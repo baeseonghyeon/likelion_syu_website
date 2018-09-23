@@ -1,0 +1,52 @@
+<div class="container">
+<h1 class="title-customform">서비스<span class="title-star">*</span></h1>
+<hr>
+<%= form_for(service, html: {multipart: true}) do |f| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="field">
+    <%= f.label :서비스_제목 %><span class="label-star">*</span>
+    <%= f.text_field :title, required: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :팀 %><span class="label-star">*</span>
+    <%= f.text_field :team, required: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :서비스_설명 %><span class="label-star">*</span>
+    <%= f.text_area:content, required: true, maxlength: "30" %>
+    <p class="logo-main-text">최대 30자 작성</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :서비스_주소 %><span class="label-star">*</span>
+    <%= f.text_field:url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :메인_이미지 %><span class="label-star">*</span>
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class="new_btn_con_con">
+    <div class="new_btn_con">
+      <div class="new_btn">
+       <%= link_to '취소', :back, class: "btn btn-primary new" %>
+       <%= f.submit value="등록", class:'btn btn-primary new' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

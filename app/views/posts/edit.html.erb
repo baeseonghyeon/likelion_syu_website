@@ -1,0 +1,31 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- form -->
+<div class="container">
+  <h1 class="title-customform">수정<span class="title-star">*</span></h1>
+  <hr>
+  <%= render 'form', post: @post %>
+</div>
+<!-- Footer -->
+<%= render 'footer' %>
+
+<!-- Select script-->
+<% if current_page?(:controller => 'posts', :action => 'edit') %>
+  <script>
+    $(document).ready(function(){
+        if($("#post_category").val() == '수업자료'){
+          $("#lecture").show();
+        }else{
+          $("#lecture").hide();
+        }
+    });
+    $(document).ready(function(){
+        if($("#post_category").val() == '과제'){
+          $("#limit").show();
+        }else{
+          $("#limit").hide();
+        }
+    });
+  </script>
+<% end %>

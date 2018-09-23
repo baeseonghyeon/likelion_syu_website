@@ -1,0 +1,63 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 title"> 
+          <h1 class="title-custom">공지사항<span class="title-star">*</span></h1>
+          <hr class="margin-b0"/>
+        </div>  
+      <div class="row">    
+        <div class="col-md-8">   
+          <!--첫 포스트작성-->
+          <%= render 'nullpost' %>
+          
+          <div class="post-box">  
+          <% @posts.each do |post| %>
+              <a href="/posts/<%= post.id %>" class="card-con">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <div class="card-cate" id="cnoti"><%= post.category %></div>
+                      <h1 class="title etc"><%= post.title %></h1>
+                      <div class="post-info"><%= post.user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+          </div>
+          
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @posts %>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Top-Widget -->
+            <%= render 'top-widget' %>
+            <hr/>
+            
+          <!-- Categories Widget -->
+            <%= render 'cate-widget'%>
+            <hr/>
+            
+          <!-- Side Widget -->
+            <%= render 'fb-widget' %><!--멋사페이스북 연동, 대시보드 활성 필요-->
+        </div>
+      </div>
+      
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    
+<!-- Footer -->
+<%= render 'footer' %>

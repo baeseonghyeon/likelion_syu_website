@@ -1,0 +1,73 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+        <!-- Blog Entries Column -->
+          <div class="col-md-12 title">
+            <h1 class="title-custom">수업 자료</h1>
+            <div class="lecture-link">
+              <a href="https://drive.google.com/drive/folders/1j__4jViRwdco44j83WprKLD5suIUNBiT?usp=sharing" target="_blank">
+                <span class="social-link"><img class='widget-icon' src='/assets/google-drive'/>수업자료 드라이브</span>
+              </a>
+              <!--<a href="https://uni.likelion.org/" target="_blank">-->
+              <!--  <span class="social-link"><img class='widget-icon' src='/assets/univ-logo'/>UNILION</span>-->
+              <!--</a>-->
+            </div>
+            <hr class="margin-b0"/>
+          </div> 
+      <div class="row">    
+        <div class="col-md-8">    
+            <!--첫 포스트작성-->
+            <%= render 'nullpost' %>
+            
+            <div class="post-box">  
+            <% @posts.each do |post| %>
+                <a href="/posts/<%= post.id %>" class="card-con">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="card-cate"><%= post.category %></div>
+                        <div class="card-cate" id="clect2"><%= post.lecture %></div>
+                        <h1 class="title etc"><%= post.title %></h1>
+                        <div class="post-info"><%= post.user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            <% end %>
+            </div>
+        
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @posts %>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Top-Widget -->
+            <%= render 'top-widget' %>
+            <hr/>
+            
+          <!-- Categories Widget -->
+            <%= render 'cate-widget'%>
+            <hr/>
+            
+          <!-- Side Widget -->
+            <%= render 'fb-widget' %>
+            
+        </div>
+      </div>
+      
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    
+<!-- Footer -->
+<%= render 'footer' %>

@@ -1,0 +1,23 @@
+<!-- Navigation -->
+<%= render './posts/nav' %>
+
+<!-- form -->
+<%= render 'form', main: @main %>
+
+<!-- Footer -->
+<%= render './posts/footer' %>
+
+<!-- Select script-->
+<% if current_page?(:controller => 'mains', :action => 'edit') %>
+  <script>
+    $(document).ready(function(){
+        if($("#main_hidden").val() == '표시'){
+          $("#alink").show();
+          $("#acontent").show();
+        }else{
+          $("#alink").hide();
+          $("#acontent").hide();
+        }
+    });
+  </script>
+<% end %>

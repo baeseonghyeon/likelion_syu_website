@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  hidden: MyString
+  th: 1
+  lion: 1
+  hack: 1
+  service: 1
+
+two:
+  title: MyString
+  content: MyText
+  hidden: MyString
+  th: 1
+  lion: 1
+  hack: 1
+  service: 1

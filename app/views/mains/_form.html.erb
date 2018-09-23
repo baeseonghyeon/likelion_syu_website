@@ -1,0 +1,83 @@
+<div class="container">
+<h1 class="title-custom mar">메인<span class="title-star">*</span></h1>
+<hr>
+<%= form_for(main) do |f| %>
+  <% if main.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(main.errors.count, "error") %> prohibited this main from being saved:</h2>
+
+      <ul>
+      <% main.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="mainfield">
+  <div class="field">
+    <%= f.label :메인제목 %><span class="label-star">*</span>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :메인내용 %><span class="label-star">*</span>
+    <br>
+    <%= f.text_area :content, required: true, placeholder: '컴퓨터를 전혀 모르는 학생들이 코딩 교육을 통해 원하는 IT 서비스를 직접 런칭 합니다. 멋쟁이 사자처럼 at 삼육대학교를 통해서!' %>
+  </div>
+  <div class="row">
+    <div class="col-md-2"> 
+      <div class="field">
+        <%= f.label :지원 %><span class="label-star">*</span>
+        <br>
+        <%= f.select :hidden, options_for_select(['숨김', '표시'], :selected => main.hidden), {:required => true, :class => 'select-box'}%>
+      </div>
+     </div> 
+    <div class="col-md-4">   
+      <div class="field" id="alink">
+        <%= f.label :지원주소 %><span class="label-star">*</span>
+        <%= f.text_field :applylink %>
+      </div>
+    </div>  
+    <div class="col-md-6">   
+      <div class="field" id="acontent">
+        <%= f.label :지원내용 %><span class="label-star">*</span>
+        <%= f.text_field :applycontent %>
+      </div>
+    </div>  
+  </div>
+  <script>
+    $("#main_hidden").change(function(){
+        if($(this).val() == '표시'){
+          $("#alink").show();
+          $("#acontent").show();
+        }else{
+          $("#alink").hide();
+          $("#acontent").hide();
+        }
+    });
+    
+  </script>
+
+  <div class="field">
+    <%= f.label :기수 %><span class="label-star">*</span>
+    <%= f.number_field :th %>
+  </div>
+
+  <div class="field">
+    <%= f.label :회원_수 %><span class="label-star">*</span>
+    <%= f.number_field :lion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :해커톤_참여_수 %><span class="label-star">*</span>
+    <%= f.number_field :hack %>
+  </div>
+  
+  <div class="new_btn_con_con">
+      <div class="main_btn">
+       <%= f.submit value="등록", class:'btn btn-primary new' %>
+      </div>
+  </div>
+</div>
+<% end %>
+</div>

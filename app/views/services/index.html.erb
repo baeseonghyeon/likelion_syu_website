@@ -1,0 +1,62 @@
+<!-- Navigation -->
+<%= render '/posts/nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+  <!-- Blog Entries Column -->
+  <div class="col-md-12 title"> 
+    <h1 class="title-custom">서비스<span class="title-star">*</span></h1>
+    <hr/>
+    <h2 class="title-custom2">멋쟁이 사자처럼 at 삼육대학교에서 만든 <span class="blue"><%= Service.all.count %>개</span>의 서비스 </h2>
+    <div class="row sindex">
+      <% @services.each do |service| %>
+        <div class="col-md-3 sindex">
+          <a href="<%= service.url %>">
+          <div class="sindexbox">
+            <div class="sindeximgbox">
+              <% if service.image.blank? %>
+                <div class= "sindeximg">
+                  <br><br><br><br><br><h2>이미지 준비중:)</h2>
+                </div>
+              <% else %>
+                <%= image_tag service.image.url, class: "sindeximg" %>
+              <% end %> 
+            </div>
+            <div class="sindexinfo">
+              <h2><%= service.title %></h2>
+              <p class="serviceteam"><%= service.team %></p>
+              <p class="time"><%= service.created_at.strftime("%Y.%m") %></p>
+              <h3><%= service.content %></h3>
+              </a>
+              <div class="servicecard-text">© <%= service.created_at.strftime("%Y") %> LIKELION SAHMYOOKUNIV</div>
+            </div>
+          </div>
+          <div class="sindexlink">
+           <% if user_signed_in? %>
+            <% if current_user.has_role? 'admin'%>
+            <p><%= link_to '수정', edit_service_path(service) %> | 
+            <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %></p> 
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+        
+      <% end %>
+      
+      <% if user_signed_in? %>
+        <% if current_user.has_role? 'admin'%>
+          <div class="col-md-3 sindex">
+            <%= link_to(image_tag('/assets/add', class:"sindexadd"), new_service_path)%>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+  </div>  
+        
+<!-- /.container -->          
+</div>
+
+<!-- Footer -->
+<%= render '/posts/footer' %>
+

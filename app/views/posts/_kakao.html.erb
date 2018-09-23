@@ -1,0 +1,38 @@
+
+<a id="kakao-link-btn" href="javascript:sendLink()">
+<img src="/assets/kakao_btn"/>
+</a>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('b480e89fe7e02b9fd2d210bac66c3752');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    function sendLink() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '<%= @post.title %>',
+          description: '[<%= @post.category %>]',
+          imageUrl: 'http://drive.google.com/uc?export=view&id=1YBwth6QT38dCjlW-6QTAsf1eWs5OqA1t',
+          link: {
+            mobileWebUrl: 'https://syu-page-tjdgusdkf.c9users.io/posts/<%= @post.id %>',
+            webUrl: 'https://syu-page-tjdgusdkf.c9users.io/posts/<%= @post.id %>'
+          }
+        },
+        social: {
+          viewCount: <%= "#{@post.unique_impression_count}" %>,
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'https://syu-page-tjdgusdkf.c9users.io/posts/<%= @post.id %>',
+              webUrl: 'https://syu-page-tjdgusdkf.c9users.io/posts/<%= @post.id %>'
+            }
+          }
+        ]
+      });
+    }
+  //]]>
+</script>

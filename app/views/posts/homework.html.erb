@@ -1,0 +1,73 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+        <!-- Blog Entries Column -->
+          <div class="col-md-12 title">
+            <h1 class="title-custom">과제</h1>
+            <div class="lecture-link">
+              <a href="https://drive.google.com/drive/folders/1ok_34SGd4pBSC2_cCRSajiy1sOYvbdZA?usp=sharing" target="_blank">
+                <span class="social-link"><img class='widget-icon' src='/assets/google-drive'/>과제제출 드라이브</span>
+              </a>
+            </div>
+            <hr class="margin-b0"/>
+          </div>
+      <div class="row">    
+        <div class="col-md-8">    
+            <!--첫 포스트작성-->
+            <%= render 'nullpost' %>
+            
+            <div class="post-box">  
+            <% @posts.each do |post| %>
+                <a href="/posts/<%= post.id %>" class="card-con">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="card-cate" id="chome"><%= post.category %></div>
+                        <% if post.limit > Time.current %>
+                          <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S')%> 까지</div>
+                        <% elsif %>
+                          <div class="card-cate" id="clect2">기한 만료</div>
+                        <% end %>
+                        <h1 class="title etc"><%= post.title %></h1>
+                        <div class="post-info"><%= post.user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            <% end %>
+            </div>
+            
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @posts %>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Top-Widget -->
+            <%= render 'top-widget' %>
+            <hr/>
+            
+          <!-- Categories Widget -->
+            <%= render 'cate-widget'%>
+            <hr/>
+            
+          <!-- Side Widget -->
+            <%= render 'fb-widget' %>
+            
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    
+<!-- Footer -->
+<%= render 'footer' %>

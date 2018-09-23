@@ -1,0 +1,154 @@
+    <!-- Page Content -->
+    <div class="container">
+    
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8 main">
+          
+          <%= link_to(image_tag('/assets/logo1-large', class:"logo-main"), posts_path )%>
+          <div class="logo-main-text">이미지를 클릭하면 메인으로 이동합니다.</div>
+          <% @mains.each do |main| %>
+          <div class="main-textbox">
+            <% if main.hidden === '표시' %>
+              <div class="apply">
+              <p>멋쟁이사자처럼 삼육대학교 <%= main.th %>기 절찬모집중<span class="title-star">*</span></p>
+              <p class="applytime"><%= main.applycontent %></p>
+              <a href="<%= main.applylink %>" class="btn main-btn apply" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
+              </div>
+            <% end %>
+            <h1 class="main-title"><%= main.title %></h1>
+            <span class="thbox"><h1 class="main-lionth" id="counter_th"><%= main.th %></h1><span class="th">기</span></span>
+            <p class="main-content"><%= main.content %></p>
+            <div class="main-info">
+              <div class="row">
+                <div class="col-md-3 r"><h1 id="counter_year" class="counter">2018</h1><p>년 부터</p></div>
+                <div class="col-md-3 r"><h1 id="counter_people" class="counter"><%= main.lion %></h1><p>명의 사자들이</p></div>
+                <div class="col-md-3 r"><h1 id="counter_hack"><%= main.lion %></h1><p>번의 해커톤을 통해</p></div>
+                <div class="col-md-3"><h1 id="counter_service">0</h1><p>개의 서비스를 만들었습니다.</p></div>
+              </div>
+            </div>
+    
+            <div class="main-service">
+              <h1>만든 서비스</h1>
+              <div class= "row service">
+                <% @services.each do |service| %>
+                  <div class="col-md-3 s">
+                    <a href="<%= service.url %>">
+                    <% if service.image.blank? %>
+                      <div class= "serviceimg sindex">
+                        <br>이미지<br>준비중
+                      </div>
+                    <% else %>
+                      <%= image_tag service.image.thumb.url, class: "serviceimg sindex" %>
+                    <% end %> 
+                    <p><%= service.title %></p>
+                    </a>
+                    <% if user_signed_in? %>
+                      <% if current_user.has_role? 'admin'%>
+                      <%= link_to '수정', edit_service_path(service) %> | 
+                      <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %> 
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+                
+                <% if user_signed_in? %>
+                  <% if current_user.has_role? 'admin'%>
+                    <div class="col-md-3 s">
+                      <%= link_to(image_tag('/assets/add', class:"serviceimgadd"), new_service_path)%>
+                    </div>
+                  <% else %>
+                    <div class="col-md-3 s2">
+                    
+                    </div>
+                  <% end %>
+                <% else %>
+                  <div class="col-md-3 s2">
+                    
+                  </div>
+                <% end %>
+              </div>
+            </div>  
+    
+            <div class="row">
+              <div class="col-md-6 mainb">
+              <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
+              <!--<button class="btn main-btn">홈페이지</button>-->
+              </div>
+              <div class="col-md-6 mainb">
+              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
+              <!--<button class="btn main-btn"></button>-->
+              </div>
+            </div>
+            <% if user_signed_in? %>
+              <% if current_user.has_role? 'admin'%>
+                <div class="maineditbox">
+                  <%= link_to '수정하기', edit_main_path(main), class: "mainedit" %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>  
+          <script>
+            var options = {
+                  useEasing: false, 
+                  useGrouping: true, 
+                  separator: '', 
+                  decimal: '.', 
+                };
+            var count_1 = new countUp('counter_th', 0, <%= main.th.to_s %>, 0, 1, options);
+            var count_2 = new countUp('counter_year', 0, 2018, 0, 2, options);
+            var count_3 = new countUp('counter_people', 0, <%= main.lion.to_s %>, 0, 1, options);
+            var count_4 = new countUp('counter_hack', 0, <%= main.hack.to_s %>, 0, 1, options);
+            var count_5 = new countUp('counter_service', 0, <%= Service.all.count.to_s %>, 0, 1, options);
+            count_1.start();
+            count_2.start();
+            count_3.start();
+            count_4.start();
+            count_5.start();
+          </script>
+          <% end %>
+          
+          <% if Main.count == 0 %>
+            <div class="empty40"></div>
+            <div class="row">
+              <div class="col-md-6 mainb">
+              <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
+              <!--<button class="btn main-btn">홈페이지</button>-->
+              </div>
+              <div class="col-md-6 mainb">
+              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
+              <!--<button class="btn main-btn"></button>-->
+              </div>
+            </div>
+            <div class="empty40"></div>
+          <% end %>
+          
+          <% if user_signed_in? %>
+            <% if current_user.has_role? 'admin'%>
+              <% if Main.count == 0 %>
+              <div class="main-textbox">
+                <div class="maineditbox">
+                  <%= link_to '메인작성', new_main_path, class: "mainedit" %>
+                </div>
+              </div>  
+              <% end %>
+            <% end %>
+          <% end %>
+        
+        <div class="col-lg-2s">
+        </div>
+     
+    <!-- /.row -->  
+      </div>
+      
+    <!-- /.container -->
+    </div>
+    
+  <!-- 이유는 모르겠지만 /div를 추가해야 footer가 container안에 안 들어감 -->
+  </div>
+
+<!-- Footer -->
+<%= render '/posts/footer' %>
