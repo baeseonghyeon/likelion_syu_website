@@ -75,11 +75,9 @@
             <div class="row">
               <div class="col-md-6 mainb">
               <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
-              <!--<button class="btn main-btn">홈페이지</button>-->
               </div>
               <div class="col-md-6 mainb">
               <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
-              <!--<button class="btn main-btn"></button>-->
               </div>
             </div>
             <% if user_signed_in? %>
@@ -112,18 +110,18 @@
           <% end %>
           
           <% if Main.count == 0 %>
+          <div class="main-textbox">
             <div class="empty40"></div>
             <div class="row">
               <div class="col-md-6 mainb">
               <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
-              <!--<button class="btn main-btn">홈페이지</button>-->
               </div>
               <div class="col-md-6 mainb">
               <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
-              <!--<button class="btn main-btn"></button>-->
               </div>
             </div>
             <div class="empty40"></div>
+          </div>  
           <% end %>
           
           <% if user_signed_in? %>
