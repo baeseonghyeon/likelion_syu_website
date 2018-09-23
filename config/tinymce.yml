@@ -1,3 +1,4 @@
+content_style: 'img {max-width: 100%;}'
 toolbar: undo redo | forecolor | bold italic | alignleft aligncenter alignright | fontselect | code | link | uploadimage | table |
 plugins:
   - link
