@@ -90,6 +90,8 @@ GEM
     excon (0.62.0)
     execjs (2.7.0)
     ffi (1.9.25)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.41.0)
@@ -449,6 +451,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   countupjs-rails
   devise
+  figaro
   fog
   fog-aws
   impressionist

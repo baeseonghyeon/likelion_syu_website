@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827192748) do
+ActiveRecord::Schema.define(version: 20180926103212) do
 
   create_table "images", force: :cascade do |t|
     t.string   "alt"
@@ -47,35 +47,6 @@ ActiveRecord::Schema.define(version: 20180827192748) do
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "nickname",               default: "", null: false
-    t.text     "gitlink",                default: "", null: false
-    t.text     "name",                   default: "", null: false
-    t.string   "phone",                  default: "", null: false
-    t.string   "image",                  default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-    t.index ["role_id"], name: "index_users_roles_on_role_id"
-    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
-    t.index ["user_id"], name: "index_users_roles_on_user_id"
-  end
 
   create_table "mains", force: :cascade do |t|
     t.string   "title"
@@ -84,7 +55,6 @@ ActiveRecord::Schema.define(version: 20180827192748) do
     t.integer  "th"
     t.integer  "lion"
     t.integer  "hack"
-    t.integer  "service"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.text     "applylink"
@@ -116,16 +86,46 @@ ActiveRecord::Schema.define(version: 20180827192748) do
 
   create_table "services", force: :cascade do |t|
     t.string   "title"
+    t.string   "team"
+    t.text     "content"
     t.text     "url"
-    t.string   "image"
+    t.string   "image",      default: "", null: false
     t.integer  "main_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "content"
-    t.string   "team"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["main_id"], name: "index_services_on_main_id"
     t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "nickname",               default: "", null: false
+    t.text     "gitlink",                default: "", null: false
+    t.text     "name",                   default: "", null: false
+    t.string   "phone",                  default: "", null: false
+    t.string   "image",                  default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
 end
