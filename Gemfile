@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.4.4"
 
+gem "waypoints_rails"
 gem "figaro"
 gem 'bundler', '~> 1.16.4'
 # simple_form
