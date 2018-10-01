@@ -11,9 +11,12 @@
               <a href="https://drive.google.com/drive/folders/1ok_34SGd4pBSC2_cCRSajiy1sOYvbdZA?usp=sharing" target="_blank">
                 <span class="social-link"><img class='widget-icon' src='/assets/google-drive'/>과제제출 드라이브</span>
               </a>
+                <!--<span class="lineh"></span>-->
+                <!--<span class="social-link"><%#= link_to '과제작성', new_post_path %></span>-->
             </div>
             <hr class="margin-b0"/>
           </div>
+          <%= render 'homework' %>
       <div class="row">    
         <div class="col-md-8">    
             <!--첫 포스트작성-->
@@ -25,12 +28,16 @@
                   <div class="card mb-4">
                     <div class="card-body">
                       <div class="card-title">
-                        <div class="card-cate" id="chome"><%= post.category %></div>
-                        <% if post.limit > Time.current %>
+                        <%if post.category === '과제'%>
+                          <% if post.limit > Time.current %>
+                          <div class="card-cate" id="chome"><%= post.category %></div>
                           <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S')%> 까지</div>
-                        <% elsif %>
+                          <% elsif %>
                           <div class="card-cate" id="clect2">기한 만료</div>
-                        <% end %>
+                          <% end %>
+                        <% else %>
+                          <div class="card-cate"><%= post.category %></div>
+                        <% end %>  
                         <h1 class="title etc"><%= post.title %></h1>
                         <div class="post-info"><%= post.user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 | <%= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
                       </div>

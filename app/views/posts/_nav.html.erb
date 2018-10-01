@@ -53,12 +53,44 @@
         <li class="nav-item" data-nav-url='/notice'>
           <%= link_to "공지", notice_path, class:"nav-link" %>
         </li>
-        <li class="nav-item" data-nav-url='/homework'>
-          <%= link_to "과제", homework_path, class:"nav-link" %>
+        <li>
+          <div class="btn-group">
+              <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                수업
+              </button>
+            <div class="dropdown-menu dropdown-menu-right drop">
+              <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>
+                <%= link_to "과제", homework_path, class:"nav-link drop" %>
+              </button>
+              <button class="dropdown-item drop" type="button" data-nav-url='/homework'>
+                <%= link_to "수업자료", lecture_path, class:"nav-link drop" %>
+              </button>
+            </div>
+          </div>
         </li>
-        <li class="nav-item" data-nav-url='/lecture'>
-          <%= link_to "수업자료", lecture_path, class:"nav-link" %>
+        <li>
+          <div class="btn-group">
+              <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                게시판
+              </button>
+            <div class="dropdown-menu dropdown-menu-right drop">
+              <button class="dropdown-item drop" type="button" data-nav-url='/homework'>
+                <%= link_to "자유게시판", freeboard_path, class:"nav-link drop" %>
+              </button>
+              <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>
+                <%= link_to "질문", freeboard_path, class:"nav-link drop" %>
+              </button>
+            </div>
+          </div>
         </li>
+        <!--<li class="nav-item" data-nav-url='/homework'>-->
+        <!--  <%#= link_to "과제", homework_path, class:"nav-link" %>-->
+        <!--</li>-->
+        <!--<li class="nav-item" data-nav-url='/lecture'>-->
+        <!--  <%#= link_to "수업자료", lecture_path, class:"nav-link" %>-->
+        <!--</li>-->
         <li class="nav-item" data-nav-url='/services'>
           <%= link_to "서비스", services_path, class:"nav-link" %>
         </li>

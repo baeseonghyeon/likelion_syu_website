@@ -133,6 +133,7 @@ a.nav-link {
 .btn .btn-mutsa .dropdown-toggle button {
   border-right: 1px solid #dfe2e6!important;
   padding: 0.200rem 0.75rem!important;
+  border: 0px;
 }
 .dropdown-nickname {
   color: #c2c0c2; font-size: 13px;
@@ -140,6 +141,35 @@ a.nav-link {
   border-bottom: 1px solid #dfe2e6;
   padding-bottom: 6px;
   margin: 0px 6px;
+}
+.btn.btn-link.btn-mutsa.dropdown-toggle {
+  border: 0px;
+}
+.btn.btn-link.btn-mutsa.dropdown-toggle.drop {
+  font-size: 15px;
+  margin: 0px;
+  padding: 8px!important;
+  line-height: 18px !important;
+}
+.btn.btn-link.btn-mutsa.dropdown-toggle.drop:hover {
+  color: #474f5c;
+  text-decoration: none;
+}
+.dropdown-menu.dropdown-menu-right.drop.show {
+  min-width: 100px;
+}
+
+button.dropdown-item.drop {
+  max-width: 100px!important;
+  padding: 5px 0px;
+  margin: 0px;
+}
+.nav-link.drop {
+  width: 100px;
+  padding: 0px;
+}
+.nav-link.drop:hover {
+  color: #0652DD!important;
 }
 
 /* BTN */
@@ -503,9 +533,10 @@ textarea {
 .btn.btn-primary.post {
   float: right;
 }
+
 .card-con:hover {
   background-color: rgba( 255, 255, 255, 0);
-  color: black !important;
+  // color: black !important;
 }
 // 카테고리 아이콘
 .card-cate {
@@ -515,6 +546,9 @@ textarea {
   font-size: 12px; font-weight: 500;
   padding: 3px 7px;
   border: 1px #c8c9ce solid;
+}
+.card-cate.home {
+  margin-left: 4px;
 }
 #chome {
   background-color: #73d8b2;
@@ -559,6 +593,7 @@ textarea {
 .title {
   font-size: 25px!important;
   padding-top: 10px;
+  color: #474f5c;
 }
 .card-body {
   padding: 0px;
@@ -584,7 +619,7 @@ textarea {
 }
 .post-info {
   font-size: 13px; font-weight: 400;
-  color: #6e747b;
+  color: #6e747b!important;
   margin-top: 5px;
 }
 //업로드 이미지 사이즈
@@ -803,6 +838,7 @@ label {
 #kakao-link-btn img {
   width: 32px!important;
 }
+
 .fb-share-button {
   height: 30px;
   width: 69px;
@@ -822,7 +858,7 @@ label {
   padding-left: 15px;
 }
 .lecture-link span {
-  color: #0652DD; font-size: 14px;
+  color: #0652DD!important; font-size: 14px;
   transition: color 0.15s ease-in-out, filter 0.15s ease-in-out!important;
 }
 .lecture-link span:hover {
@@ -997,8 +1033,6 @@ li h4:hover{
   width : 30px;
   margin-top: 5px;
   margin-bottom: 30px;
-  // -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
-  // filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
 }
 .footer .sns-link .sns-icon:hover{
   transform: scale(1.15);
@@ -1198,16 +1232,21 @@ input:disabled {
   left: 50%;
   transform: translate(-50%, -50%); 
 }
-/*끊김 현상 때문에 적용 불가*/
+/*DROPDOWN*/
 @media screen and (max-width: 991px) {
   .dropdown-menu.dropdown-menu-right {
     position: absolute;
     z-index: 100;
     left: 90px;
-    top: -3px;
+    top: -4px;
+    background: white;
   }
   .dropdown-menu.dropdown-menu-right.show {
     padding: 5px 0px;
+    background: white;
+  }
+  .btn.btn-link.btn-mutsa.dropdown-toggle.drop {
+  padding-left: 0px!important;
   }
   //메인 로고
   .logo-main {
@@ -1284,3 +1323,11 @@ input:disabled {
 
 /* placeholder focus */
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { /* WebKit browsers */ color:transparent; } input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:transparent; } input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */ color:transparent; } input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */ color:transparent; }
+
+/* LINE */
+.lineh {
+  border: 0.5px solid #dfe2e6;
+  width: 1px;
+  height: 100%;
+  margin: 0px 10px 0px 5px;
+}

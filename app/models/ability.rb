@@ -5,9 +5,9 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       if user.nil? #비로그인 읽기만 가능
-        can [:read,:notice,:homework,:lecture], :all
+        can [:read,:notice,:homework,:lecture,:freeboard], :all
       elsif user.has_role? 'member' #멤버등급 읽기,쓰기, 본인글 수정 삭제
-        can [:read,:create,:notice,:homework,:lecture], :all
+        can [:read,:create,:notice,:homework,:lecture,:freeboard], :all
         can [:update,:destroy], Post, user_id: user.id
       elsif user.has_role? 'admin' #어드민, 모든글 접근, 어드민페이지 접근
         can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew], :all

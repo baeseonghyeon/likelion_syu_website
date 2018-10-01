@@ -51,11 +51,11 @@
         });
       </script>
     <% elsif current_user.has_role? 'member'%>
-      <div class="col-md-2">
-        <%= f.label :카테고리 %><span class="label-star">*</span>
-        <br>
-        <%= f.select :category, options_for_select(['일반'], post), class:"select-box" %>
-      </div>
+        <div class="col-md-2">
+          <%= f.label :카테고리 %><span class="label-star">*</span>
+          <br>
+          <%= f.select :category, options_for_select(['일반', '과제제출'], :selected => post.category), class:"select-box" %>
+        </div>
       <div class="col-md-10"> 
         <div class="field">
           <%= f.label :제목 %><span class="label-star">*</span>

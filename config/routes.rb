@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/notice' => 'posts#notice'
   get '/homework' => 'posts#homework'
   get '/lecture' => 'posts#lecture'
+  get '/freeboard' => 'posts#freeboard'
 end

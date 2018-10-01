@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard]
   before_action :notice_widget, only: [:index]
+  before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -80,7 +81,7 @@ class PostsController < ApplicationController
   end
 
   def homework
-    @post = Post.where(:category => '과제')
+    @post = Post.where(:category => ['과제', '과제제출'])
     @posts = @post.order("created_at DESC").page(params[:page])
     authorize! :homework, @posts
   end
@@ -89,6 +90,12 @@ class PostsController < ApplicationController
     @post = Post.where(:category => '수업자료')
     @posts = @post.order("created_at DESC").page(params[:page])
     authorize! :lecture, @posts
+  end
+  
+  def freeboard
+    @post = Post.where(:category => '일반')
+    @posts = @post.order("created_at DESC").page(params[:page])
+    authorize! :freeboard, @posts
   end
 
 private
@@ -113,6 +120,11 @@ private
   def notice_widget
     @notice = Post.where(:category => '공지사항')
     @notice_1 = @notice.order("created_at DESC").limit(1)
+  end
+  
+  def homework_widget
+    @homework = Post.where(:category => '과제')
+    @homework_1 = @homework.order("created_at DESC").limit(1)
   end
   
   def mainimg 
