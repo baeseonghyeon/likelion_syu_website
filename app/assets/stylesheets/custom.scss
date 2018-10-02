@@ -146,7 +146,7 @@ a.nav-link {
 }
 a#navbarDropdownnickname.nav-link.dropdown-toggle {
   font-size: 1rem;
-  line-height: 1;
+  line-height: 12px;
 }
 a#navbarDropdownnickname.nav-link.dropdown-toggle:hover {
   color: #0652DD!important;
@@ -1153,7 +1153,7 @@ footer p {
   height: 100%;
   max-width: 200px;
   max-height: 200px;
-  margin: 25px auto 15px auto;
+  margin: 85px auto 15px auto;
 }
 .avatar img {
   border-radius: 100%;
@@ -1230,7 +1230,7 @@ input:disabled {
   }
   //드롭 다운
   #userinfo.dropdown-menu {
-    background: white;
+    background: transparent;
     box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
   }
   .dropdown-nickname {
@@ -1252,10 +1252,16 @@ input:disabled {
   }
   //네비 로고 센터
   .navbar-brand {
-      // display: block;
-      // position: relative;
-      // left: 32px;
-      margin: 0px 16px!important;
+  // display: block;
+  // position: relative;
+  // left: 32px;
+  margin: 0px 16px!important;
+  }
+  #navbarDropdownnickname::after {
+  display: none;
+  }
+  a#navbarDropdownnickname.nav-link.dropdown-toggle {
+  line-height: 1.2;
   }
   //toggler
   .navbar-toggler {
