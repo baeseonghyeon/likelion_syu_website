@@ -7,39 +7,60 @@
     <div class="collapse navbar-collapse custom-nav-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li class="nav-item signin">
-            <div class="btn-group">
-              <button type="button" class="btn btn-link btn-mutsa dropdown-toggle" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.nickname %>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-nickname">
-                  <%= current_user.email %>
-                </div>
-                <button class="dropdown-item" type="button">
-                  <%= link_to '마이페이지', edit_user_registration_path %>
-                </button>
-                <% if current_user.has_role? 'admin'%>
-                <button class="dropdown-item" type="button">
-                  <%= link_to '관리자', rails_admin_path %>
-                </button>
-                <% end %>
-                <% if current_user.has_role? 'admin'%>
-                <button class="dropdown-item" type="button">
-                  <%= link_to '새 글 작성', new_post_path %>
-                </button>
-                <% elsif current_user.has_role? 'member' %>
-                <button class="dropdown-item" type="button">
-                  <%= link_to '새 글 작성', new_post_path %>
-                </button>
-                <% end %>
-                <button class="dropdown-item" type="button">
-                  <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
-                </button>
-              </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownnickname" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.nickname %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+            <div class="dropdown-nickname">
+            <%= current_user.email %>
             </div>
-          </li>
+            <%= link_to '마이페이지', edit_user_registration_path, class:"dropdown-item"%>
+            <% if current_user.has_role? 'admin'%>
+            <%= link_to '관리자', rails_admin_path, class:"dropdown-item"%>
+            <% end %>
+            <% if current_user.has_role? 'admin'%>
+            <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
+            <% elsif current_user.has_role? 'member' %>
+            <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
+            <% end %>
+            <%= link_to '로그아웃', destroy_user_session_path, method: 'delete', class:"dropdown-item" %>
+          </div>
+        </li>
+        
+          <!--<li class="nav-item signin">-->
+          <!--  <div class="btn-group">-->
+          <!--    <button type="button" class="btn btn-link btn-mutsa dropdown-toggle" -->
+          <!--      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+          <!--      <%#= current_user.nickname %>-->
+          <!--    </button>-->
+          <!--    <div class="dropdown-menu dropdown-menu-right">-->
+          <!--      <div class="dropdown-nickname">-->
+          <!--        <%#= current_user.email %>-->
+          <!--      </div>-->
+          <!--      <button class="dropdown-item" type="button">-->
+          <!--        <%#= link_to '마이페이지', edit_user_registration_path %>-->
+          <!--      </button>-->
+          <!--      <%# if current_user.has_role? 'admin'%>-->
+          <!--      <button class="dropdown-item" type="button">-->
+          <!--        <%#= link_to '관리자', rails_admin_path %>-->
+          <!--      </button>-->
+          <!--      <%# end %>-->
+          <!--      <%# if current_user.has_role? 'admin'%>-->
+          <!--      <button class="dropdown-item" type="button">-->
+          <!--        <%#= link_to '새 글 작성', new_post_path %>-->
+          <!--      </button>-->
+          <!--      <%# elsif current_user.has_role? 'member' %>-->
+          <!--      <button class="dropdown-item" type="button">-->
+          <!--        <%#= link_to '새 글 작성', new_post_path %>-->
+          <!--      </button>-->
+          <!--      <%# end %>-->
+          <!--      <button class="dropdown-item" type="button">-->
+          <!--        <%#= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>-->
+          <!--      </button>-->
+          <!--    </div>-->
+          <!--  </div>-->
+          <!--</li>-->
           <% else %>
           <li class="nav-item" >
             <%= link_to '로그인', new_user_session_path, class:"nav-link sign" %>
@@ -53,38 +74,57 @@
         <li class="nav-item" data-nav-url='/notice'>
           <%= link_to "공지", notice_path, class:"nav-link" %>
         </li>
-        <li>
-          <div class="btn-group">
-              <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                수업
-              </button>
-            <div class="dropdown-menu dropdown-menu-right drop">
-              <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>
-                <%= link_to "과제", homework_path, class:"nav-link drop" %>
-              </button>
-              <button class="dropdown-item drop" type="button" data-nav-url='/homework'>
-                <%= link_to "수업자료", lecture_path, class:"nav-link drop" %>
-              </button>
-            </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            수업
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+            <%= link_to "과제", homework_path, class:"dropdown-item" %>
+            <%= link_to "수업자료", lecture_path, class:"dropdown-item" %>
           </div>
         </li>
-        <li>
-          <div class="btn-group">
-              <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                게시판
-              </button>
-            <div class="dropdown-menu dropdown-menu-right drop">
-              <button class="dropdown-item drop" type="button" data-nav-url='/homework'>
-                <%= link_to "자유게시판", freeboard_path, class:"nav-link drop" %>
-              </button>
-              <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>
-                <%= link_to "질문", freeboard_path, class:"nav-link drop" %>
-              </button>
-            </div>
+        <!--<li>-->
+        <!--  <div class="btn-group">-->
+        <!--      <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" -->
+        <!--        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >-->
+        <!--        수업-->
+        <!--      </button>-->
+        <!--    <div class="dropdown-menu dropdown-menu-right drop">-->
+        <!--      <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>-->
+        <!--        <%#= link_to "과제", homework_path, class:"nav-link drop" %>-->
+        <!--      </button>-->
+        <!--      <button class="dropdown-item drop" type="button" data-nav-url='/homework'>-->
+        <!--        <%#= link_to "수업자료", lecture_path, class:"nav-link drop" %>-->
+        <!--      </button>-->
+        <!--    </div>-->
+        <!--  </div>-->
+        <!--</li>-->
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            게시판
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+            <%= link_to "자유게시판", freeboard_path, class:"dropdown-item" %>
+            <%= link_to "질문", freeboard_path, class:"dropdown-item" %>
           </div>
         </li>
+        <!--<li>-->
+          <!--<div class="btn-group">-->
+          <!--    <button type="button" class="btn btn-link btn-mutsa dropdown-toggle drop" -->
+          <!--      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >-->
+          <!--      게시판-->
+          <!--    </button>-->
+          <!--  <div class="dropdown-menu dropdown-menu-right drop">-->
+          <!--    <button class="dropdown-item drop" type="button" data-nav-url='/homework'>-->
+          <!--      <%#= link_to "자유게시판", freeboard_path, class:"nav-link drop" %>-->
+          <!--    </button>-->
+          <!--    <button class="dropdown-item drop" type="button" data-nav-url='/lecture'>-->
+          <!--      <%#= link_to "질문", freeboard_path, class:"nav-link drop" %>-->
+          <!--    </button>-->
+          <!--  </div>-->
+          <!--</div>-->
+        <!--</li>-->
         <!--<li class="nav-item" data-nav-url='/homework'>-->
         <!--  <%#= link_to "과제", homework_path, class:"nav-link" %>-->
         <!--</li>-->
