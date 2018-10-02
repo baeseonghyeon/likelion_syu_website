@@ -130,11 +130,6 @@ a.nav-link {
   font-size: 15px;
   background: white;
 }
-// .btn .btn-mutsa .dropdown-toggle button {
-//   border-right: 1px solid #dfe2e6!important;
-//   padding: 0.200rem 0.75rem!important;
-//   border: 0px;
-// }
 .dropdown-toggle::after {
   display: none;
 }
@@ -149,15 +144,6 @@ a.nav-link {
   padding-top: 2px;
   margin: 0px 6px;
 }
-// .btn.btn-link.btn-mutsa.dropdown-toggle {
-//   border: 0px;
-// }
-// .btn.btn-link.btn-mutsa.dropdown-toggle.drop {
-//   font-size: 15px;
-//   margin: 0px;
-//   padding: 8px!important;
-//   line-height: 18px !important;
-// }
 a#navbarDropdownnickname.nav-link.dropdown-toggle {
   font-size: 1rem;
   line-height: 1;
@@ -175,25 +161,6 @@ a#navbarDropdownPortfolio.nav-link.dropdown-toggle:focus {
 .dropdown-item {
   padding: 7px 1.5rem;
 }
-// a.nav-link {
-//   margin: 10px 0px;
-// }
-// .dropdown-menu.dropdown-menu-right.drop.show {
-//   min-width: 100px;
-// }
-
-// button.dropdown-item.drop {
-//   max-width: 100px!important;
-//   padding: 5px 0px;
-//   margin: 0px;
-// }
-// .nav-link.drop {
-//   width: 100px;
-//   padding: 0px;
-// }
-// .nav-link.drop:hover {
-//   color: #0652DD!important;
-// }
 
 /* BTN */
 .btn-primary {
@@ -1255,25 +1222,12 @@ input:disabled {
   left: 50%;
   transform: translate(-50%, -50%); 
 }
-/*DROPDOWN*/
+/*MOBILE NAV*/
 @media screen and (max-width: 991px) {
+  //드롭 다운
   .navbar-nav .nav-link {
     text-align: center;
   }
-  // .dropdown-menu.dropdown-menu-right {
-  //   position: absolute;
-  //   z-index: 100;
-  //   left: 90px;
-  //   top: -4px;
-  //   background: white;
-  // }
-  // .dropdown-menu.dropdown-menu-right.show {
-  //   padding: 5px 0px;
-  //   background: white;
-  // }
-  // .btn.btn-link.btn-mutsa.dropdown-toggle.drop {
-  // padding-left: 0px!important;
-  // }
   //메인 로고
   .logo-main {
   width: 60%;
@@ -1349,11 +1303,3 @@ input:disabled {
 
 /* placeholder focus */
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { /* WebKit browsers */ color:transparent; } input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:transparent; } input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */ color:transparent; } input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */ color:transparent; }
-
-/* LINE */
-.lineh {
-  border: 0.5px solid #dfe2e6;
-  width: 1px;
-  height: 100%;
-  margin: 0px 10px 0px 5px;
-}
