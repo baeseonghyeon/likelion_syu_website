@@ -1247,6 +1247,11 @@ input:disabled {
   left: 50%;
   transform: translate(-50%, -50%); 
 }
+@media (min-width: 992px) {
+  .dropdown-menu {
+    left: -55px!important;
+  }
+}
 /*MOBILE NAV*/
 @media screen and (max-width: 991px) {
   .navbar.navbar-expand-lg.navbar-light.fixed-top {
