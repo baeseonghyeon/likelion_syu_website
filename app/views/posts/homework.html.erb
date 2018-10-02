@@ -20,7 +20,11 @@
       <div class="row">    
         <div class="col-md-8">    
             <!--첫 포스트작성-->
-            <%= render 'nullpost' %>
+            <% if Post.count == 0 %>
+              <%= render 'nullpost' %>
+            <% else %>  
+              <%= render 'nullpost2' %>
+            <% end %>
             
             <div class="post-box">  
             <% @posts.each do |post| %>
