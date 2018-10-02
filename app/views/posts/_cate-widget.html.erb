@@ -6,7 +6,7 @@
         <ul>
           <% @categories_10.each do |cate| %>
             <li>
-              <a href="/posts/<%= cate.id %>"><h4 class="etc"><%= cate.title %></h4><div class="cate-info"><%= cate.user.nickname %> | <%= cate.category %> | <%= cate.created_at.strftime("%Y.%m.%d. %H:%M") %></div></a> 
+              <a href="/posts/<%= cate.id %>"><h4 class="etc"><%= cate.title %></h4><div class="cate-info"><%= cate.user.name %> | <%= cate.category %> | <%= cate.created_at.strftime("%Y.%m.%d. %H:%M") %></div></a> 
             </li>
           <% end %>
         </ul>

@@ -18,7 +18,7 @@
       <h1 class="mt-4"><%= @post.title %></h1>
       
       <!-- Date/Time -->
-      <p class="time"><%= @post.user.nickname %> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
+      <p class="time"><%= @post.user.name %> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
       <% if @post.category === '과제' %>
         <% if @post.limit > Time.current %>
           <div class="card-cate" id="climit">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>

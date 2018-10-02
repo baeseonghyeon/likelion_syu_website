@@ -1255,11 +1255,12 @@ input:disabled {
       // display: block;
       // position: relative;
       // left: 32px;
-      margin: 0px 16px;
+      margin: 0px 16px!important;
   }
   //toggler
   .navbar-toggler {
     margin-right: 16px;
+    margin-left: 0px!important;
   }
   //메인 로고
   .logo-main {

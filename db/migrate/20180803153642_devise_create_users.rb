@@ -6,8 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      # nickname, description
-      t.string :nickname,           null: false, default: ""
+      # # nickname, description
+      # t.string :nickname,           null: false, default: ""
       t.text :gitlink,              null: false, default: ""
       t.text :name,                 null: false, default: ""
       t.string :phone,              null: false, default: ""
