@@ -1249,7 +1249,12 @@ input:disabled {
 }
 @media (min-width: 992px) {
   .dropdown-menu {
-    left: -55px!important;
+    left: -30px!important;
+    min-width: 5rem!important;
+  }
+  #userinfo.dropdown-menu.dropdown-menu-center.show {
+    left: -45px!important;
+    min-width: 10rem!important;
   }
 }
 /*MOBILE NAV*/
@@ -1261,6 +1266,7 @@ input:disabled {
   #userinfo.dropdown-menu {
     background: transparent;
     box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    
   }
   .dropdown-nickname {
     padding: 10px 0px;
