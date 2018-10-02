@@ -15,7 +15,7 @@
             <div class="dropdown-nickname">
             <%= current_user.email %>
             </div>
-            <%= link_to '마이페이지', edit_user_registration_path, class:"dropdown-item"%>
+            <%= link_to '마이페이지', users_path, class:"dropdown-item"%>
             <% if current_user.has_role? 'admin'%>
             <%= link_to '관리자', rails_admin_path, class:"dropdown-item"%>
             <% end %>

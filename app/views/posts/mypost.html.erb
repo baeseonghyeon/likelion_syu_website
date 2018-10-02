@@ -1,0 +1,51 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 title"> 
+          <h1 class="title-custom">내가 작성한 글(<%= @user.count %>)</h1>
+          <hr class="margin-b0"/>
+        </div>  
+      <div class="row">    
+        <div class="col-md-12">   
+          <!--첫 포스트작성-->
+          <%= render 'nullpost' %>
+          
+        <div class="post-box">
+          <% @users.each do |post| %>
+              <a href="/posts/<%= post.id %>" class="card-con">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <div class="card-cate"><%= post.category %></div>
+                      <h1 class="title etc"><%= post.title %></h1>
+                      <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 | <%= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+          </div>
+          
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @users %>
+            </li>
+          </ul>
+      </div>    
+      <!-- /.row -->
+    </div>
+      <div class="back_link">
+      <%= link_to "뒤로가기", :back %>
+      </div>
+    <!-- /.container -->
+  </div>  
+<!-- Footer -->
+<%= render 'footer' %>
+
+<!-- disqus count -->
+<%= render 'disqus2' %>

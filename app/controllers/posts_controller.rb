@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :notice_widget, only: [:index]
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -97,6 +97,16 @@ class PostsController < ApplicationController
     @posts = @post.order("created_at DESC").page(params[:page])
     authorize! :freeboard, @posts
   end
+  
+  def mypage
+
+  end  
+  
+  def mypost
+    @user = Post.where(:user_id => current_user)
+    @users = @user.order("created_at DESC").page(params[:page])
+    authorize! :mypage, @users
+  end  
 
 private
   # Use callbacks to share common setup or constraints between actions.
@@ -147,7 +157,7 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :content, :user_id, :category, :limit, :lecture)
+    params.require(:post).permit(:title, :content, :user_id, :category, :limit, :lecture, :mypost)
   end
   
   def log_impression

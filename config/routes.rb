@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get '/homework' => 'posts#homework'
   get '/lecture' => 'posts#lecture'
   get '/freeboard' => 'posts#freeboard'
+  get '/users' => 'posts#mypage'
+  get '/users/myposts' => 'posts#mypost'
 end

@@ -1,46 +1,27 @@
 <!-- Navigation -->
 <%= render '/posts/nav' %>
 
-<% if current_user.image.url.present? %>
-  <div class="avatar">
-    <a href="<%= current_user.image.url %>" target="_blank"><%= image_tag(current_user.image.thumb.url) %></a>
-  </div>
-<% else %>
-  <div class="avatar">
-    <img src="/assets/avatar">
-  </div>
-<% end %>
-
 <div class="d_main">
-  
+  <h1 class="title-custom3">개인 정보 수정하기</h1>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
   <div class="d_inputbox">
     <div class="form-inputs">
-      <div class="user-info">
-        <h1><%= current_user.name %></h1>
-        <p><%= current_user.email %></p>
-        <p>삼육멋사
-        <% if current_user.has_role? 'admin'%>
-          <span class="role">운영진*</span>
-        <% elsif current_user.has_role? 'member'%>
-          <span class="role">아기사자</span>
-        <% else %>
-          <span class="role">뉴비</span>
-          <p>'뉴비' 등급은 게시글 작성이 불가능합니다.<span class="label-star">*</span><br>
-                등급 관련 사항은 운영자에게 문의해주세요.</p>
-        <% end %>
-        </p>
-        
-      </div>
-  
-      <%#= f.label "닉네임" %>
-      <%#= f.text_field :nickname, class: "form-control", :required => true, maxlength: "10"%>
-      
+      <%= f.label "이름" %>
+      <%= f.text_field :name, class: "form-control", :required => true, disabled: true %>
+      <%= f.label "이메일" %>
+      <%= f.text_field :email, class: "form-control", :required => true, disabled: true %>
+      <%= f.label "등급" %>
+      <% if current_user.has_role? 'admin'%>
+        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "운영진" %>
+      <% elsif current_user.has_role? 'member'%>
+        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "아기사자" %>
+      <% else %>
+        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "뉴비" %>
+      <% end %>
       <%= f.label "프로필 이미지" %>
       <%= f.file_field :image %>
       <%= f.hidden_field :image_cache %>
-      
       <%= f.label "휴대전화" %>
       <%= f.text_field :phone, :required => true,placeholder: "- 없이 11자 입력", maxlength: "11"%>
       <%= f.label "Github 주소" %>
@@ -60,7 +41,7 @@
   <div class="d_link">
   <p><%= link_to "회원탈퇴", registration_path(resource_name), data: { confirm: "정말 탈퇴하시겠습니까?" }, method: :delete %></p>
   
-  <%= link_to "메인으로", posts_path %>
+  <%= link_to "뒤로가기", :back %>
   </div>
 </div>
 <%= render '/posts/footer' %>
