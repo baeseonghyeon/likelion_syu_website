@@ -5,10 +5,9 @@
       <div class="d_inputbox">
         <%= f.input :email, required: false, autofocus: true, label: '이메일' %>
         <%= f.input :password, required: false, label: '비밀번호' %>
-        
       </div>
       <div class="d_rememberbox">
-        <%= f.input :remember_me, label: '로그인 유지', as: :boolean if devise_mapping.rememberable? %>
+        <span></span><%= f.input :remember_me, label: '로그인 유지', id: 'cb1', as: :boolean if devise_mapping.rememberable? %>
       </div>
       
       <div class="d_button">
