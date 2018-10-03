@@ -1123,6 +1123,9 @@ footer p {
   top: -2px;
   position: relative;
 }
+.boolean.optional.checkbox {
+  margin: 40px auto!important;
+}
 //가입창
 .d_alert {
   position:relative; left:70px;
@@ -1315,7 +1318,7 @@ input:disabled {
   }
   //devise_check_box
   .d_rememberbox input {
-  top: 1px;
+  top: 0px;
   position: relative;
   }
 }
