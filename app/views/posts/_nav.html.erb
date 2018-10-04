@@ -12,6 +12,15 @@
             <%= current_user.name %>
           </a>
           <div class="dropdown-menu dropdown-menu-center"  id="userinfo" aria-labelledby="navbarDropdownPortfolio">
+            <% if current_user.image.url.present? %>
+              <div class="avatar2">
+                <a href="<%= current_user.image.url %>" target="_blank"><%= image_tag(current_user.image.thumb.url) %></a>
+              </div>
+            <% else %>
+              <div class="avatar2">
+                <img src="/assets/avatar">
+              </div>
+            <% end %>
             <div class="dropdown-nickname">
             <%= current_user.email %>
             </div>
