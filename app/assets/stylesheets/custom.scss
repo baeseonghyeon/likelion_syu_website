@@ -534,11 +534,15 @@ textarea {
 .btn.btn-primary.post {
   float: right;
 }
-
 .card-con:hover {
   background-color: rgba( 255, 255, 255, 0);
-  // color: black !important;
 }
+a.card-con:hover {
+  color: #666666!important;
+}
+a.comment-link-marker:hover {
+  color: #666666!important;
+}  
 // 카테고리 아이콘
 .card-cate {
   background-color: white;
