@@ -16,7 +16,7 @@ class Ability
         can :manage, :all 
         can :history, :all
       elsif
-        can [:read,:notice,:homework,:lecture,:mypage,:mypost], :all #등급은 없고 가입만 한 뉴비, 제거하면 가입후 세션막힘
+        can [:read,:notice,:homework,:lecture,:freeboard,:mypage,:mypost], :all #등급은 없고 가입만 한 뉴비, 제거하면 가입후 세션막힘
       end 
       
 
