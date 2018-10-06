@@ -602,6 +602,9 @@ a.comment-link-marker:hover {
   border: 0px;
   padding: 2px 4px;
 }
+#cfree {
+  border-radius: 15px;
+}
 #cques {
   background-color: transparent;
   color: #f76706;
@@ -1213,6 +1216,19 @@ footer p {
 .avatar2 img {
   border-radius: 100%;
   width: 100%;
+}
+.avatar3 {
+  width: 100%;
+  height: 100%;
+  max-width: 25px!important;
+  max-height: 25px!important;
+  margin-right: 5px;
+  display: inline-block;
+}
+.avatar3 img {
+  border-radius: 100%;
+  width: 100%;
+  margin: 0px;
 }
 #user_image {
   padding: 10px 10px;
