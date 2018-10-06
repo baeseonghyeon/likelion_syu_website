@@ -21,6 +21,13 @@
         }
     });
     $(document).ready(function(){
+        if($("#post_category").val() == '질문'){
+          $("#lecture2").show();
+        }else{
+          $("#lecture2").hide();
+        }
+    });
+    $(document).ready(function(){
         if($("#post_category").val() == '과제'){
           $("#limit").show();
         }else{

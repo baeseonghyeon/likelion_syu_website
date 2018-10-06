@@ -7,7 +7,11 @@
 
     <!-- Post Content Column -->
     <!--<div class="col-lg-12">-->
+    <% if @post.category === '질문' %>
+    <div class="col-lg-12">
+    <% else %>
     <div class="col-lg-8">
+    <% end %>
 
       <!-- Title -->
       <% if @post.category === '수업자료' %>
@@ -46,14 +50,16 @@
           <% elsif @post.user.has_role? 'member'%>
             삼육멋사 아기사자
           <% else %>
-            뉴비
+            게스트
           <% end %>
           <!--written by-->
           <span class="nik"><%= @post.user.name %><span>.
         </h5>
-        <% if @post.category === '질문' %>
+        <% if @post.user.has_role? 'admin'%>
+            <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
+        <% elsif @post.user.has_role? 'member'%>
+            <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
         <% else %>
-        <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
         <% end %>
       </div>
       
@@ -92,7 +98,22 @@
       <%= render 'disqus' %> 
       </div>
     </div>
-
+    <% if @post.category === '질문' %>
+    </div>  
+      <div class="row">
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-6">
+          <!-- Top-Widget -->
+            <%= render 'top-widget' %>
+            <hr/>
+        </div>
+        <div class="col-md-6">
+          <!-- Categories Widget -->
+            <%= render 'cate-widget'%>
+            <hr/>
+        </div>
+      </div>
+      <% else %>
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
         
@@ -103,12 +124,12 @@
       <!-- Categories Widget -->
       <%= render 'cate-widget'%>
       <hr/>
-
+      <% end %>
     </div>
-
+    
   </div>
   <!-- /.row -->
-
+  
 </div>
 <!-- /.container -->
 
