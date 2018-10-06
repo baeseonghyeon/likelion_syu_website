@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :question]
   before_action :notice_widget, only: [:index]
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :question]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -106,7 +106,11 @@ class PostsController < ApplicationController
     @user = Post.where(:user_id => current_user)
     @users = @user.order("created_at DESC").page(params[:page])
     authorize! :mypage, @users
-  end  
+  end 
+  
+  def question
+    authorize! :question, @posts
+  end
 
 private
   # Use callbacks to share common setup or constraints between actions.
@@ -164,5 +168,10 @@ private
     @hit_post = Post.find(params[:id])
     # this assumes you have a current_user method in your authentication system
     @hit_post.impressions.create(ip_address: request.remote_ip)
+  end
+  
+  def last_visited(question, posts)
+    session[:action]=question
+    session[:controller]=posts
   end
 end

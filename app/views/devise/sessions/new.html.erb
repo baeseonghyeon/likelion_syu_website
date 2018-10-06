@@ -21,7 +21,11 @@
         </div>
       </div>
   <% end %>
-  <%= render "devise/shared/links" %>
+  
+    <div class="d_link2">
+      <%= render "devise/shared/links" %>
+      <%= link_to "메인으로", posts_path %>
+    </div>
   </div>
 </div>
 <%= render '/posts/footer' %>
