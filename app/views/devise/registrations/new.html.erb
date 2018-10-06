@@ -1,7 +1,8 @@
 <%= render '/posts/logo' %>
 <div class="d_main">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
+  <p class=“notice’><%= notice %></p>
+  <p class=“alert’><%= alert %></p>
   <div class="d_inputbox">
     <div class="form-inputs">
       <%= f.input :email, required: true, autofocus: true, label:'이메일', maxlength: "30" %>
@@ -10,7 +11,15 @@
       <%= f.label "이름" %>
       <%= f.text_field :name, :required => true, maxlength: "5"%>
       <%= f.label "휴대전화" %>
-      <%= f.text_field :phone, :required => true, placeholder: "- 없이 11자 입력", maxlength: "11"%>
+      <%= f.number_field :phone, :required => true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
+      <script>
+      phone.oninput = function () {
+          if (this.value.length > 11) {
+              this.value = this.value.slice(0,11); 
+          }
+      }
+    </script>
+      <%#= f.text_field :phone, :required => true, placeholder: "- 없이 11자 입력", maxlength: "11"%>
       <%#= f.label "닉네임" %>
       <%#= f.text_field :nickname, :required => true, placeholder: "ex) 멋사 두희", maxlength: "10"%>
       <%= f.label "Github 주소" %>

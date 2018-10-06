@@ -2,6 +2,10 @@
 <div class="d_main">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.error_notification %>
+  <%= f.full_error :confirmation_token %>
+  <p class=“notice’><%= notice %></p>
+  <p class=“alert’><%= alert %></p>
+
     <div class="form-inputs">
       <div class="d_inputbox">
         <%= f.input :email, required: false, autofocus: true, label: '이메일' %>

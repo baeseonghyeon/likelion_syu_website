@@ -5,6 +5,8 @@
   <h1 class="title-custom3">개인 정보 수정하기</h1>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
+    <p class=“notice’><%= notice %></p>
+    <p class=“alert’><%= alert %></p>
   <div class="d_inputbox">
     <div class="form-inputs">
       <%= f.label "이름" %>
@@ -23,7 +25,15 @@
       <%= f.file_field :image %>
       <%= f.hidden_field :image_cache %>
       <%= f.label "휴대전화" %>
-      <%= f.text_field :phone, :required => true,placeholder: "- 없이 11자 입력", maxlength: "11"%>
+      <%= f.number_field :phone, :required => true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
+      <script>
+      phone.oninput = function () {
+          if (this.value.length > 11) {
+              this.value = this.value.slice(0,11); 
+          }
+      }
+      </script>
+      <%#= f.text_field :phone, :required => true,placeholder: "- 없이 11자 입력", maxlength: "11"%>
       <%= f.label "Github 주소" %>
       <%= f.text_field :gitlink, placeholder: "https://github.com/아이디" %>
       <%= f.input :password, autocomplete: "off", hint: "변경하지 않으려면 비워 두십시오.", required: false, label: "비밀번호" %>

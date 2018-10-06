@@ -40,7 +40,7 @@ a:hover {
 }
 .title-custom3 {
   font-size: 30px!important; font-weight: 300;
-  padding-left: 15px;
+  // padding-left: 15px;
   margin: 75px 0px 10px 0px;
   color: #474f5c
 }
@@ -69,7 +69,7 @@ input:focus {
 /* LOGO 이미지 */
 .logo {
   width: 200px;
-  margin: 45px auto 80px auto;
+  margin: 80px auto 70px auto;
   display: block;
 }
 
@@ -1410,3 +1410,10 @@ input:disabled {
 
 /* placeholder focus */
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { /* WebKit browsers */ color:transparent; } input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:transparent; } input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */ color:transparent; } input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */ color:transparent; }
+
+/* number input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
