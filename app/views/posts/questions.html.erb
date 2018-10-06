@@ -1,0 +1,74 @@
+<!-- Navigation -->
+<%= render 'nav' %>
+
+<!-- Page Content -->
+<div class="container">
+      
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 title"> 
+          <h1 class="title-custom-q">질문게시판</h1>
+            <%= link_to '질문하기',  new_post_path, class: "new-btn q" %>
+          <hr class="margin-b0"/>
+        </div>  
+      <div class="row">    
+        <div class="col-md-12">   
+          <!--첫 포스트작성-->
+          <% if Post.count == 0 %>
+            <%= render 'nullpost' %>
+          <% else %>  
+            <%= render 'nullpost2' %>
+          <% end %>
+          
+          <div class="post-box">  
+          <% @posts.each do |post| %>
+              <a href="/posts/<%= post.id %>" class="card-con">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <div class="card-cate" id="cques"><%= post.category %></div>
+                      <div class="card-cate" id="clect2"><%= post.lecture %></div>
+                      <h1 class="title etc"><%= post.title %></h1>
+                      <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 | <%= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+          </div>
+          
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @posts %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Top-Widget -->
+            <%= render 'top-widget' %>
+            <hr/>
+        </div>
+        <div class="col-md-4">
+          <!-- Categories Widget -->
+            <%= render 'cate-widget'%>
+            <hr/>
+        </div>
+        <div class="col-md-4">
+          <!-- Side Widget -->
+            <%= render 'fb-widget' %><!--멋사페이스북 연동, 대시보드 활성 필요-->
+        </div>
+      </div>
+      
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    
+<!-- Footer -->
+<%= render 'footer' %>
+
+<!-- disqus count -->
+<%= render 'disqus2' %>

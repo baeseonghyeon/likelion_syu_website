@@ -37,6 +37,9 @@
                 <% end %>
               <% elsif post.category === '공지사항' %>
               <div class="card-cate" id="cnoti"><%= post.category %></div>
+              <% elsif post.category === '질문' %>
+              <div class="card-cate" id="cques"><%= post.category %></div>
+              <div class="card-cate" id="clect2"><%= post.lecture %></div>
               <% else %>
               <div class="card-cate"><%= post.category %></div>
               <% end %>

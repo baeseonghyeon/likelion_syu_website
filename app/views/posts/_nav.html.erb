@@ -14,11 +14,11 @@
           <div class="dropdown-menu dropdown-menu-center"  id="userinfo" aria-labelledby="navbarDropdownPortfolio">
             <% if current_user.image.url.present? %>
               <div class="avatar2">
-                <a href="../users" target="_blank"><%= image_tag(current_user.image.thumb.url) %></a>
+                <a href="../users"><%= image_tag(current_user.image.thumb.url) %></a>
               </div>
             <% else %>
               <div class="avatar2">
-                <a href="../users" target="_blank">
+                <a href="../users">
                   <img src="/assets/avatar">
                 </a>
               </div>
@@ -26,7 +26,6 @@
             <div class="dropdown-nickname">
             <%= link_to current_user.email, users_path%>
             </div>
-            
             <% if current_user.has_role? 'admin'%>
             <%= link_to '관리자', rails_admin_path, class:"dropdown-item"%>
             <% end %>
@@ -34,6 +33,8 @@
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
             <% elsif current_user.has_role? 'member' %>
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
+            <% else %>
+            <%= link_to '질문하기', new_post_path, class:"dropdown-item" %>
             <% end %>
             <%= link_to '로그아웃', destroy_user_session_path, method: 'delete', class:"dropdown-item" %>
           </div>
@@ -66,7 +67,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
             <%= link_to "자유게시판", freeboard_path, class:"dropdown-item" %>
-            <%= link_to "질문", "https://uni.likelion.org/questions", target: "_blank", class:"dropdown-item" %>
+            <%= link_to "질문", questions_path, class:"dropdown-item" %>
           </div>
         </li>
         <li class="nav-item" data-nav-url='/services'>

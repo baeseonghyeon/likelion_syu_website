@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :question]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions]
   before_action :notice_widget, only: [:index]
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :question]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @posts = Post.order("created_at DESC").page(params[:page])
+    @posts = Post.order("created_at DESC").page(params[:page]).per(7)
   end
 
   # GET /posts/1
@@ -98,6 +98,12 @@ class PostsController < ApplicationController
     authorize! :freeboard, @posts
   end
   
+  def questions
+    @post = Post.where(:category => '질문')
+    @posts = @post.order("created_at DESC").page(params[:page])
+    authorize! :questions, @posts
+  end
+  
   def mypage
 
   end  
@@ -107,10 +113,6 @@ class PostsController < ApplicationController
     @users = @user.order("created_at DESC").page(params[:page])
     authorize! :mypage, @users
   end 
-  
-  def question
-    authorize! :question, @posts
-  end
 
 private
   # Use callbacks to share common setup or constraints between actions.
@@ -161,17 +163,12 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :content, :user_id, :category, :limit, :lecture, :mypost)
+    params.require(:post).permit(:title, :content, :user_id, :category, :limit, :lecture)
   end
   
   def log_impression
     @hit_post = Post.find(params[:id])
     # this assumes you have a current_user method in your authentication system
     @hit_post.impressions.create(ip_address: request.remote_ip)
-  end
-  
-  def last_visited(question, posts)
-    session[:action]=question
-    session[:controller]=posts
   end
 end

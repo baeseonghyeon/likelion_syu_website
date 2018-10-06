@@ -12,6 +12,9 @@
       <!-- Title -->
       <% if @post.category === '수업자료' %>
         <div class="card-cate" id="clect3"><%= @post.lecture %></div>
+      <% elsif @post.category === '질문' %>
+        <div class="card-cate" id="cques"><%= @post.category %></div>
+        <div class="card-cate" id="clect3"><%= @post.lecture %></div>
       <% else %>
         <div class="empty"></div>
       <% end %>
@@ -42,11 +45,16 @@
             삼육멋사 운영진
           <% elsif @post.user.has_role? 'member'%>
             삼육멋사 아기사자
+          <% else %>
+            뉴비
           <% end %>
           <!--written by-->
           <span class="nik"><%= @post.user.name %><span>.
         </h5>
+        <% if @post.category === '질문' %>
+        <% else %>
         <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
+        <% end %>
       </div>
       
       <!-- 삭제, 수정 -->
@@ -75,6 +83,12 @@
       <!-- Comments Form -->
       <div class="card my-4">
       <hr/>
+      <% if @post.category === '질문' %>
+      <div class="author q">
+        <h4>답변</h4>
+      </div>
+      
+      <% end %>
       <%= render 'disqus' %> 
       </div>
     </div>

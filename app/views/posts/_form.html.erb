@@ -15,7 +15,7 @@
       <div class="col-md-2">
         <%= f.label :카테고리 %><span class="label-star">*</span>
         <br>
-        <%= f.select :category, options_for_select(['공지사항', '수업자료', '과제', '대문', '일반'], :selected => post.category), {:required => true, :class => 'select-box'} %>
+        <%= f.select :category, options_for_select(['공지사항', '수업자료', '과제', '대문', '일반', '질문'], :selected => post.category), {:required => true, :class => 'select-box'} %>
       </div>
       <div class="col-md-2" id="lecture">
         <%= f.label :수업분류 %><span class="label-star">*</span>
@@ -54,7 +54,7 @@
         <div class="col-md-2">
           <%= f.label :카테고리 %><span class="label-star">*</span>
           <br>
-          <%= f.select :category, options_for_select(['일반', '과제제출'], :selected => post.category), class:"select-box" %>
+          <%= f.select :category, options_for_select(['일반', '과제제출' ,'질문' ], :selected => post.category), class:"select-box" %>
         </div>
       <div class="col-md-10"> 
         <div class="field">
@@ -62,7 +62,20 @@
           <%= f.text_field :title, required: true, maxlength: "40" %>   
         </div>
       </div>
-    <% end %>
+    <% else %>
+        <div class="col-md-2">
+          <%= f.hidden_field :category, value: '질문' %>
+        </div>
+      <div class="col-md-12"> 
+        <div class="field">
+          <%= f.label :제목 %><span class="label-star">*</span>
+          <%= f.text_field :title, required: true, maxlength: "40" %>   
+        </div>
+        <%= f.label :질문분류 %><span class="label-star">*</span>
+        <br>
+        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Rails', 'JavaScript', 'ETC'], :selected => post.lecture), {:multiple => true}, {:required => true, :class => 'select-box'}%>
+      </div>
+    <% end %>  
    </div>
   
   <!--tinymce 잼 -->
