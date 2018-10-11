@@ -12,7 +12,7 @@ end
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:gitlink, :email, :password, :phone])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:gintlink, :image, :email, :password, :current_password, :phone])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:gitlink, :image, :email, :password, :current_password, :phone])
   end
   
   def after_sign_in_path_for(resource)
