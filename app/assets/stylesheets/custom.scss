@@ -1364,6 +1364,9 @@ input:disabled {
     padding: 0px 0px 5px 0px;
     border: none;
   }
+  a#navbarDropdownnickname.nav-link.dropdown-toggle {
+  text-decoration: underline;
+  }
   .dropdown-item {
     padding: 7px!important;
   }
