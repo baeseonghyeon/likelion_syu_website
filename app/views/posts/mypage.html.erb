@@ -32,17 +32,19 @@
     </div>
   </div>
   
-  <div class="new-btn-con-con">
+  <div class="new-btn-con-con2">
     <div class="new_btn_con">
-      <div class="new_btn">
-       <%= link_to '개인 정보 수정하기', edit_user_registration_path, class: "new-btn" %>
+      <div class="author2">
+        <a href="<%= current_user.gitlink %>" target="_blank" class="btn btn-github2"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page</a>
       </div>
       <div class="new_btn">
-       <%= link_to '내 글 보기', users_myposts_path, class: "new-btn" %>
+        <%= link_to '개인 정보 수정하기', edit_user_registration_path, class: "new-btn" %>
+      </div>
+      <div class="new_btn">
+        <%= link_to '내 글 보기', users_myposts_path, class: "new-btn" %>
       </div>
     </div>
   </div>
-  
   <div class="d_link">
   <%= link_to "메인으로", posts_path %>
   </div>

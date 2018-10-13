@@ -833,6 +833,19 @@ label {
 .author {
   margin: 50px 0px 20px 0px;
 }
+.author2 {
+  margin: 0px 0px 15px 0px;
+}
+.author2 .btn .btn-github2{
+  height: 41px;
+  display: block;
+  font-weight: lighter!important;
+  font-family: 'Montserrat', sans-serif!important;
+}
+.btn.btn-github2{
+  width: 150px!important;
+  padding: 6px 9px!important;
+}
 .author h4{
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
@@ -853,6 +866,14 @@ label {
   background-color: #333333!important;
 }
 .author a:hover {
+  background-color: #333333!important;
+}
+.author2 a{
+  color: white!important;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #333333!important;
+}
+.author2 a:hover {
   background-color: #333333!important;
 }
 #kakao-link-btn {
@@ -1193,6 +1214,9 @@ footer p {
 }
 .new-btn-con-con {
   width: 100%; height: 85px; margin: 40px auto;
+}
+.new-btn-con-con2 {
+  width: 100%; height: 140px; margin: 40px auto;
 }
 //마이페이지
 .avatar {
