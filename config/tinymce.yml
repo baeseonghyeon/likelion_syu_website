@@ -1,8 +1,9 @@
 content_style: 'img {max-width: 100%;}'
-toolbar: undo redo | fontselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | code | link | uploadimage | table |
+toolbar: undo redo | fontselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | numlist bullist | code | link | uploadimage | table |
 plugins:
   - link
   - uploadimage
   - textcolor
   - code
   - table
+  - lists
