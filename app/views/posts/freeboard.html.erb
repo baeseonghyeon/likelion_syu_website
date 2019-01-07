@@ -36,7 +36,7 @@
                               <img src="/assets/avatar">
                           </div>
                         <% end %>
-                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 | <%= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
+                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
                       </div>
                     </div>
                   </div>
