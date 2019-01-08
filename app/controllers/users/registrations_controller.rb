@@ -15,6 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
      super
     # end
   end
+  
+  # def mypage
+  #   @user = User.find(farams[:id])
+  # end
 
   # GET /resource/edit
   # def edit

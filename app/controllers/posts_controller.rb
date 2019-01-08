@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = Post.order("created_at DESC").page(params[:page]).per(7)
+    @mains = Main.all
   end
 
   # GET /posts/1
@@ -105,7 +106,7 @@ class PostsController < ApplicationController
   end
   
   def mypage
-
+    @user = User.find(current_user[:id])
   end  
   
   def mypost
@@ -131,6 +132,7 @@ private
     @categories_10.push(x) # 만약 10번 안돌았으면 새로 만ㄷ
     count += 1
     end
+    @mains = Main.all
   end
   
   def notice_widget
