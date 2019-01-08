@@ -1,7 +1,6 @@
 class Post < ApplicationRecord
   resourcify
   has_many :images
-  has_many :mains
   belongs_to :user
   validates :user, presence: true
   # paginates_per 5

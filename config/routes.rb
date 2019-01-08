@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   get '/freeboard' => 'posts#freeboard'
   get '/questions' => 'posts#questions'
   get '/users' => 'posts#mypage'
-  # get '/users/:id' => 'mypages#mypage'
   get '/users/myposts' => 'posts#mypost'
 end
