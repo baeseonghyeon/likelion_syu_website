@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get '/lecture' => 'posts#lecture'
   get '/freeboard' => 'posts#freeboard'
   get '/questions' => 'posts#questions'
-  get '/users' => 'posts#mypage'
+  # get '/users' => 'posts#mypage'
   get '/users/myposts' => 'posts#mypost'
+  get '/users/list' => 'users#index'
+  # get '/users/:id' => 'users#show'
+  resources :users, only: [:show]
 end

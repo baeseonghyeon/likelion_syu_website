@@ -1,6 +1,7 @@
+<% @mains.each do |main| %>
 <div class="card my-4">
   <div class="card-body top">
-  <h5 class="widget-title">삼육대학교 멋쟁이사자처럼 6기</h5>
+  <h5 class="widget-title">삼육대학교 멋쟁이사자처럼 6기<%= main.th %>기</h5>
   
     <div class="widget-link">
       <a href="https://uni.likelion.org/" target="_blank">
@@ -22,8 +23,9 @@
     </div>
     <div class="widget-link last" id="rule">
       <a href="https://github.com/likelion-sahmyook/likelion-sahmyook.github.io/wiki/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BCat%EC%82%BC%EC%9C%A1%EB%8C%80%ED%95%99%EA%B5%90-%ED%9A%8C%EC%B9%99" target="_blank">
-        <span><img class='widget-icon' src='/assets/check-symbol'/>6기 운영규칙 →</span>
+        <span><img class='widget-icon' src='/assets/check-symbol'/>6<%= main.th %>기 운영규칙 →</span>
       </a>
     </div>
   </div>
 </div>
+<% end %>

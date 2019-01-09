@@ -119,6 +119,7 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+    @mains = Main.all
   end
   
   def categories
