@@ -14,11 +14,11 @@
           <div class="dropdown-menu dropdown-menu-center"  id="userinfo" aria-labelledby="navbarDropdownPortfolio">
             <% if current_user.image.url.present? %>
               <div class="avatar2">
-                <a href="../users"><%= image_tag(current_user.image.thumb.url) %></a>
+                <a href="../users/<%= current_user.id %>"><%= image_tag(current_user.image.thumb.url) %></a>
               </div>
             <% else %>
               <div class="avatar2">
-                <a href="../users">
+                <a href="../users/<%= current_user.id %>">
                   <img src="/assets/avatar">
                 </a>
               </div>

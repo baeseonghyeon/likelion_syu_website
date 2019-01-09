@@ -29,6 +29,38 @@
                 <div class="col-md-3"><h1 id="counter_service">0</h1><p>개의 서비스를 만들었습니다.</p></div>
               </div>
             </div>
+            
+            <div class="main-service">
+              <h1>만든 서비스</h1>
+              <div class= "row service">
+                <% @users.each do |user| %>
+                  <div class="col-md-3 s">
+                    <% if user.image.blank? %>
+                      <img src="/assets/avatar" class="serviceimg sindex">
+                    <% else %>
+                      <%= image_tag user.image.thumb.url, class: "serviceimg sindex" %>
+                    <% end %> 
+                    <p><%= user.name %></p>
+                  </div>
+                <% end %>
+                
+                <% if user_signed_in? %>
+                  <% if current_user.has_role? 'admin'%>
+                    <div class="col-md-3 s">
+                      <%= link_to(image_tag('/assets/add', class:"serviceimgadd"), new_service_path)%>
+                    </div>
+                  <% else %>
+                    <div class="col-md-3 s2">
+                    
+                    </div>
+                  <% end %>
+                <% else %>
+                  <div class="col-md-3 s2">
+                    
+                  </div>
+                <% end %>
+              </div>
+            </div> 
     
             <div class="main-service">
               <h1>만든 서비스</h1>

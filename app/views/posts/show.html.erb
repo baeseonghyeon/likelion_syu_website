@@ -25,7 +25,7 @@
       <h1 class="mt-4"><%= @post.title %></h1>
       
       <!-- Date/Time -->
-      <p class="time"><%= @post.user.name %> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
+      <p class="time"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
       <% if @post.category === '과제' %>
         <% if @post.limit > Time.current %>
           <div class="card-cate" id="climit">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
@@ -53,7 +53,7 @@
             삼육멋사 게스트
           <% end %>
           <!--written by-->
-          <span class="nik"><%= @post.user.name %><span>.
+          <span class="nik"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a><span>.
         </h5>
         <% if @post.user.has_role? 'admin'%>
             <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>

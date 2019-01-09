@@ -1,1 +1,60 @@
-<%= @user.email %>
+<!-- Navigation -->
+<%= render '/posts/nav' %>
+
+<% if @user.image.url.present? %>
+  <div class="avatar">
+    <a href="<%= @user.image.url %>" target="_blank"><%= image_tag(@user.image.thumb.url) %></a>
+  </div>
+<% else %>
+  <div class="avatar">
+    <img src="/assets/avatar">
+  </div>
+<% end %>
+
+<div class="d_main">
+  <div class="d_inputbox">
+    <div class="form-inputs">
+      <div class="user-info">
+        <h1><%= @user.name %></h1>
+        <p><%= @user.email %></p>
+        <p><%= @user.created_at.strftime("%Y")%>년 부터 삼육멋사와 함께한 
+        <% if @user.has_role? 'admin'%>
+          <span class="role">운영진*</span>
+        <% elsif @user.has_role? 'member'%>
+          <span class="role">아기사자</span>
+        <% else %>
+          <span class="role">게스트</span>
+          <% if current_user.id === @user.id %>
+          <p>'게스트' 등급은 질문작성만 가능 합니다.<span class="label-star">*</span><br>
+                등급 관련 사항은 운영자에게 문의해주세요.</p>
+          <% end %>      
+        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% if current_user.id === @user.id %>
+  <div class="new-btn-con-con2">
+  <% else %>
+  <div class="new-btn-con-con3">
+  <% end %>
+    <div class="new_btn_con">
+      <div class="author2">
+        <a href="<%= @user.gitlink %>" target="_blank" class="btn btn-github2">Github Page</a>
+      </div>
+      <% if current_user.id === @user.id %>
+      <div class="new_btn">
+        <%= link_to '개인 정보 수정하기', edit_user_registration_path, class: "new-btn" %>
+      </div>
+      <div class="new_btn">
+        <%= link_to '내 글 보기', users_myposts_path, class: "new-btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="d_link">
+  <%= link_to "메인으로", posts_path %>
+  </div>
+</div>  
+
+<%= render '/posts/footer' %>

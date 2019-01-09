@@ -61,7 +61,8 @@
       <!-- /.row -->
     </div>
       <div class="back_link">
-      <%= link_to "뒤로가기", users_path %>
+      <%#= link_to "뒤로가기", users_path %>
+      <a href="/users/<%= current_user.id %>">뒤로가기</a>
       </div>
     <!-- /.container -->
   </div>  
