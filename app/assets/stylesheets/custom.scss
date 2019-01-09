@@ -72,14 +72,14 @@ input {
   transition: all ease-in-out .15s;
 }
 input:focus {
-  border: 1px solid #0652DD!important;
+  border-bottom: 2px solid #0652DD!important;
   outline: none;
 }
 
 /* LOGO 이미지 */
 .logo {
-  width: 200px;
-  margin: 80px auto;
+  width: 250px;
+  margin: 0px auto 80px auto;
   display: block;
 }
 
@@ -1138,7 +1138,7 @@ footer p {
 .d_main {
   width: 100%;
   max-width: 460px;
-  margin: 0px auto 40px auto;
+  margin: 0px auto 80px auto;
   text-align: center;
 }
 .form-inputs {
@@ -1158,19 +1158,25 @@ footer p {
 .d_inputbox input {
   width: 100%!important;
   height: 45px;
-  border: 1px solid #dfe2e6;
-  border-radius: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #dfe2e6;
   margin: 0px auto;
   padding: 0px 10px;
 }
 .d_inputbox input:focus {
-  outline:none;
+  outline: none;
 }
 .d_inputbox .field_with_errors {
   width: 100%;
   background-color: white;
   color: #0652DD; font-weight: bold;
 }
+
+/* input box color */ 
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-text-fill-color: #000; } input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
 // 라벨
 .d_inputbox label {
   display: block!important;

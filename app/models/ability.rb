@@ -13,7 +13,7 @@ class Ability
         can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all
         can [:update,:destroy], Post, user_id: user.id  
       elsif user.has_role? 'manager' #매니저, 모든글 접근
-        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow], :all
+        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow,:mypost], :all
         can [:update,:destroy], Post, user_id: user.id
         can [:update,:destroy], :all 
       elsif user.has_role? 'admin' #어드민, 마스터, 모든글 접근, 어드민페이지 접근
