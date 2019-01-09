@@ -872,6 +872,7 @@ label {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   margin-bottom: 10px;
+  display: inline-block;
 }
 .author h5{
   font-size: 15px;
@@ -1158,6 +1159,13 @@ footer p {
 .d_inputbox input {
   width: 100%!important;
   height: 45px;
+  border: 1px solid #dfe2e6;
+  margin: 0px auto;
+  padding: 0px 10px;
+}
+.d_inputbox2 input {
+  width: 100%!important;
+  height: 45px;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -1165,7 +1173,7 @@ footer p {
   margin: 0px auto;
   padding: 0px 10px;
 }
-.d_inputbox input:focus {
+.d_inputbox2 input:focus {
   outline: none;
   border-top: none!important;
   border-left: none!important;
@@ -1293,12 +1301,15 @@ input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-tex
   border-radius: 100%;
   width: 100%;
   margin: 0px;
+  position: relative;
+  top: -3px;
 }
 #user_image {
   padding: 10px 10px;
 }
 input:disabled {
   background-color: #f8f9fa;
+  border-radius: 0px;
 }
 .role {
   color: #0652DD;

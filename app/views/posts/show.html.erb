@@ -43,21 +43,28 @@
       
       <!-- Author -->
       <div class="author">
-        <h4>작성자</h4>
-        <h5> 
-          <% if @post.user.has_role? 'admin'%>
+        <% if @post.user.image.url.present? %>
+            <div class="avatar3">
+              <%= image_tag(@post.user.image.thumb.url) %>
+            </div>
+          <% else %>
+            <div class="avatar3">
+                <img src="/assets/avatar">
+            </div>
+          <% end %>
+          <h4><span class="nik"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a><span></h4>
+        <h5>
+          <% if @post.user.has_role? 'admin' or @post.user.has_role? 'manager' %>
             삼육멋사 운영진
           <% elsif @post.user.has_role? 'member'%>
             삼육멋사 아기사자
+          <% elsif @post.user.has_role? 'oldmember'%>
+            삼육멋사 멋쟁이 사자  
           <% else %>
             삼육멋사 게스트
           <% end %>
-          <!--written by-->
-          <span class="nik"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a><span>.
         </h5>
-        <% if @post.user.has_role? 'admin'%>
-            <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
-        <% elsif @post.user.has_role? 'member'%>
+        <% if @post.user.has_role? 'admin' or @post.user.has_role? 'manager' or @post.user.has_role? 'memeber' or @post.user.has_role? 'oldmember'%>
             <a href="<%= @post.user.gitlink %>" target="_blank" class="btn btn-github"><span><img class='widget-icon' src='/assets/github-logo-w'/></span> Github Page 방문하기 →</a>
         <% else %>
         <% end %>
