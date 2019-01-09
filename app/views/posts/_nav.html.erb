@@ -24,7 +24,10 @@
               </div>
             <% end %>
             <div class="dropdown-nickname">
-            <%= link_to current_user.email, users_path%>
+            <a href="/users/<%= current_user.id %>">  
+              <%= current_user.email %>
+            <%#= link_to current_user.email, users_path %>
+            </a>
             </div>
             <% if current_user.has_role? 'admin'%>
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
