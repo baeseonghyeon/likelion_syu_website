@@ -32,7 +32,7 @@
             <% if current_user.has_role? 'admin'%>
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
             <%= link_to '관리자', rails_admin_path, class:"dropdown-item"%>
-            <% elsif current_user.has_role? 'member' %>
+            <% elsif current_user.has_role? 'member' or current_user.has_role? 'oldmember' %>
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
             <% else %>
             <%= link_to '질문하기', new_post_path, class:"dropdown-item" %>

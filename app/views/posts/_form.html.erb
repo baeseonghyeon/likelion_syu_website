@@ -62,7 +62,7 @@
             }
         });
       </script>
-    <% elsif current_user.has_role? 'member'%>
+    <% elsif current_user.has_role? 'member' or current_user.has_role? 'oldmember'%>
         <div class="col-md-2">
           <%= f.label :카테고리 %><span class="label-star">*</span>
           <br>
