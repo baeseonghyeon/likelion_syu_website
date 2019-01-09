@@ -112,7 +112,7 @@ class PostsController < ApplicationController
   def mypost
     @user = Post.where(:user_id => current_user)
     @users = @user.order("created_at DESC").page(params[:page])
-    authorize! :mypage, @users
+    authorize! :mypost, @users
   end 
 
 private

@@ -72,7 +72,7 @@ input {
   transition: all ease-in-out .15s;
 }
 input:focus {
-  border-bottom: 2px solid #0652DD!important;
+  border: 1px solid #0652DD!important;
   outline: none;
 }
 
@@ -1167,6 +1167,10 @@ footer p {
 }
 .d_inputbox input:focus {
   outline: none;
+  border-top: none!important;
+  border-left: none!important;
+  border-right: none!important;
+  border-bottom: 2px solid #0652DD!important;
 }
 .d_inputbox .field_with_errors {
   width: 100%;
@@ -1491,6 +1495,7 @@ input:disabled {
     //메인 로고
   .logo-main {
   width: 70%;
+  min-width: 220px;
   }
 }
 
