@@ -7,7 +7,7 @@ class MainsController < ApplicationController
   def index
     @mains = Main.all
     @services = Service.all
-    @users = User.all
+    # @users = User.all
   end
 
   # GET /mains/1
