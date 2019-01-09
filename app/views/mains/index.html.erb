@@ -31,10 +31,10 @@
             </div>
             
             <div class="main-service">
-              <h1><%= main.th %>기 멤버들</h1>
+              <h1><%= main.th %>기 구성원</h1>
               <div class= "row service">
                 <% @users.each do |user| %>
-                <% if user.has_role? 'admin' or user.has_role? 'member' %>
+                <% if user.has_role? 'manager' or user.has_role? 'member' %>
                  <% if user.name === "삼육멋사" %>
                    <div class="none">
                  <% else %>
@@ -46,7 +46,7 @@
                       <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
                     <% end %> 
                     <p><%= user.name %></br>
-                      <% if user.has_role? 'admin'%>
+                      <% if user.has_role? 'manager'%>
                         <span class="role">운영진</span>
                       <% elsif user.has_role? 'member'%>
                         <span class="role">아기사자</span>

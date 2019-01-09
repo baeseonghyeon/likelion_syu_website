@@ -3,9 +3,7 @@
  
 <!-- form -->
 <div class="container">
-  <% if current_user.has_role? 'admin' %>
-    <h1 class="title-customform">새 글 작성<span class="title-star">*</span></h1>
-  <% elsif current_user.has_role? 'member' or current_user.has_role? 'oldmember' %>  
+  <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' or current_user.has_role? 'member' or current_user.has_role? 'oldmember' %>  
     <h1 class="title-customform">새 글 작성<span class="title-star">*</span></h1>
   <% else %>
     <h1 class="title-customform">질문하기<span class="title-star">*</span></h1>

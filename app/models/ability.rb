@@ -12,12 +12,16 @@ class Ability
       elsif user.has_role? 'oldmember' #멤버등급 읽기,쓰기, 본인글 수정 삭제, 올드 멤버
         can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all
         can [:update,:destroy], Post, user_id: user.id  
-      elsif user.has_role? 'admin' #어드민, 모든글 접근, 어드민페이지 접근
+      elsif user.has_role? 'manager' #매니저, 모든글 접근
+        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow], :all
+        can [:update,:destroy], Post, user_id: user.id
+        can [:update,:destroy], :all 
+      elsif user.has_role? 'admin' #어드민, 마스터, 모든글 접근, 어드민페이지 접근
         can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow], :all
         can :access, :rails_admin
         can :dashboard
         can :manage, :all 
-        can :history, :all
+        can :history, :all  
       elsif
         can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all #등급은 없고 가입만 한 뉴비, 제거하면 가입후 세션막힘
         can [:update,:destroy], Post, user_id: user.id

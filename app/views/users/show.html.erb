@@ -18,7 +18,7 @@
         <h1><%= @user.name %></h1>
         <p><%= @user.email %></p>
         <p><%= @user.created_at.strftime("%Y")%>년 부터 삼육멋사와 함께한 
-        <% if @user.has_role? 'admin'%>
+        <% if @user.has_role? 'admin' or @user.has_role? 'manager' %>
           <span class="role">운영진*</span>
         <% elsif @user.has_role? 'member'%>
           <span class="role">아기사자</span>

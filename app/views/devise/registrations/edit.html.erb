@@ -14,7 +14,7 @@
       <%= f.label "이메일" %>
       <%= f.text_field :email, class: "form-control", :required => true, disabled: true %>
       <%= f.label "등급" %>
-      <% if current_user.has_role? 'admin'%>
+      <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
         <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "운영진" %>
       <% elsif current_user.has_role? 'member'%>
         <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "아기사자" %>

@@ -11,7 +11,7 @@
   <% end %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="row">
-    <% if current_user.has_role? 'admin'%>
+    <% if current_user.has_role? 'admin' or current_user.has_role? 'manager'%>
       <div class="col-md-2">
         <%= f.label :카테고리 %><span class="label-star">*</span>
         <br>

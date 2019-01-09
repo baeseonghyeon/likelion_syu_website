@@ -74,7 +74,7 @@
             <% if @post.user == current_user %>
               <%= link_to '수정', edit_post_path(@post) %> 
               <%= link_to '삭제', @post, method: :delete, data: { confirm: '게시글을 삭제하시겠습니까?' } %> 
-            <% elsif current_user.has_role? 'admin'%>
+            <% elsif current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
               <%= link_to '수정', edit_post_path(@post) %> 
               <%= link_to '삭제', @post, method: :delete, data: { confirm: '게시글을 삭제하시겠습니까?' } %> 
             <% end %>
