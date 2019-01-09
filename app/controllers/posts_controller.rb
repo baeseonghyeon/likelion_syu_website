@@ -133,6 +133,7 @@ private
     @categories_10.push(x) # 만약 10번 안돌았으면 새로 만ㄷ
     count += 1
     end
+    @mains = Main.all
   end
   
   def notice_widget
