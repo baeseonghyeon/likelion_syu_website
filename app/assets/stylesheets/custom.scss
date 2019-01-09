@@ -411,6 +411,19 @@ textarea {
 .serviceimg:hover {
   transform: scale(1.2);
 }
+.mainuserimg {
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 100%;
+}
+.mainuserimg:hover {
+  transform: scale(1.2);
+}
+.none {
+  display: none!important;
+}
 .serviceimgadd {
   width: 40px;
   height: 40px;

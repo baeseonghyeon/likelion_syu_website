@@ -22,6 +22,8 @@
           <span class="role">운영진*</span>
         <% elsif @user.has_role? 'member'%>
           <span class="role">아기사자</span>
+        <% elsif @user.has_role? 'oldmember'%>
+          <span class="role">멋쟁이 사자</span>  
         <% else %>
           <span class="role">게스트</span>
           <% if user_signed_in? %>
