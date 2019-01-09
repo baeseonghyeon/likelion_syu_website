@@ -216,7 +216,7 @@ a.btn.btn-primary:visited {
 .col-md-12.index {
   padding: 0px;
 }
-.col-lg-8.main {
+.col-lg-10.main {
   padding: 0px 50px;
 }
 .logo-main2 {
@@ -225,9 +225,9 @@ a.btn.btn-primary:visited {
   display: block;
 }
 .logo-main {
-  width: 70%;
+  width: 50%;
   display: block;
-  margin: 50px auto 40px auto;
+  margin: 0px auto 40px auto;
 }
 .logo-main-text {
  font-size: 14px; color: #d8d8d8;
@@ -1424,7 +1424,7 @@ input:disabled {
   }
   //메인 로고
   .logo-main {
-  width: 60%;
+  width: 50%;
   }
   .null-h1 {
   font-size: 35px;
@@ -1453,7 +1453,7 @@ input:disabled {
   }
   //메인 로고
   .logo-main {
-  width: 80%;
+  width: 60%;
   }
   //메인 제목
   .main-title {
@@ -1484,7 +1484,7 @@ input:disabled {
 @media (max-width: 600px) {
     //메인 로고
   .logo-main {
-  width: 100%;
+  width: 70%;
   }
 }
 

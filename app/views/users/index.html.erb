@@ -1,5 +1,43 @@
-<% @users.each do |user| %>
-<%#= link_to user.name, user_path %>
-<a href="/users/<%= user.id %>">
-<%= user.email %>
-<% end %>
+
+<%#= render '/posts/nav' %>
+
+<div class="container">
+
+  <div class="row">
+    <!-- Post Content Column -->
+    <div class="col-lg-1">
+    </div>
+    <div class="col-lg-10 main">
+      <div class="main-textbox">
+        <div class="main-service">
+              <h1>멋쟁이 사자처럼 at 삼육대학교 구성원들</h1>
+              <div class= "row service">
+                <% @users.each do |user| %>
+                <% if user.has_role? 'manager' or user.has_role? 'member'  or user.has_role? 'oldmember' %>
+                 <% if user.name === "삼육멋사" %>
+                   <div class="none">
+                 <% else %>
+                   <div class="col-md-3 s">
+                 <% end %>
+                    <% if user.image.blank? %>
+                      <img src="/assets/avatar" class="mainuserimg sindex">
+                    <% else %>
+                      <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
+                    <% end %> 
+                    <p><%= user.name %></br>
+                      <% if user.has_role? 'manager'%>
+                        <span class="role">운영진</span>
+                      <% elsif user.has_role? 'member'%>
+                        <span class="role">아기사자</span>
+                      <% end %>
+                    </p>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div> 
+          </div> 
+        </div>  
+      </div>
+    </div>  
+<%#= render '/posts/footer' %>    
