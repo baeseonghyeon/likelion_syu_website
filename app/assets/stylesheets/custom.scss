@@ -200,6 +200,7 @@ a#navbarDropdownPortfolio.nav-link.dropdown-toggle:focus {
   line-height: 1.5;
   border-radius: 0rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: #474f5c;
 }
 .btn.btn-primary {
   width: 92px;
@@ -239,8 +240,8 @@ a.btn.btn-primary:visited {
 }
 .main-btn {
   color: white!important;
-  background-color: #6d747c;
-  border-color: #6d747c;
+  background-color: #474f5c;
+  border-color: #474f5c;
   width: 100%;
   max-width: 300px;
   margin: 5px auto;
@@ -1197,6 +1198,13 @@ input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-tex
   margin: 25px 0px 10px 0px;
   color: #474f5c;
 }
+.d_inputbox2 label {
+  display: block!important;
+  text-align: left;
+  font-size: 16px;
+  margin: 25px 0px 10px 0px;
+  color: #474f5c;
+}
 .d_rememberbox {
   width: 100%;
   // max-width: 420px;
@@ -1227,7 +1235,7 @@ input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-tex
 //비밀번호찾기
 .new-btn {
   color: white;
-  background-color: #6d747c;
+  background-color: #474f5c;
   border-color: black;
   width: 150px;
 }

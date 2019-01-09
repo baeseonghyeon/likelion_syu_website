@@ -34,7 +34,7 @@
           </div>
           <div class="sindexlink">
            <% if user_signed_in? %>
-            <% if current_user.has_role? 'admin'%>
+            <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
             <p><%= link_to '수정', edit_service_path(service) %> | 
             <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %></p> 
             <% end %>
@@ -58,5 +58,5 @@
 </div>
 
 <!-- Footer -->
-<%= render '/posts/footer' %>
+<%#= render '/posts/footer' %>
 
