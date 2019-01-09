@@ -10,4 +10,4 @@ class UsersController < ApplicationController
   end
 end
 
-authorize! :notice, @posts
+# authorize! :notice, @posts
