@@ -627,6 +627,7 @@ a.comment-link-marker:hover {
   color: #f76706;
   border: 1px solid #f76706;
   border-radius: 15px;
+  margin-right: 2px;
 }
 .title {
   font-size: 25px!important;
@@ -931,6 +932,31 @@ label {
 .fb-share-button img {
   width: 34px!important;
   background: white;
+}
+input#post_attachment {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #dde2e6;
+}
+.file_box {
+  background: #eff3f6;
+  padding: 15px;
+  margin-top: 20px;
+}
+.file_name {
+    position: absolute;
+    max-width: 860px;
+}
+.file_box a {
+    position: absolute;
+    max-width: 880px;
+}
+.file_box a:hover {
+  text-decoration: underline;
+}
+.file_box_name {
+    margin-right: 15px;
+    color: #858b91;
 }
 /* LECTURE PAGE */
 .lecture-link {
@@ -1562,4 +1588,9 @@ input[type=number]::-webkit-outer-spin-button {
 .author.q {
   margin-top: 30px!important;
   margin-bottom: 0px!important;
+}
+
+input {
+  -webkit-appearance: none;  // remove shadow in iOS
+  @include border-radius(0);  // remove border-radius in iOS
 }

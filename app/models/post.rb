@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :images
   belongs_to :user
   belongs_to :main
+  mount_uploader :attachment, AttachmentUploader
   validates :user, presence: true
   # paginates_per 5
   

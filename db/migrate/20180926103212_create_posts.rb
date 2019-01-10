@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :category
       t.string :lecture
       t.datetime :limit
+      t.string :attachment
 
       t.timestamps
     end

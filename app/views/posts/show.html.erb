@@ -39,6 +39,11 @@
       <div class="show_content">  
         <p><%= content_tag(:div, @post.content.html_safe, :class => "panel-body") %></p>
       </div>
+      <% if @post.attachment.present? %>
+        <div class="file_box">
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
+        </div>  
+      <% end %>
       <hr/>
       
       <!-- Author -->

@@ -107,7 +107,7 @@
         </div>
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
-        <%= f.select :lecture, options_for_select(['LIKELION', 'HTML/CSS', 'Rails', 'JavaScript', 'ETC'], :selected => post.lecture), {:multiple => true}, {:required => true, :class => 'select-box'}%>
+        <%= f.select :lecture, options_for_select(['LIKELION', 'HTML/CSS', 'Python', 'Rails', 'JavaScript', 'ETC'], :selected => post.lecture), {:multiple => true}, {:required => true, :class => 'select-box'}%>
       </div>
     <% end %>  
    </div>
@@ -118,6 +118,12 @@
     <%= f.label :내용, class: "label2" %><span class="label-star">*</span>
     <%= f.text_area :content, :rows => 20, class: "form-control tinymce" %>
   </div>
+  <%= f.file_field :attachment %>
+  <% if post.attachment.present? %>
+        <div class="file_box">
+          <span class="file_box_name">첨부된 파일</span><span class="file_name etc"><%= post.attachment %></span>
+        </div>  
+  <% end %>
   
   <div class="new_btn_con_con">
     <div class="new_btn_con">
