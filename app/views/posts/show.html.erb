@@ -47,7 +47,7 @@
         <% else %>
         <div class="file_box a">
           <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
-        </div
+        </div>
         <% end %>
       <% end %>
       <hr/>

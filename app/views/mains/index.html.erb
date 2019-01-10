@@ -156,7 +156,7 @@
           <% end %>
           
           <% if user_signed_in? %>
-            <% if current_user.has_role? 'admin'%>
+            <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
               <% if Main.count == 0 %>
               <div class="main-textbox">
                 <div class="maineditbox">
