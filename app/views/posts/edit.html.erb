@@ -14,17 +14,24 @@
 <% if current_page?(:controller => 'posts', :action => 'edit') %>
   <script>
     $(document).ready(function(){
-        if($("#post_category").val() == '수업자료'){
+        if($("#post_category").val() == '수업자료' || $("#post_category").val() == '질문'){
           $("#lecture").show();
         }else{
           $("#lecture").hide();
         }
     });
+      $(document).ready(function(){
+        if($("#post_category").val() == '수업자료'){
+          $("#lecturelabel1").show();
+        }else{
+          $("#lecturelabel1").hide();
+        }
+    });
     $(document).ready(function(){
         if($("#post_category").val() == '질문'){
-          $("#lecture2").show();
+          $("#lecturelabel2").show();
         }else{
-          $("#lecture2").hide();
+          $("#lecturelabel2").hide();
         }
     });
     $(document).ready(function(){
