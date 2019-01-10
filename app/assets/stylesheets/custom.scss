@@ -1595,6 +1595,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input {
-  -webkit-appearance: none;  // remove shadow in iOS
+  // -webkit-appearance: none;  // remove shadow in iOS
   @include border-radius(0);  // remove border-radius in iOS
 }
