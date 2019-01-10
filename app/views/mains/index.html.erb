@@ -83,7 +83,7 @@
                 <% end %>
                 
                 <% if user_signed_in? %>
-                  <% if current_user.has_role? 'admin'%>
+                  <% if current_user.has_role? 'admin' or urrent_user.has_role? 'manager' %>
                     <div class="col-md-3 s">
                       <%= link_to(image_tag('/assets/add', class:"serviceimgadd"), new_service_path)%>
                     </div>
