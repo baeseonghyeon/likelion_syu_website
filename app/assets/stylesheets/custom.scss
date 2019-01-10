@@ -945,11 +945,15 @@ input#post_attachment {
 }
 .file_name {
     position: absolute;
-    max-width: 860px;
+    max-width: 65%;
 }
 .file_box a {
     position: absolute;
-    max-width: 880px;
+    max-width: 65%;
+}
+.file_box.a a {
+    position: absolute;
+    max-width: 65%;
 }
 .file_box a:hover {
   text-decoration: underline;

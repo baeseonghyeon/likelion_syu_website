@@ -40,9 +40,15 @@
         <p><%= content_tag(:div, @post.content.html_safe, :class => "panel-body") %></p>
       </div>
       <% if @post.attachment.present? %>
+        <% if @post.category === '질문' %>
         <div class="file_box">
           <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
-        </div>  
+        </div>
+        <% else %>
+        <div class="file_box a">
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
+        </div
+        <% end %>
       <% end %>
       <hr/>
       
