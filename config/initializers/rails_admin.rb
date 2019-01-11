@@ -20,36 +20,57 @@ RailsAdmin.config do |config|
   config.model 'Impression' do
     label '조회수'
     label_plural '조회수'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
   config.model 'Post' do
     label '게시글'
     label_plural '게시글'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
   config.model 'Role' do
     label '등급'
     label_plural '등급'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
   config.model 'User' do
     label '회원'
     label_plural '회원'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
    config.model 'Image' do
     label '이미지'
     label_plural '이미지'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
   config.model 'Main' do
     label '메인페이지'
     label_plural '메인페이지'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
   
   config.model 'Service' do
     label '서비스'
     label_plural '서비스'
+    include_all_fields
+    field :created_at
+    field :updated_at
   end
 
 
@@ -78,6 +99,7 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+
 
     ## With an audit adapter, you can add:
     # history_index
