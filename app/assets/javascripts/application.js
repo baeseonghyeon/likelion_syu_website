@@ -21,7 +21,8 @@
 //= require jquery.timepicker.js
 //= require Datepair
 //= require jquery.datepair.js
-//= require bootstrap-datepicker
 //= require countUp
+//= require bootstrap-datetimepicker
+//= require bootstrap-datepicker
 
 

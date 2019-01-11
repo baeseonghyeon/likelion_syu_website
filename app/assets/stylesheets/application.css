@@ -15,7 +15,7 @@
  *= require_self
  *= require bootstrap-social
  *= require jquery.timepicker.css
- *= require bootstrap-datepicker
+ *= require bootstrap-datepicker3
 
  /* 게시글 길이를 제한하는 기능*/
  .etc {
