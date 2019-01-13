@@ -43,7 +43,7 @@
                         <div class="card-cate"><%= post.category %></div>
                         <% end %>
                       <h1 class="title etc"><%= post.title %></h1>
-                      <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 | <%= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
+                      <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 %></div>
                     </div>
                   </div>
                 </div>
@@ -68,6 +68,3 @@
   </div>  
 <!-- Footer -->
 <%= render 'footer' %>
-
-<!-- disqus count -->
-<%= render 'disqus2' %>
