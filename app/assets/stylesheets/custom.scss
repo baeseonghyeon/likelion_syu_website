@@ -13,15 +13,15 @@
 /* PAGE */
 html {
 
-// -ms-content-zooming: none;
-// -ms-touch-action: pan-x pan-y;
+-ms-content-zooming: none;
+-ms-touch-action: pan-x pan-y;
 
 }
 // Source: stackoverflow
 body {
   margin: 0!important;
   padding-top: 60px;
-  // touch-action: manipulation;
+  touch-action: manipulation;
 }
 .container {
   max-width: 1000px;
