@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
   <div class="container">
     <%= link_to(image_tag('/assets/logo1', class:"nav-logo"), posts_path, class:"navbar-brand custom-brand")%>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,13 +76,25 @@
         </li>
       </ul>
     </div>
-    
+    <script>
+      $(window).scroll(function() {
+        var $el = $('#navbar');
+        
+        if($(this).scrollTop() >= 10) { 
+          $el.addClass('shown');
+          // $el.css('border-bottom', '1px solid #dfe2e6').fadeIn(200);
+        } else { 
+          // $el.css('border-bottom', 'none').fadeOut(200);
+          $el.removeClass('shown');
+        }
+      });
+    </script>
     <script>
       /* link active set up*/
       $(function(){
         // 페이지가 로드될때마다 이 구역이 실행됨.
         let _pathname = location.pathname;
-        let _navItems = $('.navbar-nav').find('.nav-item');
+        let _navItems = $('navbar-nav').find('.nav-item');
         for(let i = 0 ; i < _navItems.length ; i++){
           let _currentItem = _navItems.eq(i);
           if(_currentItem.attr('data-nav-url') === _pathname){
