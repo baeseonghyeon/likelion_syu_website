@@ -22,7 +22,7 @@ body {
   margin: 0!important;
   padding-top: 60px;
   touch-action: manipulation;
-  position:relative;
+  // position:relative;
 }
 .background {
   width: 100%;
@@ -114,7 +114,7 @@ input:focus {
 /* NAVI */
 .navbar {
   // background: rgba(250, 250, 250, 1 );
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   min-height: 60px!important;
   border-bottom: 1px solid white;
@@ -367,7 +367,7 @@ a.btn.btn-primary:visited {
 }
 .main-btn.apply {
   color: #0652DD!important;
-  background-color: white;
+  background-color: white!important;
   border-color: #0652DD;
   width: 100%;
   margin: 10px auto;
