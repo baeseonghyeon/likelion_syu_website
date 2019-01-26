@@ -22,6 +22,26 @@ body {
   margin: 0!important;
   padding-top: 60px;
   touch-action: manipulation;
+  position:relative;
+}
+.background {
+  width: 100%;
+    height: 100%;
+    position: absolute;
+    // background-size: cover;
+    // transform: scale(1.02);
+    // background-position: center;
+    // filter: blur(8px);
+    // -o-filter: blur(8px);
+    // -ms-filter: blur(8px);
+    // -moz-filter: blur(8px);
+    // -webkit-filter: blur(8px);
+    // background-image: url(https://4.bp.blogspot.com/-CySuzbalqTk/XEFtKsaCdWI/AAAAAAAAFYo/NG5QqKDmTw41ETR7WXcjnYyyxpJ2DNRTgCLcBGAs/s1600/2.jpg);
+    // top: 0;
+    background: #FFFFFF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #FAFAFA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #FAFAFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .container {
   max-width: 1000px;
@@ -94,7 +114,7 @@ input:focus {
 /* NAVI */
 .navbar {
   // background: rgba(250, 250, 250, 1 );
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   min-height: 60px!important;
   border-bottom: 1px solid white;
@@ -218,7 +238,8 @@ a#navbarDropdownPortfolio.nav-link.dropdown-toggle:focus {
   line-height: 1.5;
   border-radius: 0rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background: #474f5c;
+  background-color: #3f3f3f!important;
+  font-weight: 500!important;
 }
 .btn.btn-primary {
   width: 92px;
@@ -258,12 +279,14 @@ a.btn.btn-primary:visited {
 }
 .main-btn {
   color: white!important;
-  background-color: #474f5c;
+  background-color: #3f3f3f;
   border-color: #474f5c;
   width: 100%;
   max-width: 300px;
   margin: 5px auto;
   text-shadow: none;
+  border-radius: 20px;
+  font-weight: 500;
 }
 .main-btn:hover {
   color: #0652DD;
@@ -353,8 +376,8 @@ a.btn.btn-primary:visited {
 }
 .main-btn.apply:hover {
   color: white!important;
-  background-color: #474f5c!important;
-  border: 1px solid #474f5c!important;
+  background-color: #3f3f3f!important;
+  border: 1px solid #3f3f3f!important;
 }
 .applytime {
   font-size: 20px!important;
@@ -1290,9 +1313,10 @@ input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-tex
 //비밀번호찾기
 .new-btn {
   color: white;
-  background-color: #474f5c;
+  background-color: #3f3f3f;
   border-color: black;
   width: 150px;
+  font-weight: 500!important;
 }
 .new-btn:hover {
   color: #0652DD;
