@@ -22,7 +22,7 @@ body {
   margin: 0!important;
   padding-top: 60px;
   touch-action: manipulation;
-  // position:relative;
+  position:relative;
 }
 .background {
   width: 100%;
@@ -1166,6 +1166,7 @@ li h4:hover{
   padding: 0px ;
   background-color: white;
   width: 100%;
+  position: relative;
 }
 .fsns-box {
   display: inline-block;
