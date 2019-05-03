@@ -19,7 +19,7 @@ class Ability
       elsif user.has_role? 'admin' #어드민, 마스터, 모든글 접근, 어드민페이지 접근
         can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow], :all
         can :access, :rails_admin
-        can :dashboard
+        # can :dashboard
         can :manage, :all 
         can :history, :all  
       elsif
