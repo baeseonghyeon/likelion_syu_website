@@ -19,7 +19,30 @@
               <a href="<%= main.applylink %>" class="btn main-btn apply" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
               </div>
             <% end %>
-            <h1 class="main-title"><%= main.title %></h1>
+            
+            <h1 class="main-title" id="texts"></h1>
+            <!-- 타이핑 효과 -->
+            <script>
+                var text = "<%= main.title %>";
+                var cnt = 0;
+                var speed = 150; //글자가 찍히는 속도
+                var timer1 = null;
+                 
+                function gogogo(){
+                    document.getElementById('texts').innerHTML = text.substring(0, cnt) + "_";
+                    cnt++;
+                    timer1 = setTimeout('gogogo()', speed);
+                 
+                    if(text.length < cnt){
+                        document.getElementById('texts').innerHTML = document.getElementById('texts').innerHTML.replace("_", "");
+                        // 아래 주석으로 처리된 부분을 지우면 한번만 실행됩니다.
+                        clearTimeout(timer1)
+                        cnt = 0;
+                    }
+                }
+                gogogo();
+            </script>
+
             <span class="thbox"><h1 class="main-lionth" id="counter_th"><%= main.th %></h1><span class="th">기</span></span>
             <p class="main-content"><%= main.content %></p>
             <div class="main-info">
@@ -120,24 +143,31 @@
             <% end %>
           </div>
         </div>  
-          <script>
-            var options = {
-                  useEasing: false, 
-                  useGrouping: true, 
-                  separator: '', 
-                  decimal: '.', 
-                };
-            var count_1 = new countUp('counter_th', 0, <%= main.th.to_s %>, 0, 1, options);
-            var count_2 = new countUp('counter_year', 0, 2018, 0, 2, options);
-            var count_3 = new countUp('counter_people', 0, <%= main.lion.to_s %>, 0, 1, options);
-            var count_4 = new countUp('counter_hack', 0, <%= main.hack.to_s %>, 0, 1, options);
-            var count_5 = new countUp('counter_service', 0, <%= Service.all.count.to_s %>, 0, 1, options);
-            count_1.start();
-            count_2.start();
-            count_3.start();
-            count_4.start();
-            count_5.start();
-          </script>
+        <script>
+          // js 카운트 액션, 스크롤 시 실행
+            $(window).scroll(function() {
+                var options = {
+                      useEasing: false, 
+                      useGrouping: true, 
+                      separator: '', 
+                      decimal: '.', 
+                    };
+                var count_1 = new countUp('counter_th', 0, <%= main.th.to_s %>, 0, 1, options);
+                var count_2 = new countUp('counter_year', 0, 2018, 0, 2, options);
+                var count_3 = new countUp('counter_people', 0, <%= main.lion.to_s %>, 0, 1, options);
+                var count_4 = new countUp('counter_hack', 0, <%= main.hack.to_s %>, 0, 1, options);
+                var count_5 = new countUp('counter_service', 0, <%= Service.all.count.to_s %>, 0, 1, options);
+                count_1.start();
+                count_2.start();
+                count_3.start();
+                count_4.start();
+                count_5.start();
+                
+                $(window).off('scroll');
+            });
+
+        </script>
+          
           <% end %>
           
           <% if Main.count == 0 %>

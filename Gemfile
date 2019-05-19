@@ -1,34 +1,37 @@
 source 'https://rubygems.org'
-ruby "2.4.4"
+ruby "2.6.0"
 
 gem "waypoints_rails"
+
 gem "figaro"
-gem 'bundler', '~> 1.16.4'
+# # aws c9 bundler version set
+# gem 'bundler', '~> 1.16.4'
+
 # simple_form
 gem 'simple_form'
 # countup.js
 gem 'countupjs-rails'
-# timepicker
-gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-datetimepicker-rails'
-gem 'bootstrap4-datetime-picker-rails'
-gem 'jquery-timepicker-rails'
 # admin page
 gem 'rails_admin', '~> 1.3'
 # 조회수
 gem 'impressionist'
+# user권한
 gem 'cancancan'
 gem 'rolify'
 gem 'devise'
+
 # 부트스트랩 소셜
 gem 'bootstrap-social-rails'
+
 # 텍스트 편집기 이미지업로드
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'fog'
+
 # 이미지 업로드
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'carrierwave'
+
 # 텍스트 편집기
 gem 'tinymce-rails'
 # 페이지 구분 테마

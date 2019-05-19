@@ -18,11 +18,7 @@
 //= require bootstrap-sprockets
 //= require tinymce
 //= require tinymce-jquery
-//= require jquery.timepicker.js
-//= require Datepair
-//= require jquery.datepair.js
 //= require countUp
-//= require bootstrap-datetimepicker
-//= require bootstrap-datepicker
+
 
 
