@@ -67,33 +67,48 @@
             </div>
             
             <div class="main-service">
-              <h1><%= main.th %>기 구성원</h1>
-              <div class= "row service">
-                <% @users.each do |user| %>
-                <% if user.has_role? 'manager' or user.has_role? 'member' %>
-                 <% if user.name === "삼육멋사" %>
-                   <div class="none">
-                 <% else %>
-                   <div class="col-md-3 s">
-                 <% end %>
-                    <% if user.image.blank? %>
-                      <img src="/assets/avatar" class="mainuserimg sindex">
-                    <% else %>
-                      <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
-                    <% end %> 
-                    <p><%= user.name %></br>
-                      <% if user.has_role? 'manager'%>
-                        <span class="role">운영진</span>
-                      <% elsif user.has_role? 'member'%>
-                        <span class="role">아기사자</span>
-                      <% end %>
-                    </p>
-                  </div>
-                  <% end %>
-                <% end %>
-              </div>
-            </div> 
-    
+                <h1><%= main.th %>기 구성원</h1>
+                <div class= "row service">
+                    <% @users.each do |user| %>
+                        <% if user.has_role? 'manager' %>
+                            <% if user.name === "삼육멋사" %>
+                            <div class="none">
+                            <% else %>
+                            <div class="col-md-3 s">
+                            <% end %>
+                                <% if user.image.blank? %>
+                                    <img src="/assets/avatar" class="mainuserimg sindex">
+                                <% else %>
+                                    <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
+                                <% end %> 
+                                <p>
+                                    <%= user.name %></br>
+                                    <span class="role">운영진</span>
+                                </p>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            
+                <div class= "row service">
+                    <% @users.each do |user| %>
+                        <% if user.has_role? 'member' %>
+                        <div class="col-md-3 s">
+                            <% if user.image.blank? %>
+                                <img src="/assets/avatar" class="mainuserimg sindex">
+                            <% else %>
+                                <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
+                            <% end %>
+                            <p>
+                                <%= user.name %></br>
+                                <span class="role">아기사자</span>
+                            </p>
+                        </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            
             <div class="main-service">
               <h1>만든 서비스</h1>
               <div class= "row service">
