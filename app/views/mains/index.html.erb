@@ -43,7 +43,7 @@
                 gogogo();
             </script>
 
-            <span class="thbox"><h1 class="main-lionth" id="counter_th"><%= main.th %></h1><span class="th">기</span></span>
+            <span class="thbox"><h1 class="main-lionth" id="counter_th">0</h1><span class="th">기</span></span>
             <p class="main-content"><%= main.content %></p>
             <div class="main-info">
               <div class="row">
@@ -152,11 +152,12 @@
                       separator: '', 
                       decimal: '.', 
                     };
+                // 시작 수, 종료 수, 속도
                 var count_1 = new countUp('counter_th', 0, <%= main.th.to_s %>, 0, 1, options);
                 var count_2 = new countUp('counter_year', 0, 2018, 0, 2, options);
                 var count_3 = new countUp('counter_people', 0, <%= main.lion.to_s %>, 0, 1, options);
-                var count_4 = new countUp('counter_hack', 0, <%= main.hack.to_s %>, 0, 1, options);
-                var count_5 = new countUp('counter_service', 0, <%= Service.all.count.to_s %>, 0, 1, options);
+                var count_4 = new countUp('counter_hack', 0, <%= main.hack.to_s %>, 0, 3, options);
+                var count_5 = new countUp('counter_service', 0, <%= Service.all.count.to_s %>, 0, 3, options);
                 count_1.start();
                 count_2.start();
                 count_3.start();
