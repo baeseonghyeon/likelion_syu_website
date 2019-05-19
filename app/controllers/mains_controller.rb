@@ -7,7 +7,7 @@ class MainsController < ApplicationController
   def index
     @mains = Main.all
     @services = Service.all
-    @users = User.all.order("created_at ASC")
+    @users = User.all.order("name ASC")
   end
 
   # GET /mains/1
