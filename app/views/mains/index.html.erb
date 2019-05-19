@@ -93,11 +93,11 @@
                 <div class= "row service">
                     <% @users.each do |user| %>
                         <% if user.has_role? 'member' %>
-                        <div class="col-md-3 s">
+                        <div class="col-md-3 sm">
                             <% if user.image.blank? %>
-                                <img src="/assets/avatar" class="mainuserimg sindex">
+                                <img src="/assets/avatar" class="mainuserimgm sindex">
                             <% else %>
-                                <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
+                                <%= image_tag user.image.thumb.url, class: "mainuserimgm sindex" %>
                             <% end %>
                             <p>
                                 <%= user.name %></br>
