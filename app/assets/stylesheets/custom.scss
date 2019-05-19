@@ -451,7 +451,7 @@ textarea {
   width: 100%;
   margin: 0px 0px 30px;
 }
-.row.service h3 {
+.row.service > h3 {
   font-size: 1.5rem;
   font-weight: 300;
 }
@@ -1441,7 +1441,13 @@ input:disabled {
   line-height: 0.8;
 }
 .back_link {
-  font-size:15px;
+  font-size:15px;.col-md-3.sm {
+  margin: 0px auto;
+  height: 130px;
+  max-width: 110px;
+  width: 100%;
+  padding: 10px;
+}
   line-height: 1.6;
   text-align: center;
   margin-bottom: 30px;
