@@ -42,15 +42,20 @@
       <% if @post.attachment.present? %>
         <% if @post.category === '질문' %>
         <div class="file_box">
-          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename}", @post.attachment_url, class: "etc" %>
         </div>
         <% else %>
         <div class="file_box a">
-          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment}", @post.attachment_url, download: "post_#{@post.id}_attachment", class: "etc" %>
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename}", @post.attachment_url, class: "etc" %>
         </div>
         <% end %>
       <% end %>
       <hr/>
+      <script>
+      // $('.file_box').text($('.file_box').text().replace("/uploads/post/attachment/", ""))
+      
+      </script>
+      
       
       <!-- Author -->
       <div class="author">

@@ -121,7 +121,7 @@
   <%= f.file_field :attachment %>
   <% if post.attachment.present? %>
         <div class="file_box">
-          <span class="file_box_name">첨부된 파일</span><span class="file_name etc"><%= post.attachment %></span>
+          <span class="file_box_name">첨부된 파일</span><span class="file_name etc"><%= post.attachment.file.filename %></span>
         </div>  
   <% end %>
   
