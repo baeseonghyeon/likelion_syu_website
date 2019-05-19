@@ -42,11 +42,11 @@
       <% if @post.attachment.present? %>
         <% if @post.category === '질문' %>
         <div class="file_box">
-          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename}", @post.attachment_url, class: "etc" %>
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename} (#{(@post.attachment.file.size / 1024000.0).round(1)}MB)", @post.attachment_url, class: "etc" %>
         </div>
         <% else %>
         <div class="file_box a">
-          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename}", @post.attachment_url, class: "etc" %>
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename} (#{(@post.attachment.file.size / 1024000.0).round(1)}MB)", @post.attachment_url, class: "etc" %>
         </div>
         <% end %>
       <% end %>

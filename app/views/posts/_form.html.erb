@@ -118,10 +118,11 @@
     <%= f.label :내용, class: "label2" %><span class="label-star">*</span>
     <%= f.text_area :content, :rows => 20, class: "form-control tinymce" %>
   </div>
-  <%= f.file_field :attachment %>
+  <%= f.file_field :attachment,
+    data: { max_file_size: 5.megabytes } %>
   <% if post.attachment.present? %>
         <div class="file_box">
-          <span class="file_box_name">첨부된 파일</span><span class="file_name etc"><%= post.attachment.file.filename %></span>
+          <span class="file_box_name">첨부된 파일</span><span class="file_name etc"><%= post.attachment.file.filename %> (<%= (@post.attachment.file.size / 1024000.0).round(1)%>MB)</span>
         </div>  
   <% end %>
   
