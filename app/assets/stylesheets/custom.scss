@@ -437,7 +437,7 @@ textarea {
 }
 .col-md-3.sm {
   margin: 0px auto;
-  height: 122px;
+  height: 120px;
   max-width: 110px;
   width: 100%;
   padding: 10px;
@@ -1521,6 +1521,12 @@ input:disabled {
     padding: 10px 0px;
     margin: 0px auto;
     width: 180px;
+  }
+  p.mypage_link {
+    margin: 5px 0px 0px!important;
+  }
+  a.my_link:hover {
+    color: #0752dd;
   }
   .navbar-nav .nav-link {
     text-align: center;

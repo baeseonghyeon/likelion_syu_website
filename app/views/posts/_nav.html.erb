@@ -12,23 +12,23 @@
             <%= current_user.name %>
           </a>
           <div class="dropdown-menu dropdown-menu-center"  id="userinfo" aria-labelledby="navbarDropdownPortfolio">
+          <a href="/users/<%= current_user.id %>" class="my_link">  
             <% if current_user.image.url.present? %>
               <div class="avatar2">
-                <a href="../users/<%= current_user.id %>"><%= image_tag(current_user.image.thumb.url) %></a>
+                <%= image_tag(current_user.image.thumb.url) %>
               </div>
             <% else %>
               <div class="avatar2">
-                <a href="../users/<%= current_user.id %>">
+                <!--<a href="../users/<%= current_user.id %>">-->
                   <img src="/assets/avatar">
-                </a>
+                <!--</a>-->
               </div>
             <% end %>
             <div class="dropdown-nickname">
-            <a href="/users/<%= current_user.id %>">  
               <%= current_user.email %>
-            <%#= link_to current_user.email, users_path %>
-            </a>
             </div>
+          </a>
+            <a href="/users/<%= current_user.id %>" class="dropdown-item">마이페이지</a>
             <% if current_user.has_role? 'admin' %>
             <%= link_to '새 글 작성', new_post_path, class:"dropdown-item" %>
             <%= link_to '관리자', rails_admin_path, class:"dropdown-item"%>
