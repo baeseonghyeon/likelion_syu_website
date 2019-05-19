@@ -68,8 +68,8 @@
             
             <div class="main-service">
                 <h1><%= main.th %>기 구성원</h1>
+                <h3>멘토</h3>
                 <div class= "row service">
-                    <h2>멘토</h2>
                     <% @users.each do |user| %>
                         <% if user.has_role? 'manager' %>
                             <% if user.name === "삼육멋사" %>
@@ -90,9 +90,9 @@
                         <% end %>
                     <% end %>
                 </div>
-            
+                
+                <h3>멘티</h3>
                 <div class= "row service">
-                    <h2>멘티</h2>
                     <% @users.each do |user| %>
                         <% if user.has_role? 'member' %>
                         <div class="col-md-3 sm">

@@ -474,8 +474,11 @@ textarea {
   display: block;
   border-radius: 100%;
 }
-.mainuserimg,.mainuserimgm:hover {
+.mainuserimg:hover {
   transform: scale(1.2);
+}
+.mainuserimgm:hover {
+  transform: scale(1.1);
 }
 .none {
   display: none!important;
