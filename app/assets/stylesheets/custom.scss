@@ -433,7 +433,7 @@ textarea {
 .col-md-3.sm {
   margin: 0px auto;
   height: 130px;
-  max-width: 90px;
+  max-width: 110px;
   width: 100%;
   padding: 10px;
 }
@@ -449,7 +449,11 @@ textarea {
 }
 .row.service {
   width: 100%;
-  margin: 0px;
+  margin: 0px 0px 30px;
+}
+.row.service h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 .serviceimg {
   width: 80px;
@@ -1605,6 +1609,10 @@ input:disabled {
   }
   .lecture-link {
   padding-left: 10px;
+  }
+  //메인 일반 멤버
+  .col-md-3.sm {
+  max-width: 90px;
   }
 }
 @media (max-width: 600px) {
