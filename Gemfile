@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 ruby "2.6.0"
 
 gem "figaro"
+# # aws c9 bundler version set
+# gem 'bundler', '~> 1.16.4'
+
 # simple_form
 gem 'simple_form'
 # countup.js
@@ -14,15 +17,19 @@ gem 'impressionist'
 gem 'cancancan'
 gem 'rolify'
 gem 'devise'
+
 # 부트스트랩 소셜
 gem 'bootstrap-social-rails'
+
 # 텍스트 편집기 이미지업로드
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'fog'
-# 이미지,파일 업로드
+
+# 이미지 업로드
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'carrierwave'
+
 # 텍스트 편집기
 gem 'tinymce-rails'
 # 페이지 구분 테마
