@@ -1,10 +1,14 @@
 ko:
   views:
     pagination:
-      first: "처음"         
-      last: "마지막"
-      previous: "이전"
-      next: "다음"
+      first: "<<"         
+      last: ">>"
+      previous: "<"
+      next: ">"
+      # first: "처음"         
+      # last: "마지막"
+      # previous: "이전"
+      # next: "다음"
       truncate: ""
       # first: "&laquo; 처음"
       # last: "마지막 &raquo;"
