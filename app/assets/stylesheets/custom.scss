@@ -432,8 +432,8 @@ textarea {
 }
 .col-md-3.sm {
   margin: 0px auto;
-  height: 145px;
-  max-width: 100px;
+  height: 130px;
+  max-width: 90px;
   width: 100%;
   padding: 10px;
 }
@@ -468,13 +468,13 @@ textarea {
   border-radius: 100%;
 }
 .mainuserimgm {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin: 10px auto;
   display: block;
   border-radius: 100%;
 }
-.mainuserimg, .mainuserimgm:hover {
+(.mainuserimg,.mainuserimgm):hover {
   transform: scale(1.2);
 }
 .none {
