@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @posts = Post.order("created_at DESC").page(params[:page]).per(7)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(8)
     @mains = Main.all
   end
 
