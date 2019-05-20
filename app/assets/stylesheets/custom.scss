@@ -361,6 +361,10 @@ a.btn.btn-primary:visited {
   font-size: 16px;
   text-shadow: none;
 }
+.admin-edit-box {
+  position: relative;
+  top: -3px;
+}
 //apply
 .apply p {
   line-height: 35px!important;
@@ -545,20 +549,25 @@ textarea {
   font-size: 20px;
   font-weight: 500;
   color: #474f5c;
+  max-height: 24px;
 }
 .serviceteam {
   color: #0652DD;
   font-size: 15px!important;
+  max-height: 24px;
 }
 .col-md-3.sindex p {
   font-size: 13px;
   text-align: center;
   margin: 10px auto;
+  max-height: 24px;
 }
 .sindexlink p {
   font-size: 13px;
   text-align: center;
   margin: 10px auto;
+  // position: relative;
+  // top: 15px;
 }
 .col-md-3.sindex h3 {
   text-align: center;
@@ -566,6 +575,8 @@ textarea {
   line-height: 25px;
   margin: 10px 0px;
   color: #474f5c;
+  min-height: 65px;
+  max-height: 65px;
 }
 .col-md-3.sindex h3:hover {
   color: #474f5c;
@@ -600,6 +611,10 @@ textarea {
  font-size: 10px; color: #d8d8d8;
  text-align: center;
  font-family: 'Montserrat', sans-serif;
+}
+.admin-btn {
+  position: relative;
+  top: 10px;
 }
 
 /* INDEX PAGE */
@@ -958,6 +973,7 @@ label {
   color: #474f5c!important;
   background: transparent!important;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 .author .nik a:hover{
   color: #0652DD!important;
@@ -1150,7 +1166,7 @@ input#post_attachment {
   padding: 0px 3px 1px 3px;
   margin-bottom: 2px;
   position: relative;
-  top: 0px;
+  top: -1px;
   vertical-align: 2px;
   margin-left: 1px;
 }
@@ -1253,7 +1269,17 @@ li h4:hover{
   margin-top: 5px;
   margin-bottom: 30px;
 }
+.footer .sns-link .sns-icon-s {
+  transition: 0.3s ease-out;
+  width : 28px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
 .footer .sns-link .sns-icon:hover{
+  transform: scale(1.15);
+  transition: 0.3s;
+}
+.footer .sns-link .sns-icon-s:hover{
   transform: scale(1.15);
   transition: 0.3s;
 }

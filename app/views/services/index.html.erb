@@ -17,25 +17,25 @@
             <div class="sindeximgbox">
               <% if service.image.blank? %>
                 <div class= "sindeximg">
-                  <br><br><br><br><br><h2>이미지 준비중:)</h2>
+                  <br><br><br><h2>이미지 준비중:)</h2>
                 </div>
               <% else %>
                 <%= image_tag service.image.url, class: "sindeximg" %>
               <% end %> 
             </div>
             <div class="sindexinfo">
-              <h2><%= service.title %></h2>
+              <h2 class="etc"><%= service.title %></h2>
               <p class="serviceteam"><%= service.team %></p>
               <p class="time"><%= service.created_at.strftime("%Y.%m") %></p>
               <h3><%= service.content %></h3>
               </a>
-              <div class="servicecard-text">© <%= service.created_at.strftime("%Y") %> LIKELION SAHMYOOKUNIV</div>
+              <div class="servicecard-text etc">© <%= service.created_at.strftime("%Y") %> LIKELION SAHMYOOKUNIV</div>
             </div>
           </div>
           <div class="sindexlink">
            <% if user_signed_in? %>
             <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
-            <p><%= link_to '수정', edit_service_path(service) %> | 
+            <p class="admin-btn"><%= link_to '수정', edit_service_path(service) %> | 
             <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %></p> 
             <% end %>
           <% end %>
