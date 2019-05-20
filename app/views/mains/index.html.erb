@@ -70,21 +70,21 @@
                 <h1><%= main.th %>기 구성원</h1>
                 <h3>멘토</h3>
                 <div class= "row service">
-                    <% @users.each do |user| %>
-                        <% if user.has_role? 'manager' %>
+                    <% @users.each do |users| %>
+                        <% if users.has_role? 'manager' %>
                             <% if user.name === "삼육멋사" %>
                             <div class="none">
                             <% else %>
-                            <a href="/users/<%= user.user.id %>">
+                            <a href="/users/<%= users.user.id %>">
                             <div class="col-md-3 s">
                             <% end %>
-                                <% if user.image.blank? %>
+                                <% if users.image.blank? %>
                                     <img src="/assets/avatar" class="mainuserimg sindex">
                                 <% else %>
-                                    <%= image_tag user.image.thumb.url, class: "mainuserimg sindex" %>
+                                    <%= image_tag users.image.thumb.url, class: "mainuserimg sindex" %>
                                 <% end %> 
                                 <p>
-                                    <%= user.name %>
+                                    <%= users.name %>
                                     <!--</br>-->
                                     <!--<span class="role">운영진</span>-->
                                 </p>
@@ -96,17 +96,17 @@
                 
                 <h3>멘티</h3>
                 <div class= "row service">
-                    <% @users.each do |user| %>
-                        <% if user.has_role? 'member' %>
-                        <a href="/users/<%= user.user.id %>">
+                    <% @users.each do |users| %>
+                        <% if users.has_role? 'member' %>
+                        <a href="/users/<%= users.user.id %>">
                         <div class="col-md-3 sm">
-                            <% if user.image.blank? %>
+                            <% if users.image.blank? %>
                                 <img src="/assets/avatar" class="mainuserimgm sindex">
                             <% else %>
-                                <%= image_tag user.image.thumb.url, class: "mainuserimgm sindex" %>
+                                <%= image_tag users.image.thumb.url, class: "mainuserimgm sindex" %>
                             <% end %>
                             <p>
-                                <%= user.name %>
+                                <%= users.name %>
                                 <!--</br>-->
                                 <!--<span class="role">아기사자</span>-->
                             </p>
