@@ -33,6 +33,7 @@
         <%= f.label :과제기한 %><span class="label-star">*</span>
         <br>
         <script>
+        $(document).ready(function(){
           $.datetimepicker.setLocale('kr');
         		$('.dt').datetimepicker({
         		onChangeDateTime : function(dp,$input){
@@ -77,6 +78,8 @@
         		  timepicker:false,
         		  format:'Y-m-d'	  
         		});
+        });
+          
         </script>
 
         <%= f.text_field :limit, 'data-behaviour' => 'datepicker', class:"datepicker", id: "datetimepicker", autocomplete: "off"%>
