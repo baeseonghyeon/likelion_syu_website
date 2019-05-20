@@ -25,7 +25,14 @@
                   <div class="card-body">
                     <div class="card-title">
                       <div class="card-cate" id="cfree"><%= post.category %></div>
-                      <h1 class="title etc"><%= post.title %></h1>
+                        <% if post.attachment.present? %>
+                        <h1 class="title etc">
+                          <%= post.title %>
+                        <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                        </h1>
+                        <% else %>
+                        <h1 class="title etc"><%= post.title %></h1>
+                        <% end %>
                       <div class="post-info">
                         <% if post.user.image.url.present? %>
                           <div class="avatar3">
