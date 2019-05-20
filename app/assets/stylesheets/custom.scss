@@ -1200,6 +1200,8 @@ input#post_attachment {
   margin-top: 2px!important;
   padding-bottom: 5px;
   transform: rotate(-45deg);
+  position: relative;
+  top: -1px;
 }
 
 /* CATEGORIES 카테고리 위젯 */
