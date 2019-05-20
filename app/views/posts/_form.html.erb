@@ -28,15 +28,71 @@
         <!--<br>-->
         <%#= f.select :lecture, options_for_select(['LIKELION','HTML/CSS', 'Python', 'Rails', 'JavaScript', 'ETC'], :selected => post.lecture), {:required => true, :class => 'select-box'}%>
       <!--</div>-->
-      <div class="col-md-4" id="limit">
+      <!--<input id="datetimepicker" type="text" >-->
+      <div class="col-md-2" id="limit">
         <%= f.label :과제기한 %><span class="label-star">*</span>
         <br>
-        <%= f.datetime_select :limit, 'data-behaviour' => 'datepicker', class:"datepicker" %>
+        <script>
+          $.datetimepicker.setLocale('kr');
+        		$('.dt').datetimepicker({
+        		onChangeDateTime : function(dp,$input){
+        		$input.text($input.val());		
+        		 },
+        		  
+        		 i18n:{
+        		  kr:{
+        		   months:[
+        			'1월','2월','3월','4월',
+        			'5월','6월','7월','8월',
+        			'9월','10월','11월','12월',
+        		   ],
+        		   dayOfWeek:[
+        			"일", "월", "화", "수", 
+        			"목", "금", "토",
+        		   ]
+        		  }
+        		 },
+        		  timepicker:true,
+        		  format:'Y-m-d H:i:s'	  
+        		});
+        			
+        		$('.d').datetimepicker({
+        		onChangeDateTime : function(dp,$input){
+        		$input.text($input.val());		
+        		},
+        		  
+        		 i18n:{
+        		  kr:{
+        		   months:[
+        			'1월','2월','3월','4월',
+        			'5월','6월','7월','8월',
+        			'9월','10월','11월','12월',
+        		   ],
+        		   dayOfWeek:[
+        			"일", "월", "화", "수", 
+        			"목", "금", "토",
+        		   ]
+        		  }
+        		 },
+        		  timepicker:false,
+        		  format:'Y-m-d'	  
+        		});
+        </script>
+
+        <%= f.text_field :limit, 'data-behaviour' => 'datepicker', class:"datepicker", id: "datetimepicker", autocomplete: "off"%>
+        
+        <script>
+          $('#datetimepicker').datetimepicker({
+            format:'Y.m.d H:i',
+            lang: 'kr'
+          });
+        </script>
+        
       </div>
       <div class="col-md-10" id="title"> 
         <div class="field">
           <%= f.label :제목 %><span class="label-star">*</span>
-          <%= f.text_field :title, required: true, maxlength: "40" %>   
+          <%= f.text_field :title, required: true, maxlength: "50" %>   
         </div>
       </div>
       
@@ -84,7 +140,7 @@
       <div class="col-md-10" id="title">
         <div class="field">
           <%= f.label :제목 %><span class="label-star">*</span>
-          <%= f.text_field :title, required: true, maxlength: "40" %>   
+          <%= f.text_field :title, required: true, maxlength: "50" %>   
         </div>
       </div>
       <script>
@@ -103,7 +159,7 @@
       <div class="col-md-12"> 
         <div class="field">
           <%= f.label :제목 %><span class="label-star">*</span>
-          <%= f.text_field :title, required: true, maxlength: "40" %>   
+          <%= f.text_field :title, required: true, maxlength: "50" %>   
         </div>
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
