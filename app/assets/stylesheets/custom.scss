@@ -698,6 +698,7 @@ a.comment-link-marker:hover {
   font-size: 25px!important;
   padding-top: 10px;
   color: #474f5c;
+  line-height: 34px;
 }
 .card-body {
   padding: 0px;
@@ -857,6 +858,7 @@ label {
   font-size: 30px; font-weight: 400;
   margin-top: 10px!important;
   color: #474f5c;
+  line-height: 40px;
 }
 .show_content {
   padding: 20px 0px;
@@ -1002,6 +1004,7 @@ input#post_attachment {
   padding: 10px;
   width: 100%;
   border: 1px solid #dde2e6;
+  font-size: 0.9rem;
 }
 .file_box {
   background: #eff3f6;
@@ -1021,11 +1024,32 @@ input#post_attachment {
     max-width: 65%;
 }
 .file_box a:hover {
-  text-decoration: underline;
+  // text-decoration: underline
 }
 .file_box_name {
     margin-right: 15px;
     color: #858b91;
+}
+.attachsize {
+    font-size: 10px;
+    color: #858b91;
+}
+.attachsize:hover {
+  text-decoration: none;
+}
+.field_with_errors {
+    padding: 2px;
+    background-color: #cc0000!important;
+    display: table;
+    width: 100%;
+    border: none;
+    color: white;
+}
+#error_explanation {
+  width: 100%!important;
+}
+#error_explanation ul li {
+  margin-top: 15px;
 }
 /* LECTURE PAGE */
 .lecture-link {
@@ -1103,12 +1127,15 @@ input#post_attachment {
   font-size: 16px!important;
   color: #0652DD;
   vertical-align: 3px!important;
+  line-height: 21px;
 }
 .notice-icon {
   width: 15px;
   margin: 0px 3px;
   padding-top: 2px;
   float: left;
+  position: relative;
+  top: 1px;
 }
 .notice {
   transition: color 0.15s ease-in-out, filter 0.15s ease-in-out!important;
@@ -1122,8 +1149,10 @@ input#post_attachment {
   font-size: 8px; color : white; font-weight: 500;
   padding: 0px 3px 1px 3px;
   margin-bottom: 2px;
-  top: 2px;
+  position: relative;
+  top: 0px;
   vertical-align: 2px;
+  margin-left: 1px;
 }
 .notihr {
   margin-bottom: 0px;
@@ -1164,6 +1193,13 @@ input#post_attachment {
   margin: 0px 6px 0px 3px;
   margin-top: 2px!important;
   padding-bottom: 5px;
+}
+.attach-icon {
+  width: 16px;
+  margin: 0px 6px;
+  margin-top: 2px!important;
+  padding-bottom: 5px;
+  transform: rotate(-45deg);
 }
 
 /* CATEGORIES 카테고리 위젯 */
@@ -1431,7 +1467,12 @@ input:disabled {
 .user-info {
   margin-bottom: 70px;
 }
-
+.user_mail {
+  font-size: 1rem;
+}
+.user_mail p {
+  font-size: 0.8rem;
+}
 //링크
 .d_link {
   font-size:15px;

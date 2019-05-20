@@ -22,7 +22,7 @@
       <% else %>
         <div class="empty"></div>
       <% end %>
-      <h1 class="mt-4"><%= @post.title %></h1>
+      <h1 class="mt-4 etc"><%= @post.title %></h1>
       
       <!-- Date/Time -->
       <p class="time"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
@@ -46,16 +46,11 @@
         </div>
         <% else %>
         <div class="file_box a">
-          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename} (#{(@post.attachment.file.size / 1024000.0).round(1)}MB)", @post.attachment_url, class: "etc" %>
+          <span class="file_box_name">첨부파일</span><%= link_to "#{@post.attachment.file.filename} <span class='attachsize'>(#{(@post.attachment.file.size / 1024000.0).round(1)}MB)</span>".html_safe, @post.attachment_url, class: "etc" %>
         </div>
         <% end %>
       <% end %>
       <hr/>
-      <script>
-      // $('.file_box').text($('.file_box').text().replace("/uploads/post/attachment/", ""))
-      
-      </script>
-      
       
       <!-- Author -->
       <div class="author">
