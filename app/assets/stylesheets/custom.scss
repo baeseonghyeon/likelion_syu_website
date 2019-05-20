@@ -363,7 +363,7 @@ a.btn.btn-primary:visited {
 }
 .admin-edit-box {
   position: relative;
-  top: -3px;
+  top: -5px;
 }
 //apply
 .apply p {
@@ -395,6 +395,7 @@ a.btn.btn-primary:visited {
 #main_hidden {
   width: 100%;
 }
+
 //edit
 .mainfield {
  font-size: 15px!important; 
@@ -1500,6 +1501,7 @@ input:disabled {
 }
 .user_mail p {
   font-size: 0.8rem;
+  color: #bcbcbc;
 }
 //링크
 .d_link {
