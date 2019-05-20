@@ -75,6 +75,7 @@
                             <% if user.name === "삼육멋사" %>
                             <div class="none">
                             <% else %>
+                            <a href="/users/<%= user.user.id %>">
                             <div class="col-md-3 s">
                             <% end %>
                                 <% if user.image.blank? %>
@@ -88,6 +89,7 @@
                                     <!--<span class="role">운영진</span>-->
                                 </p>
                             </div>
+                            </a>
                         <% end %>
                     <% end %>
                 </div>
@@ -96,6 +98,7 @@
                 <div class= "row service">
                     <% @users.each do |user| %>
                         <% if user.has_role? 'member' %>
+                        <a href="/users/<%= user.user.id %>">
                         <div class="col-md-3 sm">
                             <% if user.image.blank? %>
                                 <img src="/assets/avatar" class="mainuserimgm sindex">
@@ -108,6 +111,7 @@
                                 <!--<span class="role">아기사자</span>-->
                             </p>
                         </div>
+                        </a>
                         <% end %>
                     <% end %>
                 </div>
