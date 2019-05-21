@@ -1761,13 +1761,16 @@ input {
 /* ERROR */
 #er {
   max-width: 650px;
-  padding: 100px 50px;
+  padding: 10% 50px;
   display: flex;
   flex-direction: column;
 }
 #er h1 {
     font-size: 4rem;
     color: #0652DD;
+}
+#er h2 {
+  margin-bottom: 20px;
 }
 #er a {
   font-size: 1rem;
