@@ -7,8 +7,8 @@
         <ul>
          <li>
            <h4 class="etc"><%= noti.title %>
-             <!-- 3일간 new 아이콘이 뜨도록 -->
-             <% if noti.created_at + 3*24*60*60 > Time.zone.now %>
+             <!-- 7일간 new 아이콘이 뜨도록 -->
+             <% if noti.created_at + 7*24*60*60 > Time.zone.now %>
              <span class="new-icon">NEW!</span>
              <% end %>
            </h4>
