@@ -1768,11 +1768,18 @@ input {
   flex-direction: column;
 }
 #er h1 {
-    font-size: 4rem;
-    color: #0652DD;
+  font-size: 4rem;
+  color: #0652DD;
 }
 #er h2 {
   margin-bottom: 20px;
+}
+#er h3 {
+  line-height: 1.7;
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  color: gray;
 }
 #er a {
   font-size: 1rem;
