@@ -1770,6 +1770,7 @@ input {
 #er h1 {
   font-size: 4rem;
   color: #0652DD;
+  font-weight: 100;
 }
 #er h2 {
   margin-bottom: 20px;
@@ -1787,4 +1788,8 @@ input {
 #er.row {
   max-width:800px;
   margin:100px auto;
+}
+.er_ment {
+  font-size: 2rem;
+  padding-left: 10px;
 }
