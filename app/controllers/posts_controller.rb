@@ -171,7 +171,11 @@ private
   
   def log_impression
     @hit_post = Post.find(params[:id])
-    # this assumes you have a current_user method in your authentication system
-    @hit_post.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+    # this assumes you have a current_user method in your authentication system\
+    if(current_user == true) 
+      @hit_post.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+    else
+      @hit_post.impressions.create(ip_address: request.remote_ip)
+    end
   end
 end
