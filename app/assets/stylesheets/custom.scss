@@ -905,12 +905,14 @@ label {
 }
 .show_content p {
   font-size: 16px;
-  line-height: 27px;
+  // line-height: 27px;
+  line-height: 1.7;
   margin-bottom: 0px;
 }
 .show_content ul,ol{
   font-size: 16px;
-  line-height: 30px;
+  // line-height: 30px;
+  line-height: 1.7;
 }
 .show_link_con {
   height: 15px;
@@ -1761,7 +1763,7 @@ input {
 /* ERROR */
 #er {
   max-width: 650px;
-  padding: 10% 50px;
+  padding: 7% 50px;
   display: flex;
   flex-direction: column;
 }
