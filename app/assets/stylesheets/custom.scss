@@ -1122,7 +1122,8 @@ input#post_attachment {
   margin: 0px auto 20px auto;
 }
 .fb-btnbox {
-  width: 142px;
+  width: 100%;
+  display: flex;
   margin: 8px auto 20px auto;
 }
 .fb-btn {
