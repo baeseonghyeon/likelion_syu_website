@@ -1767,6 +1767,11 @@ input {
   display: flex;
   flex-direction: column;
 }
+#er .logo-main{
+  width: 55%;
+  // filter: grayscale(100%);
+  margin: 0px auto 20px auto;
+}
 #er h1 {
   font-size: 4rem;
   color: #0652DD;
