@@ -33,7 +33,7 @@
                 <% if post.limit > Time.current %>
                   <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
                 <% elsif %>
-                  <div class="card-cate" id="clect2">기한 만료</div>
+                  <div class="card-cate" id="expir">기한 만료</div>
                 <% end %>
               <% elsif post.category === '공지사항' %>
               <div class="card-cate" id="cnoti"><%= post.category %></div>

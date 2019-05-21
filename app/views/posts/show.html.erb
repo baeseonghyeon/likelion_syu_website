@@ -30,7 +30,7 @@
         <% if @post.limit > Time.current %>
           <div class="card-cate" id="climit">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
         <% elsif %>
-          <div class="card-cate" id="clect2">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 만료</div>
+          <div class="card-cate" id="expir">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 만료</div>
         <% end %>
       <% end %>
       <hr>
