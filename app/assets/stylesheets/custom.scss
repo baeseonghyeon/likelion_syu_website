@@ -1757,3 +1757,16 @@ input {
   // -webkit-appearance: none;  // remove shadow in iOS
   @include border-radius(0);  // remove border-radius in iOS
 }
+
+/* ERROR */
+#er h1 {
+    font-size: 4rem;
+    color: #0652DD;
+}
+#er a {
+  font-size: 1rem;
+}
+#er.row {
+  max-width:800px;
+  margin:100px auto;
+}

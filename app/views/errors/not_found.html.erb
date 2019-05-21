@@ -1,7 +1,8 @@
 <%= render '/posts/nav' %>
-    <div class="container">
-        <div class="row" style="max-widget:800px;">
-            <%= render '/posts/logo' %>    
+    <div class="container" id="er">
+        <div class="row">
+            <%= render '/posts/logo' %>  
+            <%= link_to(image_tag('/assets/logo2-large', class:"logo-main"), posts_path )%>
             <h1>404</h1>
             <h2>페이지를 찾을 수 없습니다:(</h2>
             <%= link_to "메인으로", posts_path %> 
