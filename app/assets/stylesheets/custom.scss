@@ -1759,6 +1759,12 @@ input {
 }
 
 /* ERROR */
+#er {
+  max-width: 650px;
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+}
 #er h1 {
     font-size: 4rem;
     color: #0652DD;
