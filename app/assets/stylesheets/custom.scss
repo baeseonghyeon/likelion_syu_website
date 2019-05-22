@@ -786,6 +786,14 @@ a.comment-link-marker:hover {
   -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
   position: absolute;
 }
+a.carousel-control-prev {
+  height: 0;
+  padding: 20.4% 0;
+}
+a.carousel-control-next {
+  height: 0;
+  padding: 20.4% 0;
+}
 
 /* NEW PAGE */
 #post_category {
@@ -1814,6 +1822,3 @@ input {
   font-size: 2rem;
   padding-left: 10px;
 }
-// .carousel-control-prev-icon {
-//   position: absolute;
-// }
