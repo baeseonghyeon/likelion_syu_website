@@ -29,29 +29,6 @@
             
             <!-- 타이핑 효과 -->
             <script>
-                // var text = "";
-                // var cnt = 0;
-                // var speed = 150; //글자가 찍히는 속도
-                // var timer1 = null;
-                 
-                // function gogogo(){
-                //     document.getElementById('texts').innerHTML = text.substring(0, cnt) + "_";
-                //     cnt++;
-                //     timer1 = setTimeout('gogogo()', speed);
-                 
-                //     if(text.length < cnt){
-                //         document.getElementById('texts').innerHTML = document.getElementById('texts').innerHTML.replace("_", "");
-                //         // 아래 주석으로 처리된 부분을 지우면 한번만 실행됩니다.
-                //         // clearTimeout(timer1)
-                //         // 딜레이
-                //         setTimeout(function() {
-                //             cnt = 0;
-                //         }, 1000);
-                //     }
-                // }
-                
-                // gogogo();
-                
                 var app = document.getElementById('app');
 
                 var typewriter = new Typewriter(app, {
@@ -60,7 +37,7 @@
                 
                 typewriter.typeString('<%= main.title %>')
                     .pauseFor(2500)
-                    .deleteChars(10)
+                    .deleteChars(9)
                     .pauseFor(2500)
                     .deleteAll()
                     .typeString('HACK YOUR LIFE')
