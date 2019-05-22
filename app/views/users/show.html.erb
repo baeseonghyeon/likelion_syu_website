@@ -32,7 +32,10 @@
           <p><%= @user.name %>님께 이메일 보내기</p>
         </a> 
         <% end %>
-        <p><%= @user.created_at.strftime("%Y")%>년 부터 삼육멋사와 함께한 
+        
+        
+        <p>
+        <% if @user.id < 7 %>2018<% else %><%= @user.created_at.strftime("%Y")%><% end %>년 부터 삼육멋사와 함께한 
         <% if @user.has_role? 'admin' or @user.has_role? 'manager' %>
           <span class="role">운영진*</span>
         <% elsif @user.has_role? 'member'%>
@@ -44,7 +47,7 @@
           <% if user_signed_in? %>
             <% if current_user.id === @user.id %>
             <p>'게스트' 등급은 질문작성만 가능 합니다.<span class="label-star">*</span><br>
-                  등급 관련 사항은 운영자에게 문의해주세요.</p>
+                  등급 관련 사항은 <a href='mailto:sahmyook@likelion.org'>sahmyook@likelion.org</a>로 문의해주세요.</p>
             <% end %>   
           <% end %>  
         <% end %>
