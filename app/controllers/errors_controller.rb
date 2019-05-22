@@ -12,4 +12,7 @@ class ErrorsController < ApplicationController
         render :status => 500
     end  
     
+    def timeout_error
+        render :status => 504
+    end 
 end
