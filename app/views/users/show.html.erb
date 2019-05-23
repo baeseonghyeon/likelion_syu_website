@@ -46,7 +46,7 @@
           <span class="role">게스트</span>
           <% if user_signed_in? %>
             <% if current_user.id === @user.id %>
-            <p>'게스트' 등급은 질문작성만 가능 합니다.<span class="label-star">*</span><br>
+            <p>'게스트' 등급은 질문작성만 가능합니다.<span class="label-star">*</span><br>
                   등급 관련 사항은 <a href='mailto:sahmyook@likelion.org'>sahmyook@likelion.org</a>로 문의해주세요.</p>
             <% end %>   
           <% end %>  
