@@ -724,7 +724,6 @@ a.comment-link-marker:hover {
 }
 .card-body {
   padding: 0px;
-  word-break: break-all;
 }
 .card-body p {
   font-size: 0px!important; margin: 0px auto;
@@ -749,6 +748,9 @@ a.comment-link-marker:hover {
   font-size: 13px; font-weight: 400;
   color: #6e747b!important;
   margin-top: 5px;
+}
+.panel-body {
+  word-break: break-all;
 }
 //업로드 이미지 사이즈
 .panel-body img{
