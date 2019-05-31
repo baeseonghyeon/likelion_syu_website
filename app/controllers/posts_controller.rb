@@ -113,7 +113,7 @@ class PostsController < ApplicationController
     @user = Post.where(:user_id => current_user)
     @users = @user.order("created_at DESC").page(params[:page])
     authorize! :mypost, @users
-  end 
+  end
 
 private
   # Use callbacks to share common setup or constraints between actions.

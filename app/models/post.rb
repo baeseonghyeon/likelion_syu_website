@@ -7,7 +7,6 @@ class Post < ApplicationRecord
   validates :user, presence: true
   # paginates_per 5
   
-  
   has_many :impressions, :as=>:impressionable
   
    def impression_count
