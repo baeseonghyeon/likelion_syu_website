@@ -755,18 +755,9 @@ a.comment-link-marker:hover {
 .mce-content-body {
   word-break: break-all;
 }
-// #tinymce.mce-content-body  {
-//   word-break: break-all!important;
-// }
-// .show_content {
-//   word-break: break-all!important;
-// }
-// #post_content_ifr {
-//   word-break: break-all!important;
-// }
-// #mceu_44 {
-//   word-break: break-all!important;
-// }
+#tinymce {
+  word-break: break-all;
+}
 //업로드 이미지 사이즈
 .panel-body img{
     max-width : 100%;
