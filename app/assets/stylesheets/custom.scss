@@ -752,10 +752,13 @@ a.comment-link-marker:hover {
 .panel-body {
   word-break: break-all;
 }
-body #tinymce .mce-content-body {
+.mce-content-body {
   word-break: break-all!important;
 }
-#tinymce {
+.show_content {
+  word-break: break-all;
+}
+.panel-body {
   word-break: break-all;
 }
 //업로드 이미지 사이즈
