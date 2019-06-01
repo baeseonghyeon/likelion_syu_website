@@ -172,7 +172,7 @@
    </div>
   
   <!--tinymce 잼 -->
-  <div class="form-group">
+  <div class="form-group" style="word-break:break-all;">
     <%= tinymce %>
     <%= f.label :내용, class: "label2" %><span class="label-star">*</span>
     <%= f.text_area :content, :rows => 20, class: "form-control tinymce", style: "word-break:break-all;" %>
