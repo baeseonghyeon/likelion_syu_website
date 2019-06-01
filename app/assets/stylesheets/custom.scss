@@ -752,8 +752,8 @@ a.comment-link-marker:hover {
 .panel-body {
   word-break: break-all;
 }
-body#tinymce.mce-content-body {
-  word-break: break-all;
+body #tinymce .mce-content-body {
+  word-break: break-all!important;
 }
 #tinymce {
   word-break: break-all;
