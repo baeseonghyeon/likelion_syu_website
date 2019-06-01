@@ -175,7 +175,7 @@
   <div class="form-group">
     <%= tinymce %>
     <%= f.label :내용, class: "label2" %><span class="label-star">*</span>
-    <%= f.text_area :content, :rows => 20, class: "form-control tinymce" %>
+    <%= f.text_area :content, :rows => 20, class: "form-control tinymce", style: "word-break:break-all;" %>
   </div>
   <%= f.file_field :attachment,
     data: { max_file_size: 5.megabytes } %>
