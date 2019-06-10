@@ -26,6 +26,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
   <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
   <%= csrf_meta_tags %>
@@ -35,6 +36,27 @@
 <body>
 
 <%= yield %>
+
+    
+    <button onclick="topFunction()" id="myBtn" title="go to top" style="display: block">Top</button>
+ 
+    <script>
+    	window.onscroll = function() {scrollFunction()};
+    
+    	function scrollFunction() {
+    	  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    		document.getElementById("myBtn").style.display = "block";
+    	  } else {
+    		document.getElementById("myBtn").style.display = "none";
+    	  }
+    	}
+    
+    	// When the user clicks on the button, scroll to the top of the document
+    	function topFunction() {
+    	  document.body.scrollTop = 0; // For Safari
+    	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    	}
+    </script>
 
 </body>
 </html>
