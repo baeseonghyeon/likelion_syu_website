@@ -971,6 +971,17 @@ label {
   border: 1px #c7c7c7 solid!important;
   background: #f2f2f2!important;
 }
+.mce-path-item.mce-last, .mce-divider, .mce-path-item {
+  font-size: 14px!important;
+  color: #333!important;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+}
+// .mce-divider {
+  
+// }
+// .mce-path-item {
+  
+// }
 // New page btn
 .new_btn_con_con {
   width: 100%; height: 38px; margin: 40px auto;
@@ -1156,6 +1167,7 @@ input#post_attachment {
   background: #eff3f6;
   padding: 15px;
   margin-top: 20px;
+  border: 1px solid #ddd;
 }
 .file_name {
     position: absolute;
