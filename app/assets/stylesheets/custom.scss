@@ -811,7 +811,7 @@ a.carousel-control-next {
 /* NEW PAGE */
 #post_category {
   width: 100%; height: 40px;
-  border: 1px #c5c5c5 solid;
+  border: 1px #ddd solid;
   border-radius: 2px!important;
   box-shadow: none;
   height: 50px;
@@ -819,7 +819,7 @@ a.carousel-control-next {
 }
 #post_lecture {
   width: 100%; height: 40px;
-  border: 1px #dfe2e6 solid;
+  border: 1px #ddd solid;
   border-radius: 2px!important;
   box-shadow: none;
   height: 50px;
@@ -829,7 +829,7 @@ a.carousel-control-next {
   width: 100%;
   height: 50px;
   padding: 0px 10px;
-  border: 1px #c5c5c5 solid;
+  border: 1px #ddd solid;
   border-radius: 2px;
   box-shadow: none;
   display: inline-block;
@@ -879,10 +879,97 @@ label {
 // MCE
 #mceu_13 {
   border: 1px #dfe2e6 solid;
-  box-shadow: none;
+  box-shadow: none!important;
 }
 .mce-panel {
-  // border: 1px solid #ebedef!important;
+  border: 1px solid #ddd!important;
+  box-shadow: none!important;
+}
+.mce-flow-layout-item.mce-last {
+  display: none;
+}
+#mceu_16 {
+  color: #333!important;
+}
+#mceu_20 {
+  color: #333!important;
+}
+#mceu_20 {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+}
+#mceu_20-body {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+  box-shadow: none!important;
+}
+#mceu_21 {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+  box-shadow: none!important;
+}
+#mceu_21-body {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+  box-shadow: none!important;
+}
+#mceu_22 {
+  padding: 2px 0px;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+  box-shadow: none!important;
+}
+#mceu_22-body {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+  box-shadow: none!important;
+}
+#mceu_30 {
+  border: none!important;
+  padding: 2px 0px;
+  border-bottom: 1px solid #ddd!important;
+}
+#mceu_41 {
+  border: none!important;
+  border-bottom: 1px solid #ddd!important;
+}
+#mceu_42 {
+  border: none!important;
+}
+#mceu_42-body {
+  height: 36px!important;
+}
+#mceu_44 {
+  border: none!important;
+}
+#mceu_45 {
+  border-bottom: none!important;
+  border-right: none!important;
+  border-left: none!important;
+}
+.mce-btn button {
+  color: #333;
+}
+.mce-txt {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
+  color: #333!important;
+}
+.mce-top-part:before {
+  box-shadow: none!important;
+}
+.mce-menubar .mce-caret {
+  border-top-color: #333!important;
+}
+#mceu_13 {
+  // border: 0 !important;
+  border-color: transparent!important;
+}
+.mce-widget.mce-btn {
+  border-color: transparent!important;
+}
+.mce-widget.mce-btn:hover {
+  border: 1px #c7c7c7 solid!important;
+  background: #f2f2f2!important;
 }
 // New page btn
 .new_btn_con_con {
@@ -1061,7 +1148,8 @@ label {
 input#post_attachment {
   padding: 10px;
   width: 100%;
-  border: 1px solid #c5c5c5;
+  border: 1px solid #ddd;
+  border-radius: 2px;
   font-size: 0.9rem;
 }
 .file_box {

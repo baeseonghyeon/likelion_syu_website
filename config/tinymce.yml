@@ -1,5 +1,5 @@
 content_style: 'img {max-width: 100%;} a {word-break: break-all}'
-toolbar: undo redo | fontselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | numlist bullist | outdent indent | code | link | uploadimage | table |
+toolbar: undo redo | fontselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright | outdent indent numlist bullist | link code uploadimage | table |
 plugins:
   - link
   - uploadimage
