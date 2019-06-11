@@ -1126,7 +1126,7 @@ label {
   background-color: #333333!important;
 }
 .author a:hover {
-  background-color: #333333!important;
+  background-color: black!important;
 }
 .author2 a{
   color: white!important;
@@ -1134,7 +1134,7 @@ label {
   background-color: #333333!important;
 }
 .author2 a:hover {
-  background-color: #333333!important;
+  background-color: black!important;
 }
 #kakao-link-btn {
   display: inline-block;
@@ -1143,7 +1143,14 @@ label {
 #kakao-link-btn img {
   width: 32px!important;
 }
-
+#kakao-link-btn img:hover {
+  transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  filter: opacity(0.8);
+  -webkit-filter: opacity(0.8);
+}
 .fb-share-button {
   height: 30px;
   width: 69px;
