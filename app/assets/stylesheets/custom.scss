@@ -21,8 +21,8 @@ html {
 body {
   margin: 0!important;
   padding-top: 60px;
-  touch-action: manipulation;
-  -webkit-touch-action: manipulation;
+  touch-action: none;
+  -webkit-touch-action: none;
   position:relative;
 }
 .background {
