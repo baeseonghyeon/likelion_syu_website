@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <% if @post %>
       <meta property="og:title" content="<%= @post.title %>">
-      <meta property="og:description" content="<%= @post.content %>">
+      <meta property="og:description" content="<%= @post.content.html_safe %>">
       <meta property="og:image" content="http://drive.google.com/uc?export=view&id=1k6oxxfzY6dS5-d_lE5k2a-gTCwpoP6Bt">
     <% else %>   
       <meta property="og:title" content="멋쟁이 사자처럼 at 삼육대학교">
