@@ -947,19 +947,19 @@ label {
   color: #333!important;
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'!important;
 }
-.mce-edit-area .mce-container .mce-panel .mce-stack-layout-item {
+.mce-edit-area.mce-container.mce-panel.mce-stack-layout-item {
   border: none!important;
   border-bottom: 1px solid #dddddd!important;
 }
-.mce-statusbar .mce-container .mce-panel .mce-stack-layout-item .mce-last {
+.mce-statusbar.mce-container.mce-panel.mce-stack-layout-item.mce-last {
   border: none!important;
 }
-.mce-toolbar-grp .mce-container .mce-panel .mce-last {
+.mce-toolbar-grp.mce-container.mce-panel.mce-last {
   border: none!important;
   border-bottom: 1px solid #dddddd!important;
   padding: 2px 0px;
 }
-.mce-container .mce-menubar .mce-toolbar .mce-first {
+.mce-container.mce-menubar.mce-toolbar.mce-first {
   padding: 2px 0px;
 }
 
