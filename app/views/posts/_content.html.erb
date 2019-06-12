@@ -1,16 +1,17 @@
 <div class="container">
 
     <!-- Blog Entries Column -->
-    <div class="col-md-12 index">
-      
-      <!--공지 위젯-->
-      <%= render 'notice' %>
-      
-      <!--대문사진-->
-      <% if @posts.current_page == 1 %>
-      <%= render 'mainimg' %>
-      <% end %>
-    </div>  
+  <div class="col-md-12 index">
+    
+    <!--공지 위젯-->
+    <%= render 'notice' %>
+    
+    <!--대문사진-->
+    <% if @posts.current_page == 1 %>
+    <%= render 'mainimg' %>
+    <% end %>
+  </div>  
+  
   <div class="row">
     <div class="col-md-8 index">    
       <!--첫 포스트작성-->
@@ -92,8 +93,5 @@
 
 </div>
 <!-- /.container -->
-
-<!-- 이유는 모르겠지만 /div를 추가해야 footer가 container안에 안 들어감 -->
-</div>
 
 

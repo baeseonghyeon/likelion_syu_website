@@ -27,6 +27,10 @@ end
     new_user_session_path
   end
   
+  def posts
+    @post = Post.find(params[:id])
+  end
+  
 end
 
 
