@@ -5,25 +5,25 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       if user.nil? #비로그인 읽기만 가능
-        can [:read,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all
+        can [:read,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow, :calendar], :all
       elsif user.has_role? 'member' #멤버등급 읽기,쓰기, 본인글 수정 삭제, 활동 멤버
-        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all
+        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow, :calendar], :all
         can [:update,:destroy], Post, user_id: user.id
       elsif user.has_role? 'oldmember' #멤버등급 읽기,쓰기, 본인글 수정 삭제, 올드 멤버
-        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all
+        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow, :calendar], :all
         can [:update,:destroy], Post, user_id: user.id  
       elsif user.has_role? 'manager' #매니저, 모든글 접근
-        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow,:mypost,:freeboard,:questions], :all
+        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow,:mypost,:freeboard,:questions, :calendar], :all
         can [:update,:destroy], Post, user_id: user.id
         can [:update,:destroy], :all 
       elsif user.has_role? 'admin' #어드민, 마스터, 모든글 접근, 어드민페이지 접근
-        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow], :all
+        can [:read,:create,:update,:destory,:notice,:homework,:lecture,:mainnew,:servicenew,:usershow, :calendar], :all
         can :access, :rails_admin
         # can :dashboard
         can :manage, :all 
         can :history, :all  
       elsif
-        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow], :all #등급은 없고 가입만 한 뉴비, 제거하면 가입후 세션막힘
+        can [:read,:create,:notice,:homework,:lecture,:freeboard,:mypage,:mypost,:questions,:usershow, :calendar], :all #등급은 없고 가입만 한 뉴비, 제거하면 가입후 세션막힘
         can [:update,:destroy], Post, user_id: user.id
       end 
       

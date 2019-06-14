@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :notice_widget, only: [:index]
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions, :calendar]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
