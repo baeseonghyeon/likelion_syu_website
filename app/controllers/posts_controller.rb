@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions, :calendar]
   before_action :notice_widget, only: [:index]
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
@@ -113,6 +113,10 @@ class PostsController < ApplicationController
     @user = Post.where(:user_id => current_user)
     @users = @user.order("created_at DESC").page(params[:page])
     authorize! :mypost, @users
+  end
+  
+  def calendar
+    
   end
 
 private
