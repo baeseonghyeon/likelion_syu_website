@@ -1835,6 +1835,9 @@ input:disabled {
   .calen p {
   margin: 20px 10px!important;
   }
+  .notice.homew {
+  margin: 0px 10px!important;
+}
 }
 @media (max-width: 600px) {
     //메인 로고
@@ -1960,7 +1963,17 @@ input {
 //calendar
 .calen p {
   font-size: 1rem;
-  margin: 20px;
+  margin: 16px;
   font-weight: 300;
   line-height: 1.5;
+}
+.notice-icon.cal {
+  filter: grayscale(100%);
+  top: 3px;
+  margin-right: 6px;
+}
+
+//homework
+.notice.homew {
+  margin: 0px 15px;
 }

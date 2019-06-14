@@ -37,7 +37,7 @@
                           <div class="card-cate" id="chome"><%= post.category %></div>
                           <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S')%> 까지</div>
                           <% elsif %>
-                          <div class="card-cate" id="clect2">기한 만료</div>
+                          <div class="card-cate" id="expir">기한 만료</div>
                           <% end %>
                         <% else %>
                           <div class="card-cate"><%= post.category %></div>

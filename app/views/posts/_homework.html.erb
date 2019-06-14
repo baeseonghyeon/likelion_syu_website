@@ -1,9 +1,9 @@
 <% @homework_1.each do |home| %>
   <% if home.category === '과제' %>
     <a href="/posts/<%= home.id %>">
-      <div class="notice">
+      <div class="notice homew">
         <!--etc 클래스를 붙여서 긴 제목이 ...으로 보이도록-->
-        <img class='notice-icon' src='/assets/notice'/>
+        <img class='notice-icon' src='/assets/notice'/ style="top: 2px;">
         <ul>
          <li>
            <h4 class="etc"><%= home.title %>
