@@ -1832,6 +1832,9 @@ input:disabled {
   .col-md-3.sm {
   max-width: 90px;
   }
+  .calen p {
+  margin: 20px 10px!important;
+  }
 }
 @media (max-width: 600px) {
     //메인 로고
@@ -1955,6 +1958,8 @@ input {
 	-webkit-transition-duration: 0.3s;
 }
 //calendar
-#calendarTitle {
-  display: none;
+.calen p {
+  font-size: 1rem;
+  margin: 20px;
+  font-weight: 300;
 }
