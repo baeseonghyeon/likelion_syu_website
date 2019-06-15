@@ -1833,11 +1833,14 @@ input:disabled {
   max-width: 90px;
   }
   .calen p {
-  margin: 5px 10px!important;
+  // margin: 5px 10px!important;
   }
   .notice.homew {
   margin: 0px 10px!important;
-}
+  }
+  .lecture-link table {
+  margin: 0px 10px!important;
+  }
 }
 @media (max-width: 600px) {
     //메인 로고
@@ -1963,15 +1966,18 @@ input {
 //calendar
 .calen p {
   font-size: 14px;
-  margin: 5px 16px;
+  margin-bottom: 0px;
   font-weight: 400;
   line-height: 1.5;
 }
 .notice-icon.cal {
-  top: 3px;
+  top: -1px;
   margin-right: 6px;
+  vertical-align: top;
 }
-
+.lecture-link table {
+  margin: 0px 17px;
+}
 //homework
 .notice.homew {
   margin: 0px 15px;
