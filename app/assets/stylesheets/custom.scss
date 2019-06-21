@@ -730,6 +730,9 @@ a.comment-link-marker:hover {
 .panel-body {
   word-break: break-all;
 }
+.panel-body table {
+  table-layout: auto;
+}
 //업로드 이미지 사이즈
 .panel-body img{
     max-width : 100%;
