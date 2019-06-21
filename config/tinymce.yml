@@ -7,3 +7,5 @@ plugins:
   - code
   - table
   - lists
+default_link_target: "_blank"
+

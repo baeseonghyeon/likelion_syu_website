@@ -21,7 +21,7 @@
         <span id="lecturelabel1"><%= f.label :수업분류 %><span class="label-star">*</span></span>
         <span id="lecturelabel2"><%= f.label :질문분류 %><span class="label-star">*</span></span>
         <br>
-        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'ETC'], :selected => post.lecture), {:required => true, :class => 'select-box'}%>
+        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'Git', 'ETC'], :selected => post.lecture), {:required => true, :class => 'select-box'}%>
       </div>
       <div class="col-md-2" id="limit">
         <%= f.label :과제기한 %><span class="label-star">*</span>
@@ -132,7 +132,7 @@
       <div class="col-md-2" id="lecture2">
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
-        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'ETC'], :selected => post.lecture), {:required => true, :class => 'select-box'}%>
+        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'Git', 'ETC'], :selected => post.lecture), {:required => true, :class => 'select-box'}%>
       </div>
       <div class="col-md-10" id="title">
         <div class="field">
@@ -160,7 +160,7 @@
         </div>
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
-        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'ETC'], :selected => post.lecture), {:multiple => true}, {:required => true, :class => 'select-box'}%>
+        <%= f.select :lecture, options_for_select(['HTML/CSS', 'Django', 'Python', 'Rails', 'JavaScript', 'WEB', 'Git', 'ETC'], :selected => post.lecture), {:multiple => true}, {:required => true, :class => 'select-box'}%>
       </div>
     <% end %>  
    </div>
