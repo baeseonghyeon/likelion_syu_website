@@ -1000,6 +1000,9 @@ label {
 .show_content {
   padding: 20px 0px;
 }
+.show_content table {
+  table-layout: auto!important;
+}
 .show_content h1 {
   font-size: 25px;
   line-height: 40px;
