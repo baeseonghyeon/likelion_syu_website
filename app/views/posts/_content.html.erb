@@ -52,8 +52,10 @@
                 <%= post.title %>
               <img class='attach-icon' src='/assets/attachment-clip.svg'/>
               </h1>
-              <% elsif post.limit < Time.current %>
-              <h1 class="title_expir etc"><%= post.title %></h1>
+              <% elsif post.category === '과제' %>
+                <% if post.limit < Time.current %>
+                <h1 class="title_expir etc"><%= post.title %></h1>
+                <% end %>
               <% else %>
               <h1 class="title etc"><%= post.title %></h1>
               <% end %>
