@@ -2,14 +2,15 @@
 <%= render 'nav' %>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container_wrap">
+  <div class="container">
       
         <!-- Blog Entries Column -->
           <div class="col-md-12 title">
             <h1 class="title-custom">과제</h1>
             <div class="lecture-link">
               <a href="https://drive.google.com/drive/folders/1ok_34SGd4pBSC2_cCRSajiy1sOYvbdZA?usp=sharing" target="_blank">
-                <span class="social-link"><img class='widget-icon' src='/assets/google-drive'/>과제제출 드라이브</span>
+                <span class="social-link"><img class='widget-icon i-white' src='/assets/google-drive'/>과제제출 드라이브</span>
               </a>
                 <!--<span class="lineh"></span>-->
                 <!--<span class="social-link"><%#= link_to '과제작성', new_post_path %></span>-->
@@ -59,7 +60,17 @@
                         <% else %>
                         <h1 class="title etc"><%= post.title %></h1>
                         <% end %>
-                        <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
+                        <div class="post-info">
+                          <% if post.user.image.url.present? %>
+                            <div class="avatar3">
+                              <%= image_tag(post.user.image.thumb.url) %>
+                            </div>
+                          <% else %>
+                            <div class="avatar3">
+                                <img src="/assets/avatar">
+                            </div>
+                          <% end %>
+                          <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
                       </div>
                     </div>
                   </div>
@@ -80,11 +91,11 @@
 
           <!-- Top-Widget -->
             <%= render 'top-widget' %>
-            <hr/>
+            <!--<hr/>-->
             
           <!-- Categories Widget -->
             <%= render 'cate-widget'%>
-            <hr/>
+            <!--<hr/>-->
             
           <!-- Side Widget -->
             <%= render 'fb-widget' %>
@@ -95,6 +106,7 @@
 
     </div>
     <!-- /.container -->
+  </div>  
     
 <!-- Footer -->
 <%= render 'footer' %>

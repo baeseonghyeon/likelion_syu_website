@@ -1,30 +1,16 @@
     <!-- Page Content -->
+ <%= render '/posts/nav' %>
+    
     <script>
         //jquery-visible
         !function(t){var i=t(window);t.fn.visible=function(t,e,o){if(!(this.length<1)){var r=this.length>1?this.eq(0):this,n=r.get(0),f=i.width(),h=i.height(),o=o?o:"both",l=e===!0?n.offsetWidth*n.offsetHeight:!0;if("function"==typeof n.getBoundingClientRect){var g=n.getBoundingClientRect(),u=g.top>=0&&g.top<h,s=g.bottom>0&&g.bottom<=h,c=g.left>=0&&g.left<f,a=g.right>0&&g.right<=f,v=t?u||s:u&&s,b=t?c||a:c&&a;if("both"===o)return l&&v&&b;if("vertical"===o)return l&&v;if("horizontal"===o)return l&&b}else{var d=i.scrollTop(),p=d+h,w=i.scrollLeft(),m=w+f,y=r.offset(),z=y.top,B=z+r.height(),C=y.left,R=C+r.width(),j=t===!0?B:z,q=t===!0?z:B,H=t===!0?R:C,L=t===!0?C:R;if("both"===o)return!!l&&p>=q&&j>=d&&m>=L&&H>=w;if("vertical"===o)return!!l&&p>=q&&j>=d;if("horizontal"===o)return!!l&&m>=L&&H>=w}}}}(jQuery);
     </script>
+    <% @mains.each do |main| %>
+    <div class="background">
+    </div>
     
-    <div class="background"></div>
-    <div class="container">
-    
-      <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10 main">
-          
-          <%= link_to(image_tag('/assets/logo2', class:"logo-main"), posts_path )%>
-          <div class="logo-main-text">로고이미지를 클릭하면 홈페이지로 이동합니다.</div>
-          <% @mains.each do |main| %>
-          <div class="main-textbox">
-            <% if main.hidden === '표시' %>
-              <div class="apply">
-              <p>멋쟁이사자처럼 삼육대학교 <%= main.th %>기 절찬모집중<span class="title-star">*</span></p>
-              <p class="applytime"><%= main.applycontent %></p>
-              <a href="<%= main.applylink %>" class="btn main-btn apply" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
-              </div>
-            <% end %>
-            
+    <div class="main-sec1">
+        <div class="container">
             <h1 class="main-title" id="texts"><span id="app"></span></h1>
             
             <!-- 타이핑 효과 -->
@@ -46,12 +32,43 @@
                     .typeString('<span style="font-family: Montserrat, sans-serif; font-weight: boldER;">HACK YOUR LIFE</span>')
                     .pauseFor(2500)
                     .start();
-                    
             </script>
+          
+          
+          
+            <% if main.hidden === '표시' %>
+              <div class="apply">
+              <p>멋쟁이사자처럼 삼육대학교 <%= main.th %>기 절찬모집중<span class="title-star">*</span></p>
+              <p class="applytime"><%= main.applycontent %></p>
+              <a href="<%= main.applylink %>" class="btn main-btn apply" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
+              </div>
+            <% end %>
 
             <span class="thbox"><h1 class="main-lionth" id="counter_th"><%= main.th %></h1><span class="th">기</span></span>
+            <div class="main-line"></div>
             <p class="main-content"><%= main.content %></p>
+            
+            <%= link_to '홈페이지로 이동하기', posts_path, class: "btn btn-home main-btn apply" %>
+
+        </div>
+    </div>
+
+    <div class="main-sec2">
+    <div class="container">
+    
+      <div class="row">
+        <!-- Post Content Column -->
+        <!--<div class="col-lg-1">-->
+        <!--</div>-->
+        <div class="col-lg-12 main">
+          
+          <!--<%#= link_to(image_tag('/assets/logo2', class:"logo-main"), posts_path )%>-->
+          <!--<div class="logo-main-text">로고이미지를 클릭하면 홈페이지로 이동합니다.</div>-->
+            <div class="main-textbox">
+            
+
             <div class="main-info">
+            <h1 class="info_title">활동내역</h1>
               <div class="row">
                 <div class="col-md-3 r"><h1 id="counter_year" class="counter">2018</h1><p>년 부터</p></div>
                 <div class="col-md-3 r"><h1 id="counter_people" class="counter"><%= main.lion %></h1><p>명의 사자들이</p></div>
@@ -59,6 +76,18 @@
                 <div class="col-md-3"><h1 id="counter_service">0</h1><p>개의 서비스를 만들었습니다.</p></div>
               </div>
             </div>
+            </div>    
+        </div>  
+    </div>
+    </div>
+    </div>
+      
+      
+    <div class="main-sec3">    
+        <div class="container">
+    
+            <div class="row">
+            <div class="col-lg-12 main">    
             
             <div class="main-service">
                 <h1><%= main.th %>기 구성원</h1>
@@ -112,7 +141,17 @@
                     <% end %>
                 </div>
             </div>
-            
+            </div> 
+            </div>
+            </div>
+            </div>
+         </div>   
+         
+    <div class="main-sec4">      
+        <div class="container">
+
+        <div class="row">
+        <div class="col-lg-12 main">
             <div class="main-service">
               <h1>만든 서비스</h1>
               <div class= "row service">
@@ -156,14 +195,14 @@
                 <% end %>
               </div>
             </div>  
-    
+            <h1 class="info_title">SNS</h1>
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-5 mainb">
-              <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
+              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
               </div>
               <div class="col-md-5 mainb">
-              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
+              <%= link_to 'Instagram', 'https://www.instagram.com/likelion_syu/', class: "btn main-btn", target: "_blank" %>
               </div>
               <div class="col-md-1"></div>
             </div>
@@ -236,13 +275,14 @@
           <% if Main.count == 0 %>
           <div class="main-textbox">
             <div class="empty40"></div>
+            <h1 class="info_title">SNS</h1>
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-5 mainb">
-              <%= link_to '홈페이지', posts_path, class: "btn main-btn" %>
+              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
               </div>
               <div class="col-md-5 mainb">
-              <%= link_to 'Facebook', 'https://www.facebook.com/likelionsahmyook/', class: "btn main-btn", target: "_blank" %>
+              <%= link_to 'Instagram', 'https://www.instagram.com/likelion_syu/', class: "btn main-btn", target: "_blank" %>
               </div>
               <div class="col-md-1"></div>
             </div>
@@ -261,9 +301,10 @@
             <% end %>
           <% end %>
         
-        <div class="col-lg-2s">
-        </div>
-     
+        <!--<div class="col-lg-2s">-->
+        <!--</div>-->
+      </div>
+    </div>  
     <!-- /.row -->  
       </div>
       

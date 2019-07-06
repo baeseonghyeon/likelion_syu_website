@@ -5,15 +5,29 @@ class PostsController < ApplicationController
   before_action :homework_widget, only: [:homework]
   before_action :mainimg, only: [:index]
   before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions, :calendar]
-  before_action :log_impression, :only=> [:show]
+  # before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-    @posts = Post.order("created_at DESC").page(params[:page]).per(8)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(10)
     @mains = Main.all
+    
+    @post_n = Post.where(:category => ['공지사항', '대문'])
+    @posts_n = @post_n.order("created_at DESC").limit(2)
+    
+    @post_h = Post.where(:category => ['과제', '과제제출'])
+    @posts_h = @post_h.order("created_at DESC").limit(4)
+    
+    @post_l = Post.where(:category => '수업자료')
+    @posts_l = @post_l.order("created_at DESC").limit(4)
+    
+    @post_f= Post.where(:category => '일반')
+    @posts_f = @post_f.order("created_at DESC").limit(4)
+    
+    
   end
 
   # GET /posts/1
@@ -80,7 +94,7 @@ class PostsController < ApplicationController
     @posts = @post.order("created_at DESC").page(params[:page])
     authorize! :notice, @posts
   end
-
+    
   def homework
     @post = Post.where(:category => ['과제', '과제제출'])
     @posts = @post.order("created_at DESC").page(params[:page])
@@ -173,13 +187,13 @@ private
     params.require(:post).permit(:title, :content, :user_id, :category, :limit, :lecture, :attachment)
   end
   
-  def log_impression
-    @hit_post = Post.find(params[:id])
-    # this assumes you have a current_user method in your authentication system\
-    if(current_user == true) 
-      @hit_post.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
-    else
-      @hit_post.impressions.create(ip_address: request.remote_ip)
-    end
-  end
+  # def log_impression
+  #   @hit_post = Post.find(params[:id])
+  #   # this assumes you have a current_user method in your authentication system\
+  #   if(current_user == true) 
+  #     @hit_post.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+  #   else
+  #     @hit_post.impressions.create(ip_address: request.remote_ip)
+  #   end
+  # end
 end

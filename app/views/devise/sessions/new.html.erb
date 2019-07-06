@@ -1,4 +1,6 @@
-<%= render '/posts/logo' %>
+
+<div class="container_wrap2">
+<%= render '/posts/logo' %>  
 <div class="d_main">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -34,4 +36,5 @@
     alert('이이디 및 비밀번호 관련 문의는 sahmyook@likelion.org로 주시길 바랍니다:)');
   });
 </script>
-<%#= render '/posts/footer' %>
+</div>
+<%= render '/posts/footer' %>

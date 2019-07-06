@@ -2,11 +2,12 @@
 <%= render 'nav' %>
 
 <!-- Page Content -->
+<div class="container_wrap">
 <div class="container">
       
         <!-- Blog Entries Column -->
         <div class="col-md-12 title"> 
-          <h1 class="title-custom-q">질문게시판</h1>
+          <h1 class="title-custom-q">FAQ</h1>
             <%= link_to '질문하기',  new_post_path, class: "new-btn q" %>
           <hr class="margin-b0"/>
         </div>  
@@ -67,12 +68,12 @@
         <div class="col-md-4">
           <!-- Top-Widget -->
             <%= render 'top-widget' %>
-            <hr/>
+            <!--<hr/>-->
         </div>
         <div class="col-md-4">
           <!-- Categories Widget -->
             <%= render 'cate-widget'%>
-            <hr/>
+            <!--<hr/>-->
         </div>
         <div class="col-md-4">
           <!-- Side Widget -->
@@ -84,6 +85,6 @@
 
     </div>
     <!-- /.container -->
-    
+  </div>  
 <!-- Footer -->
 <%= render 'footer' %>

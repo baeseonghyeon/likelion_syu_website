@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <%= render '/posts/nav' %>
-
+<div class="container_wrap2">
 <% if @user.image.url.present? %>
   <div class="avatar">
     <a href="<%= @user.image.url %>" target="_blank"><%= image_tag(@user.image.thumb.url) %></a>
@@ -92,5 +92,5 @@
   </div>
 <% end %>
 </div>
-
-<%# render '../posts/footer' %>
+</div>
+<%= render '/posts/footer' %>

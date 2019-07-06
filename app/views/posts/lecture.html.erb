@@ -2,6 +2,7 @@
 <%= render 'nav' %>
 
 <!-- Page Content -->
+<div class="container_wrap">
 <div class="container">
       
         <!-- Blog Entries Column -->
@@ -9,7 +10,7 @@
             <h1 class="title-custom">수업 자료</h1>
             <div class="lecture-link">
               <a href="https://drive.google.com/drive/folders/1j__4jViRwdco44j83WprKLD5suIUNBiT?usp=sharing" target="_blank">
-                <span class="social-link"><img class='widget-icon' src='/assets/google-drive'/>수업자료 드라이브</span>
+                <span class="social-link"><img class='widget-icon i-white' src='/assets/google-drive'/>수업자료 드라이브</span>
               </a>
               <!--<a href="https://uni.likelion.org/" target="_blank">-->
               <!--  <span class="social-link"><img class='widget-icon' src='/assets/univ-logo'/>UNILION</span>-->
@@ -41,7 +42,17 @@
                         <% else %>
                         <h1 class="title etc"><%= post.title %></h1>
                         <% end %>
-                        <div class="post-info"><%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
+                        <div class="post-info">
+                          <% if post.user.image.url.present? %>
+                            <div class="avatar3">
+                              <%= image_tag(post.user.image.thumb.url) %>
+                            </div>
+                          <% else %>
+                            <div class="avatar3">
+                                <img src="/assets/avatar">
+                            </div>
+                          <% end %>
+                          <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %></div>
                       </div>
                     </div>
                   </div>
@@ -62,11 +73,11 @@
 
           <!-- Top-Widget -->
             <%= render 'top-widget' %>
-            <hr/>
+            <!--<hr/>-->
             
           <!-- Categories Widget -->
             <%= render 'cate-widget'%>
-            <hr/>
+            <!--<hr/>-->
             
           <!-- Side Widget -->
             <%= render 'fb-widget' %>
@@ -78,6 +89,6 @@
 
     </div>
     <!-- /.container -->
-    
+  </div>  
 <!-- Footer -->
 <%= render 'footer' %>

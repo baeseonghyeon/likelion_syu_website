@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <%= render 'nav' %>
-
+<div class="container_wrap_show">
 <!-- Page Content -->
 <div class="container">
   <div class="row">
@@ -14,6 +14,8 @@
     <% end %>
 
       <!-- Title -->
+      
+      <div class="show-card">
       <% if @post.category === '수업자료' %>
         <div class="card-cate" id="clect3"><%= @post.lecture %></div>
       <% elsif @post.category === '질문' %>
@@ -25,7 +27,7 @@
       <h1 class="mt-4 etc"><%= @post.title %></h1>
       
       <!-- Date/Time -->
-      <p class="time"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{@post.unique_impression_count}" %> 읽음</p>
+      <p class="time"><a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a> | <%= @post.category %> | <%= @post.created_at.strftime("%Y.%m.%d. %H:%M") %></p>
       <% if @post.category === '과제' %>
         <% if @post.limit > Time.current %>
           <div class="card-cate" id="climit">제출기한 : <%= @post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
@@ -105,7 +107,7 @@
       </div>
 
       <!-- Comments Form -->
-      <div class="card my-4">
+      <!--<div class="card my-4">-->
       <hr/>
       <% if @post.category === '질문' %>
       <div class="author q">
@@ -114,11 +116,13 @@
       
       <% end %>
       <%= render 'comment' %> 
-      </div>
+      <!--</div>-->
       
     </div>
+  </div>  
     <% if @post.category === '질문' %>
-    </div>  
+  </div> 
+  
       <div class="row">
         <!-- Sidebar Widgets Column -->
         <div class="col-md-6">
@@ -132,26 +136,27 @@
             <hr/>
         </div>
       </div>
+      </div>
       <% else %>
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
         
       <!-- Top-Widget -->
       <%= render 'top-widget' %>
-      <hr/>
+      <!--<hr/>-->
       
       <!-- Categories Widget -->
       <%= render 'cate-widget'%>
-      <hr/>
+      <!--<hr/>-->
       <% end %>
-    </div>
+      </div>
     
   </div>
   <!-- /.row -->
   
 </div>
 <!-- /.container -->
-
+</div>
 <!-- Footer -->
 <%= render 'footer' %>
 

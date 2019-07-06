@@ -1,6 +1,7 @@
 <!-- Navigation -->
 <%= render 'nav' %>
 
+<div class="container_wrap">
 <!-- Page Content -->
 <div class="container">
       
@@ -43,7 +44,7 @@
                               <img src="/assets/avatar">
                           </div>
                         <% end %>
-                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
+                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
                       </div>
                     </div>
                   </div>
@@ -65,11 +66,9 @@
 
           <!-- Top-Widget -->
             <%= render 'top-widget' %>
-            <hr/>
             
           <!-- Categories Widget -->
             <%= render 'cate-widget'%>
-            <hr/>
             
           <!-- Side Widget -->
             <%= render 'fb-widget' %><!--멋사페이스북 연동, 대시보드 활성 필요-->
@@ -80,6 +79,6 @@
 
     </div>
     <!-- /.container -->
-    
+  </div>  
 <!-- Footer -->
 <%= render 'footer' %>

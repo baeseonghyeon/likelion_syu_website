@@ -43,11 +43,11 @@
           <%= link_to '로그인', new_user_session_path, class:"nav-link sign" %>
         </li>
         <% end %>
-        <li class="nav-item" data-nav-url='/posts'>
-          <%= link_to "메인", posts_path, class:"nav-link" %>
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
+        <!--<li class="nav-item" data-nav-url='/posts'>-->
+        <!--  <%#= link_to "메인", posts_path, class:"nav-link" %>-->
+        <!--    <span class="sr-only">(current)</span>-->
+        <!--  </a>-->
+        <!--</li>-->
         <li class="nav-item" data-nav-url='/notice'>
           <%= link_to "공지", notice_path, class:"nav-link" %>
         </li>
@@ -60,16 +60,16 @@
             <%= link_to "수업자료", lecture_path, class:"dropdown-item" %>
           </div>
         </li>
-        <li class="nav-item" data-nav-url='/notice'>
-          <%= link_to "일정", calendar_path, class:"nav-link" %>
-        </li>
+        <!--<li class="nav-item" data-nav-url='/notice'>-->
+        <!--  <%#= link_to "일정", calendar_path, class:"nav-link" %>-->
+        <!--</li>-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             게시판
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
             <%= link_to "자유게시판", freeboard_path, class:"dropdown-item" %>
-            <%= link_to "질문", questions_path, class:"dropdown-item" %>
+            <%= link_to "FAQ", questions_path, class:"dropdown-item" %>
           </div>
         </li>
         <li class="nav-item" data-nav-url='/services'>
