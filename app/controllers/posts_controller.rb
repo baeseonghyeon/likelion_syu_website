@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(10)
     @mains = Main.all
     
-    @post_n = Post.where(:category => ['공지사항', '대문'])
+    @post_n = Post.where(:category => ['공지사항'])
     @posts_n = @post_n.order("created_at DESC").limit(2)
     
     @post_h = Post.where(:category => ['과제', '과제제출'])

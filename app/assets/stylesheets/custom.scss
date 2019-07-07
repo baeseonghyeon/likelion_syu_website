@@ -310,6 +310,7 @@ a.btn.btn-primary:visited {
   padding: 10px 0px;
   border-radius: 100px;
   box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 .main-btn:hover {
   color: white!important;
@@ -908,7 +909,7 @@ a.comment-link-marker:hover {
   padding: 0px;
   height: 0;
   padding-bottom: 40.8%;
-  margin-top: 15px;
+  // margin-top: 15px;
   overflow: hidden;
 }
 .card-body.mainimg img {
@@ -940,7 +941,7 @@ a.carousel-control-next {
 }
 #carousel {
   background: #f1f3f6;
-  margin-top: 45px;
+  margin-top: 60px;
   // max-height: 300px;
   // padding-bottom: 6px;
 }
