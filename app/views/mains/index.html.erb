@@ -9,7 +9,12 @@
     <div class="background">
     </div>
     
-    <div class="main-sec1">
+    <div class="main-sec1" style="background-image: url('<%= @mainimg.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
+        
+        <!--<div class="card-body mainimg">-->
+        <!--  <p class="card-text" style="text-align: center;"><%#= content_tag(:div, @mainimg.content.to_s.html_safe, :class => "panel-body") %></p>-->
+        <!--</div>-->
+        
         <div class="container">
             <h1 class="main-title" id="texts"><span id="app"></span></h1>
             
@@ -48,7 +53,7 @@
             <div class="main-line"></div>
             <p class="main-content"><%= main.content %></p>
             
-            <%= link_to '홈페이지로 이동하기', posts_path, class: "btn btn-home main-btn apply" %>
+            <%= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
 
         </div>
     </div>

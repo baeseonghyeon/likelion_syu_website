@@ -301,7 +301,7 @@ a.btn.btn-primary:visited {
 .main-btn {
   color: white!important;
   background-color: #3f3f3f;
-  border-color: #474f5c;
+  // border-color: #474f5c;
   width: 100%;
   max-width: 300px;
   margin: 5px auto;
@@ -311,9 +311,9 @@ a.btn.btn-primary:visited {
   border-radius: 100px;
 }
 .main-btn:hover {
-  color: #0652DD;
-  background-color: transparent;
-  border: 1px solid #0652DD;
+  color: white!important;
+  background-color: #2b2b2b!important;
+  // border: 1px solid #0652DD;
 }
 .main-textbox {
   text-align: center;
@@ -472,6 +472,9 @@ a.btn.btn-primary:visited {
   background: #1583ff;
   padding: 100px 0px;
   margin-top: 60px;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 .main-sec2 {
   position: relative;

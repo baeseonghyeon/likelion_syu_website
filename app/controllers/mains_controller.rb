@@ -8,6 +8,9 @@ class MainsController < ApplicationController
     @mains = Main.all
     @services = Service.all
     @users = User.all.order("name ASC")
+    @mainimgs = Post.where(:category => '대문')
+    @mainimg = @mainimgs.order("created_at DESC").limit(1).first
+    # print @mainimg
   end
 
   # GET /mains/1
