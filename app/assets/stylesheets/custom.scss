@@ -309,6 +309,7 @@ a.btn.btn-primary:visited {
   font-weight: 500;
   padding: 10px 0px;
   border-radius: 100px;
+  box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.2);
 }
 .main-btn:hover {
   color: white!important;
@@ -470,11 +471,12 @@ a.btn.btn-primary:visited {
   text-align: center;
   position: relative;
   background: #1583ff;
-  padding: 100px 0px;
-  margin-top: 60px;
+  padding: 160px 0px;
+  // margin-top: 60px;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
+  text-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.4);
 }
 .main-sec2 {
   position: relative;
