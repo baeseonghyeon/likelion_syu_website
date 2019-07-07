@@ -6,7 +6,7 @@ class MainsController < ApplicationController
   # GET /mains.json
   def index
     @mains = Main.all
-    @services = Service.all.order("created_at DESC")
+    @services = Service.all.order("created_at ASC")
     @users = User.all.order("name ASC")
     @mainimgs = Post.where(:category => '대문')
     @mainimg = @mainimgs.order("created_at DESC").limit(1).first
