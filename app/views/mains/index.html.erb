@@ -39,24 +39,25 @@
                     .start();
             </script>
           
-          
-          
-            <% if main.hidden === '표시' %>
-              <div class="apply">
-              <p>멋쟁이사자처럼 삼육대학교 <%= main.th %>기 절찬모집중<span class="title-star">*</span></p>
-              <p class="applytime"><%= main.applycontent %></p>
-              <a href="<%= main.applylink %>" class="btn main-btn apply" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
-              </div>
-            <% end %>
 
             <span class="thbox"><h1 class="main-lionth" id="counter_th"><%= main.th %></h1><span class="th">기</span></span>
             <div class="main-line"></div>
             <p class="main-content"><%= main.content %></p>
             
+            <% if main.hidden === '표시' %>
+              <div class="apply">
+              <p>멋쟁이사자처럼 삼육대학교 <%= main.th %>기 절찬모집중<span class="title-star">*</span></p>
+              <p class="applytime"><%= main.applycontent %></p>
+              <a href="<%= main.applylink %>" class="btn main-btn" target= "_blank"><%= main.th %>기 삼육대 멋사 지원하기!</a>
+              </div>
+            <% end %>
+            
             <%= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
 
         </div>
     </div>
+    
+            
 
     <div class="main-sec2">
     <div class="container">
