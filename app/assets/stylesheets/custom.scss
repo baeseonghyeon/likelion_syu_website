@@ -39,22 +39,22 @@ body {
 }
 .container_wrap {
   background: #f1f3f6!important;
-  padding-top: 60px;
+  padding-top: 50px;
   padding-bottom: 15px;
 }
-.container_wrap_index {
+.container_wrap_index{
   background: #f1f3f6!important;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 15px;
 }
 .container_wrap_show {
   background: #fafafa;
-  padding-top: 75px;
+  padding-top: 65px;
   padding-bottom: 15px;
 }
 .container_wrap2 {
   background: #f5f5f5!important;
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
 }
 
@@ -133,7 +133,7 @@ input:focus {
 .navbar {
   background: rgba(255, 255, 255, 0.95);
   border: none;
-  min-height: 60px!important;
+  min-height: 50px!important;
   box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
   // border-bottom: 1px solid #dfe2e6;
 }
@@ -147,7 +147,7 @@ input:focus {
 }
 @media (min-width: 992px) {
   .navbar {
-    max-height: 60px!important;
+    max-height: 50px!important;
 }
 }
 .nav-logo {
@@ -943,7 +943,7 @@ a.carousel-control-next {
 }
 #carousel {
   background: #f1f3f6;
-  margin-top: 60px;
+  margin-top: 50px;
   // max-height: 300px;
   // padding-bottom: 6px;
 }
@@ -2112,7 +2112,7 @@ input {
 /* ERROR */
 #er {
   max-width: 650px;
-  padding: 6rem 40px 5rem;
+  padding: 13rem 40px 8rem;
   display: flex;
   flex-direction: column;
 }
@@ -2130,8 +2130,8 @@ input {
   margin-bottom: 20px;
 }
 #er h3 {
-  line-height: 1.7;
-  font-size: 1.15rem;
+  line-height: 1.5;
+  font-size: 1rem;
   margin-bottom: 30px;
   font-weight: 300;
   color: gray;
