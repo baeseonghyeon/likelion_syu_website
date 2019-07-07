@@ -49,7 +49,7 @@ body {
 }
 .container_wrap_show {
   background: #fafafa;
-  padding-top: 65px;
+  padding-top: 50px;
   padding-bottom: 15px;
 }
 .container_wrap2 {
@@ -1993,6 +1993,9 @@ input:disabled {
   .d_rememberbox input {
   top: 0px;
   position: relative;
+  }
+  #carousel {
+    margin-top: 55px;
   }
 }
 
