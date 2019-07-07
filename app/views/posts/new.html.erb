@@ -1,6 +1,7 @@
 <!-- Navigation -->
 <%= render 'nav' %>
  
+<div class="container_wrap_show"> 
 <!-- form -->
 <div class="container">
   <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' or current_user.has_role? 'member' or current_user.has_role? 'oldmember' %>  
@@ -11,6 +12,7 @@
   <hr>
   <%= render 'form', post: @post %>
 </div>
+</div> 
 <!-- Footer -->
 <%= render 'footer' %>
  
