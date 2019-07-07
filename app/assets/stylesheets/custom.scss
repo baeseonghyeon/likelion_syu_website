@@ -470,13 +470,15 @@ a.btn.btn-primary:visited {
 .main-sec1 {
   text-align: center;
   position: relative;
-  background: #1583ff;
+  background: transparent;
   padding: 160px 0px;
   // margin-top: 60px;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
   text-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.4);
+  filter: brightness(0.95);
+  -webkit-filter: brightness(0.95);
 }
 .main-sec2 {
   position: relative;
