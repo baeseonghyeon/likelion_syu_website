@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <%= render '/posts/nav' %>
-<div class="container_wrap2">
+<div class="container_wrap_show">
 <% if @user.image.url.present? %>
   <div class="avatar">
     <a href="<%= @user.image.url %>" target="_blank"><%= image_tag(@user.image.thumb.url) %></a>
@@ -69,9 +69,9 @@
         <div class="new_btn">
           <%= link_to '개인 정보 수정하기', edit_user_registration_path, class: "new-btn" %>
         </div>
-        <div class="new_btn">
-          <%= link_to '내 글 보기', users_myposts_path, class: "new-btn" %>
-        </div>
+        <!--<div class="new_btn">-->
+        <!--  <%#= link_to '내 글 보기', users_myposts_path, class: "new-btn" %>-->
+        <!--</div>-->
         <% end %>
       </div>
     </div>

@@ -115,10 +115,6 @@ class PostsController < ApplicationController
     authorize! :questions, @posts
   end
   
-  def mypage
-    @user = User.find(current_user[:id])
-  end  
-  
   def mypost
     @user = Post.where(:user_id => current_user)
     @users = @user.order("created_at DESC").page(params[:page])
