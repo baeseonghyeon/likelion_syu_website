@@ -520,21 +520,21 @@ textarea {
   font-weight: 300;
   color: #0752dd;
 }
-.col-md-3.float-s-left {
+.col-md-3.s {
   margin: 0px auto;
   height: 130px;
   max-width: 137px;
   width: 100%;
   padding: 10px;
 }
-.col-md-3.float-sm-left {
+.col-md-3.sm {
   margin: 0px auto;
   height: 120px;
   max-width: 110px;
   width: 100%;
   padding: 10px;
 }
-.col-md-3.float-s-left p {
+.col-md-3.s p {
   margin: 5px;
 }
 .col-md-3.s2 {
@@ -2009,7 +2009,7 @@ input:disabled {
   padding-left: 10px;
   }
   //메인 일반 멤버
-  .col-md-3.float-sm-left {
+  .col-md-3.sm {
   max-width: 90px;
   }
   .calen p {
