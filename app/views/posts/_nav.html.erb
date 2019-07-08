@@ -43,11 +43,7 @@
           <%= link_to '로그인', new_user_session_path, class:"nav-link sign" %>
         </li>
         <% end %>
-        <!--<li class="nav-item" data-nav-url='/posts'>-->
-        <!--  <%#= link_to "메인", posts_path, class:"nav-link" %>-->
-        <!--    <span class="sr-only">(current)</span>-->
-        <!--  </a>-->
-        <!--</li>-->
+
         <li class="nav-item" data-nav-url='/notice'>
           <%= link_to "공지", notice_path, class:"nav-link" %>
         </li>
@@ -83,9 +79,7 @@
         
         if($(this).scrollTop() >= 10) { 
           $el.addClass('shown');
-          // $el.css('border-bottom', '1px solid #dfe2e6').fadeIn(200);
         } else { 
-          // $el.css('border-bottom', 'none').fadeOut(200);
           $el.removeClass('shown');
         }
       });

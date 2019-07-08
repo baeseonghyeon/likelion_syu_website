@@ -9,9 +9,6 @@
           <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_1.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
 <% elsif @mainimg.count == 2%>
       <div class="carousel-item active">
@@ -20,9 +17,6 @@
           <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_1.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
       <div class="carousel-item">
         <a href="/posts/<%= @mainimg_3_2.id%>"> 
@@ -30,9 +24,6 @@
           <p class="card-text" style="text-align: center;" alt="Second slide" ><%= content_tag(:div, @mainimg_3_2.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_2.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
 <% else %>
       <div class="carousel-item active">
@@ -41,9 +32,6 @@
           <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_1.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
       <div class="carousel-item">
         <a href="/posts/<%= @mainimg_3_2.id%>"> 
@@ -51,9 +39,6 @@
           <p class="card-text" style="text-align: center;" alt="Second slide" ><%= content_tag(:div, @mainimg_3_2.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_2.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
       <div class="carousel-item">
         <a href="/posts/<%= @mainimg_3_3.id%>"> 
@@ -61,9 +46,6 @@
           <p class="card-text" style="text-align: center;" alt="Third slide"><%= content_tag(:div, @mainimg_3_3.content.to_s.html_safe, :class => "panel-body") %></p>
         </div>
         </a>
-        <!--<div class="mainimg-text">-->
-        <!--<%#= @mainimg_3_3.created_at.strftime("%Y.%m") %> Likelion Sahmyookuniv-->
-        <!--</div>-->
       </div>
   </div>
 <% end %>  
@@ -81,5 +63,4 @@
   </a>
   
 </div>
-<!--<hr class="margin-b0"> -->
 
