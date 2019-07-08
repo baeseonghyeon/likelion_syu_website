@@ -15,6 +15,7 @@
       <div class="col-md-2">
         <%= f.label :카테고리 %><span class="label-star">*</span>
         <br>
+        
         <%= f.select :category, options_for_select(['공지사항', '수업자료', '과제', '대문', '일반', '질문'], :selected => post.category), {:required => true, :class => 'select-box'} %>
       </div>
       <div class="col-md-2" id="lecture">
@@ -22,14 +23,74 @@
         <span id="lecturelabel2"><%= f.label :질문분류 %><span class="label-star">*</span></span>
         <br>
         
-        <!--수업자료 분류-->
-        <%= render '/posts/form/lecture-options', { f: f, post: post } %>
-      
+        
+        <!-- 수업자료 분류 -->
+        <%= render '/posts/form/lecture-options', { f: f , post: post } %>
+        
       </div>
-      
-      <!-- 과제 기한 -->
-      <%= render '/posts/form/homework-datepicker', { f: f } %>
-      
+      <div class="col-md-2" id="limit">
+        <%= f.label :과제기한 %><span class="label-star">*</span>
+        <br>
+        <script>
+        $(document).ready(function(){
+          $.datetimepicker.setLocale('kr');
+        		$('.dt').datetimepicker({
+        		onChangeDateTime : function(dp,$input){
+        		$input.text($input.val());		
+        		 },
+        		  
+        		 i18n:{
+        		  kr:{
+        		   months:[
+        			'1월','2월','3월','4월',
+        			'5월','6월','7월','8월',
+        			'9월','10월','11월','12월',
+        		   ],
+        		   dayOfWeek:[
+        			"일", "월", "화", "수", 
+        			"목", "금", "토",
+        		   ]
+        		  }
+        		 },
+        		  timepicker:true,
+        		  format:'Y-m-d H:i:s'	  
+        		});
+        			
+        		$('.d').datetimepicker({
+        		onChangeDateTime : function(dp,$input){
+        		$input.text($input.val());		
+        		},
+        		  
+        		 i18n:{
+        		  kr:{
+        		   months:[
+        			'1월','2월','3월','4월',
+        			'5월','6월','7월','8월',
+        			'9월','10월','11월','12월',
+        		   ],
+        		   dayOfWeek:[
+        			"일", "월", "화", "수", 
+        			"목", "금", "토",
+        		   ]
+        		  }
+        		 },
+        		  timepicker:false,
+        		  format:'Y-m-d'	  
+        		});
+        });
+          
+        </script>
+
+        <%= f.text_field :limit, 'data-behaviour' => 'datepicker', class:"datepicker", id: "datetimepicker", autocomplete: "off"%>
+        
+        <script>
+          $('#datetimepicker').datetimepicker({
+            format:'Y.m.d H:i',
+            lang: 'kr'
+          });
+        </script>
+        
+      </div>
       <div class="col-md-10" id="title"> 
         <div class="field">
           <%= f.label :제목 %><span class="label-star">*</span>
@@ -77,8 +138,8 @@
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
         
-        <!--수업자료 분류-->
-        <%= render '/posts/form/lecture-options', { f: f, post: post } %>
+        <!-- 수업자료 분류 -->
+        <%= render '/posts/form/lecture-options', { f: f , post: post } %>
         
       </div>
       <div class="col-md-10" id="title">
@@ -108,16 +169,20 @@
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
         
-        <!--수업자료 분류-->
-        <%= render '/posts/form/lecture-options', { f: f, post: post } %>
+        <!-- 수업자료 분류 -->
+        <%= render '/posts/form/lecture-options', { f: f , post: post } %>
         
       </div>
     <% end %>  
    </div>
   
   <!--tinymce 잼 -->
-  <%= render '/posts/form/tinymce', { f: f } %>
-
+  <div class="form-group">
+    <%= tinymce %>
+    <%= f.label :내용, class: "label2" %><span class="label-star">*</span>
+    <%= f.text_area :content, :rows => 20, class: "form-control tinymce" %>
+  </div>
+  
   <%= f.file_field :attachment,
     data: { max_file_size: 5.megabytes } %>
   <% if post.attachment.present? %>
