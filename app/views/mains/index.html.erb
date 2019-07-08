@@ -105,7 +105,7 @@
                             <div class="none">
                             <% else %>
                             
-                            <div class="col-md-3 s">
+                            <div class="col-md-3 float-left s">
                             <% end %>
                                 <a href="/users/<%= user.id %>">
                                 <% if user.image.blank? %>
@@ -129,7 +129,7 @@
                     <% @users.each do |user| %>
                         <% if user.has_role? 'member' %>
                         
-                        <div class="col-md-3 sm">
+                        <div class="col-md-3 float-left sm">
                             <a href="/users/<%= user.id %>">
                             <% if user.image.blank? %>
                                 <img src="/assets/avatar" class="mainuserimgm sindex">
