@@ -1,338 +1,198 @@
-
 <!--대문사진-->
 <% if @posts.current_page == 1 %>
 <%= render 'mainimg' %>
 <% end %>
 
 <div class="container_wrap_index">
-<div class="container">
-
-    <!-- Blog Entries Column -->
-  <!--<div class="col-md-12 index">-->
-    <!--공지 위젯-->
-  <!--  <%#= render 'notice' %>-->
-  <!--</div>  -->
-  
-  <div class="row">
-    <div class="col-md-8 index">    
-      <!--첫 포스트작성-->
-      <%= render 'nullpost' %>
-      
-      <!-- Blog Post -->
-      <% if @post_n.count > 0 %>
-        <div class="post-box row">
-        <h3 class="index_post_title">공지사항<span class="index_link"><%= link_to "전체 보기 >", notice_path %></span></h3>
-        <% @posts_n.each do |post| %>
-        <a href="/posts/<%= post.id %>" class="card-con col-md-6">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="card-title">
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% if post.attachment.present? %>
-                  <h1 class="title etc">
-                    <%= post.title %>
-                  <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                  </h1>
-                <% else %>
-                <h1 class="title etc"><%= post.title %></h1>
-                <% end %>
-                <hr>
-                <div class="post-info">
-                  <% if post.user.image.url.present? %>
-                    <div class="avatar3">
-                      <%= image_tag(post.user.image.thumb.url) %>
-                    </div>
-                  <% else %>
-                    <div class="avatar3">
-                        <img src="/assets/avatar">
-                    </div>
-                  <% end %>
-                  <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <% end %>
-        </div>
-      <% end %>
-      
-      <!-- Blog Post -->
-      <% if @post_h.count > 0 %>
-        <div class="post-box row">
-        <h3 class="index_post_title">과제<span class="index_link"><%= link_to "전체 보기 >", homework_path %></span></h3>
-        <% @posts_h.each do |post| %>
-        <a href="/posts/<%= post.id %>" class="card-con col-md-6">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="card-title">
-                <% if post.category === '수업자료' %>
-                <div class="card-cate"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% elsif post.category === '대문' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '과제' %>
-                <div class="card-cate" id="chome"><%= post.category %></div>
-                  <% if post.limit > Time.current %>
-                    <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
-                  <% elsif %>
-                    <div class="card-cate" id="expir">기한 만료</div>
-                  <% end %>
-                <% elsif post.category === '공지사항' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '일반' %>
-                <div class="card-cate" id="cfree"><%= post.category %></div>
-                <% elsif post.category === '질문' %>
-                <div class="card-cate" id="cques"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% else %>
-                <div class="card-cate"><%= post.category %></div>
-                <% end %>
-                
-                <% if post.attachment.present? %>
-                  <% if post.category === '과제' %>
-                    <% if post.limit < Time.current %>
-                    <h1 class="title_expir etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% else %>
-                    <h1 class="title etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% end %>
-                  <% else %>
-                  <h1 class="title etc">
-                    <%= post.title %>
-                  <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                  </h1>
-                  <% end %>
-                <% elsif post.category === '과제' %>
-                  <% if post.limit < Time.current %>
-                  <h1 class="title_expir etc"><%= post.title %></h1>
-                  <% else %>
-                  <h1 class="title etc"><%= post.title %></h1>
-                  <% end %>
-                <% else %>
-                <h1 class="title etc"><%= post.title %></h1>
-                <% end %>
-                <hr>
-                <div class="post-info">
-                  <% if post.user.image.url.present? %>
-                    <div class="avatar3">
-                      <%= image_tag(post.user.image.thumb.url) %>
-                    </div>
-                  <% else %>
-                    <div class="avatar3">
-                        <img src="/assets/avatar">
-                    </div>
-                  <% end %>
-                  <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %><!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <% end %>
-        </div>
-      <% end %>
-      
-      <!-- Blog Post -->
-      <% if @post_l.count > 0 %>
-        <div class="post-box row">
-        <h3 class="index_post_title">수업자료<span class="index_link"><%= link_to "전체 보기 >", lecture_path %></span></h3>
-        <% @posts_l.each do |post| %>
-        <a href="/posts/<%= post.id %>" class="card-con col-md-6">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="card-title">
-                <% if post.category === '수업자료' %>
-                <div class="card-cate"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% elsif post.category === '대문' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '과제' %>
-                <div class="card-cate" id="chome"><%= post.category %></div>
-                  <% if post.limit > Time.current %>
-                    <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
-                  <% elsif %>
-                    <div class="card-cate" id="expir">기한 만료</div>
-                  <% end %>
-                <% elsif post.category === '공지사항' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '일반' %>
-                <div class="card-cate" id="cfree"><%= post.category %></div>
-                <% elsif post.category === '질문' %>
-                <div class="card-cate" id="cques"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% else %>
-                <div class="card-cate"><%= post.category %></div>
-                <% end %>
-                
-                <% if post.attachment.present? %>
-                  <% if post.category === '과제' %>
-                    <% if post.limit < Time.current %>
-                    <h1 class="title_expir etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% else %>
-                    <h1 class="title etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% end %>
-                  <% else %>
-                  <h1 class="title etc">
-                    <%= post.title %>
-                  <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                  </h1>
-                  <% end %>
-                <% elsif post.category === '과제' %>
-                  <% if post.limit < Time.current %>
-                  <h1 class="title_expir etc"><%= post.title %></h1>
-                  <% else %>
-                  <h1 class="title etc"><%= post.title %></h1>
-                  <% end %>
-                <% else %>
-                <h1 class="title etc"><%= post.title %></h1>
-                <% end %>
-                <hr>
-                <div class="post-info">
-                  <% if post.user.image.url.present? %>
-                    <div class="avatar3">
-                      <%= image_tag(post.user.image.thumb.url) %>
-                    </div>
-                  <% else %>
-                    <div class="avatar3">
-                        <img src="/assets/avatar">
-                    </div>
-                  <% end %>
-                  <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %><!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <% end %>
-        </div>
-      <% end %>
-      
-      <!-- Blog Post -->
-      <% if @post_f.count > 0 %>
-        <div class="post-box row">
-        <h3 class="index_post_title">일반<span class="index_link"><%= link_to "전체 보기 >", freeboard_path %></span></h3>
-        <% @posts_f.each do |post| %>
-        <a href="/posts/<%= post.id %>" class="card-con col-md-6">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="card-title">
-                <% if post.category === '수업자료' %>
-                <div class="card-cate"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% elsif post.category === '대문' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '과제' %>
-                <div class="card-cate" id="chome"><%= post.category %></div>
-                  <% if post.limit > Time.current %>
-                    <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
-                  <% elsif %>
-                    <div class="card-cate" id="expir">기한 만료</div>
-                  <% end %>
-                <% elsif post.category === '공지사항' %>
-                <div class="card-cate" id="cnoti"><%= post.category %></div>
-                <% elsif post.category === '일반' %>
-                <div class="card-cate" id="cfree"><%= post.category %></div>
-                <% elsif post.category === '질문' %>
-                <div class="card-cate" id="cques"><%= post.category %></div>
-                <div class="card-cate" id="clect2"><%= post.lecture %></div>
-                <% else %>
-                <div class="card-cate"><%= post.category %></div>
-                <% end %>
-                
-                <% if post.attachment.present? %>
-                  <% if post.category === '과제' %>
-                    <% if post.limit < Time.current %>
-                    <h1 class="title_expir etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% else %>
-                    <h1 class="title etc">
-                      <%= post.title %>
-                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                    </h1>
-                    <% end %>
-                  <% else %>
-                  <h1 class="title etc">
-                    <%= post.title %>
-                  <img class='attach-icon' src='/assets/attachment-clip.svg'/>
-                  </h1>
-                  <% end %>
-                <% elsif post.category === '과제' %>
-                  <% if post.limit < Time.current %>
-                  <h1 class="title_expir etc"><%= post.title %></h1>
-                  <% else %>
-                  <h1 class="title etc"><%= post.title %></h1>
-                  <% end %>
-                <% else %>
-                <h1 class="title etc"><%= post.title %></h1>
-                <% end %>
-                <hr>
-                <div class="post-info">
-                  <% if post.user.image.url.present? %>
-                    <div class="avatar3">
-                      <%= image_tag(post.user.image.thumb.url) %>
-                    </div>
-                  <% else %>
-                    <div class="avatar3">
-                        <img src="/assets/avatar">
-                    </div>
-                  <% end %>
-                  <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <% end %>
-        </div>
-      <% end %>
+  <div class="container">
     
-      <!-- Pagination -->
-      <!--<ul class="pagination justify-content-center mb-4">-->
-      <!--  <li>-->
-      <!--    <%#= paginate @posts %>-->
-      <!--  </li>-->
-      <!--</ul>-->
-      
-    </div>
-  <!--</div>-->
+    <div class="row">
+      <div class="col-md-8 index">    
+        <!-- 포스트 NULL -->
+        <%= render 'nullpost' %>
+        
+        <!-- 공지 -->
+        <% if @post_n.count > 0 %>
+        <div class="post-box row">
+          <h3 class="index_post_title">공지사항<span class="index_link"><%= link_to "전체 보기 >", notice_path %></span></h3>
+          <% @posts_n.each do |post| %>
+          <a href="/posts/<%= post.id %>" class="card-con col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-cate" id="cnoti"><%= post.category %></div>
+                  <% if post.attachment.present? %>
+                    <h1 class="title etc">
+                      <%= post.title %>
+                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                    </h1>
+                  <% else %>
+                  <h1 class="title etc"><%= post.title %></h1>
+                  <% end %>
+                  <hr>
+                  <div class="post-info">
+                    <% if post.user.image.url.present? %>
+                      <div class="avatar3">
+                        <%= image_tag(post.user.image.thumb.url) %>
+                      </div>
+                    <% else %>
+                      <div class="avatar3">
+                          <img src="/assets/avatar">
+                      </div>
+                    <% end %>
+                    <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+        <% end %>
+        
+        <!-- 과제 -->
+        <% if @post_h.count > 0 %>
+        <div class="post-box row">
+          <h3 class="index_post_title">과제<span class="index_link"><%= link_to "전체 보기 >", homework_path %></span></h3>
+          <% @posts_h.each do |post| %>
+          <a href="/posts/<%= post.id %>" class="card-con col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-cate" id="chome"><%= post.category %></div>
+                    <% if post.limit > Time.current %>
+                      <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
+                    <% elsif %>
+                      <div class="card-cate" id="expir">기한 만료</div>
+                    <% end %>
+                  <% if post.attachment.present? %>
+                    <% if post.limit < Time.current %>
+                      <h1 class="title_expir etc">
+                        <%= post.title %>
+                      <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                      </h1>
+                    <% else %>
+                      <h1 class="title etc">
+                        <%= post.title %>
+                        <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                      </h1>
+                    <% end %>
+                  <% else %>
+                    <% if post.limit < Time.current %>
+                      <h1 class="title_expir etc"><%= post.title %></h1>
+                    <% else %>
+                      <h1 class="title etc"><%= post.title %></h1>
+                    <% end %>
+                  <% end %>
+                  <hr>
+                  <div class="post-info">
+                    <% if post.user.image.url.present? %>
+                      <div class="avatar3">
+                        <%= image_tag(post.user.image.thumb.url) %>
+                      </div>
+                    <% else %>
+                      <div class="avatar3">
+                          <img src="/assets/avatar">
+                      </div>
+                    <% end %>
+                    <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+        <% end %>
+        
+        <!-- 수업자료 -->
+        <% if @post_l.count > 0 %>
+        <div class="post-box row">
+          <h3 class="index_post_title">수업자료<span class="index_link"><%= link_to "전체 보기 >", lecture_path %></span></h3>
+          <% @posts_l.each do |post| %>
+          <a href="/posts/<%= post.id %>" class="card-con col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-cate"><%= post.category %></div>
+                  <div class="card-cate" id="clect2"><%= post.lecture %></div>
+                  <% if post.attachment.present? %>
+                    <h1 class="title etc">
+                      <%= post.title %>
+                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                    </h1>
+                  <% else %>
+                    <h1 class="title etc"><%= post.title %></h1>
+                  <% end %>
+                  <hr>
+                  <div class="post-info">
+                    <% if post.user.image.url.present? %>
+                      <div class="avatar3">
+                        <%= image_tag(post.user.image.thumb.url) %>
+                      </div>
+                    <% else %>
+                      <div class="avatar3">
+                          <img src="/assets/avatar">
+                      </div>
+                    <% end %>
+                    <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+        <% end %>
+        
+        <!-- 일반 -->
+        <% if @post_f.count > 0 %>
+        <div class="post-box row">
+          <h3 class="index_post_title">일반<span class="index_link"><%= link_to "전체 보기 >", freeboard_path %></span></h3>
+          <% @posts_f.each do |post| %>
+          <a href="/posts/<%= post.id %>" class="card-con col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-cate" id="cfree"><%= post.category %></div>
+                  <% if post.attachment.present? %>
+                    <h1 class="title etc">
+                      <%= post.title %>
+                    <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                    </h1>
+                  <% else %>
+                    <h1 class="title etc"><%= post.title %></h1>
+                  <% end %>
+                  <hr>
+                  <div class="post-info">
+                    <% if post.user.image.url.present? %>
+                      <div class="avatar3">
+                        <%= image_tag(post.user.image.thumb.url) %>
+                      </div>
+                    <% else %>
+                      <div class="avatar3">
+                          <img src="/assets/avatar">
+                      </div>
+                    <% end %>
+                    <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
   
-  <!--<div class="row"></div>-->
-    <!-- Sidebar Widgets Column -->
-    
-    <div class="col-md-4">
-    <h3 class="index_post_title plr-0">멋쟁이 사자처럼 at 삼육대학교</h3>
-      <!-- Top-Widget -->
-      <%= render 'top-widget' %>
-      <!--<hr/>-->
-      
-      <!-- Categories Widget -->
-      <%= render 'cate-widget'%>
-      <!--<hr/>-->
-      
-      <!-- Fb Widget -->
-      <%= render 'fb-widget' %>
-         
+      <!-- Sidebar Widgets -->
+      <%= render 'posts/side_widget/side-widget' %>
+  
+    <!-- /.row -->
     </div>
-
+    
+  <!-- /.container -->
   </div>
-  <!-- /.row -->
-
-</div>
-<!-- /.container -->
 
 <!-- /.container_wrap -->
 </div>

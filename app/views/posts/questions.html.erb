@@ -3,7 +3,8 @@
 
 <!-- Page Content -->
 <div class="container_wrap">
-<div class="container">
+  
+  <div class="container">
       
         <!-- Blog Entries Column -->
         <div class="col-md-12 title"> 
@@ -46,7 +47,7 @@
                               <img src="/assets/avatar">
                           </div>
                         <% end %>
-                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %> | <%= "#{post.unique_impression_count}" %> 읽음 <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
+                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %>
                       </div>
                     </div>
                   </div>
@@ -62,29 +63,18 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="row">
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Top-Widget -->
-            <%= render 'top-widget' %>
-            <!--<hr/>-->
-        </div>
-        <div class="col-md-4">
-          <!-- Categories Widget -->
-            <%= render 'cate-widget'%>
-            <!--<hr/>-->
-        </div>
-        <div class="col-md-4">
-          <!-- Side Widget -->
-            <%= render 'fb-widget' %><!--멋사페이스북 연동, 대시보드 활성 필요-->
-        </div>
+        
+      <!-- /.row -->  
       </div>
       
-      <!-- /.row -->
+      <!-- Sidebar Widgets Column -->
+      <%= render 'posts/side_widget/side-widget-faq' %>
+      
+  <!-- /.container -->
+  </div>
 
-    </div>
-    <!-- /.container -->
-  </div>  
+<!-- /.container-wrap -->    
+</div>  
+
 <!-- Footer -->
 <%= render 'footer' %>

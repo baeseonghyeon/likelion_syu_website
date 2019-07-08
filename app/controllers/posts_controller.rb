@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions, :calendar]
-  before_action :notice_widget, only: [:index]
-  before_action :homework_widget, only: [:homework]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions ]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions, :calendar]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions]
   # before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -26,8 +24,6 @@ class PostsController < ApplicationController
     
     @post_f= Post.where(:category => '일반')
     @posts_f = @post_f.order("created_at DESC").limit(4)
-    
-    
   end
 
   # GET /posts/1
@@ -128,10 +124,6 @@ class PostsController < ApplicationController
     @users = @user.order("created_at DESC").page(params[:page])
     authorize! :mypost, @users
   end
-  
-  def calendar
-    
-  end
 
 private
   # Use callbacks to share common setup or constraints between actions.
@@ -152,16 +144,6 @@ private
     count += 1
     end
     @mains = Main.all
-  end
-  
-  def notice_widget
-    @notice = Post.where(:category => '공지사항')
-    @notice_1 = @notice.order("created_at DESC").limit(1)
-  end
-  
-  def homework_widget
-    @homework = Post.where(:category => '과제')
-    @homework_1 = @homework.order("created_at DESC").limit(1)
   end
   
   def mainimg 

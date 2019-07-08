@@ -1,18 +1,21 @@
 <!-- Navigation -->
 <%= render 'nav' %>
 
-<div class="container_wrap">
 <!-- Page Content -->
-<div class="container">
+<div class="container_wrap">
+  
+  <div class="container">
+    
+      <!-- Blog Entries Column -->
+      <div class="col-md-12 title"> 
+        <h1 class="title-custom">자유게시판</h1>
+        <hr class="margin-b0"/>
+      </div>
       
-        <!-- Blog Entries Column -->
-        <div class="col-md-12 title"> 
-          <h1 class="title-custom">자유게시판</h1>
-          <hr class="margin-b0"/>
-        </div>  
       <div class="row">    
         <div class="col-md-8">   
           <!--첫 포스트작성-->
+          
           <% if Post.count == 0 %>
             <%= render 'nullpost' %>
           <% else %>  
@@ -62,23 +65,16 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-          <!-- Top-Widget -->
-            <%= render 'top-widget' %>
-            
-          <!-- Categories Widget -->
-            <%= render 'cate-widget'%>
-            
-          <!-- Side Widget -->
-            <%= render 'fb-widget' %><!--멋사페이스북 연동, 대시보드 활성 필요-->
-        </div>
-      </div>
+        <%= render 'posts/side_widget/side-widget' %>
       
-      <!-- /.row -->
+      <!-- /.row -->  
+      </div>
 
-    </div>
-    <!-- /.container -->
-  </div>  
+  <!-- /.container -->
+  </div>
+   
+<!-- /.container-wrap -->  
+</div> 
+  
 <!-- Footer -->
 <%= render 'footer' %>

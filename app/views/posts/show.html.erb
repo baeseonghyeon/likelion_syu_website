@@ -87,8 +87,8 @@
       <div class="show_link_con">
         
         <!--카카오톡 버튼-->
-        <%= render 'kakao' %>
-        <%= render 'fb-btn2' %>
+        <%= render '/posts/show_content/kakao-share'%>
+        <%= render '/posts/show_content/fb-share' %>
         <div class="show_link">
           <% if user_signed_in? %>
             <% if @post.user == current_user %>
@@ -107,7 +107,6 @@
       </div>
 
       <!-- Comments Form -->
-      <!--<div class="card my-4">-->
       <hr/>
       <% if @post.category === '질문' %>
       <div class="author q">
@@ -115,48 +114,34 @@
       </div>
       
       <% end %>
-      <%= render 'comment' %> 
-      <!--</div>-->
+      <%= render '/posts/show_content/comment' %> 
       
     </div>
   </div>  
     <% if @post.category === '질문' %>
-  </div> 
-  
-      <div class="row">
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-6">
-          <!-- Top-Widget -->
-            <%= render 'top-widget' %>
-            <hr/>
-        </div>
-        <div class="col-md-6">
-          <!-- Categories Widget -->
-            <%= render 'cate-widget'%>
-            <hr/>
-        </div>
-      </div>
-      </div>
-      <% else %>
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
-        
-      <!-- Top-Widget -->
-      <%= render 'top-widget' %>
-      <!--<hr/>-->
-      
-      <!-- Categories Widget -->
-      <%= render 'cate-widget'%>
-      <!--<hr/>-->
-      <% end %>
-      </div>
-    
   </div>
-  <!-- /.row -->
+      <!-- Sidebar Widgets Column -->
+      <%= render '/posts/side_widget/side-widget-faq' %> 
+      
+    <!-- row -->
+    </div>
+    
+    <% else %>
+      <!-- Sidebar Widgets Column -->
+      <%= render '/posts/side_widget/side-widget' %> 
+      
+    <% end %>
+    </div>
+   
+  <!-- /.row -->  
+  </div>
   
+<!-- /.container -->  
 </div>
-<!-- /.container -->
+
+<!-- /.container-wrap -->  
 </div>
+
 <!-- Footer -->
 <%= render 'footer' %>
 

@@ -5,19 +5,19 @@
 <div class="container_wrap">
   <div class="container">
       
-        <!-- Blog Entries Column -->
-          <div class="col-md-12 title">
-            <h1 class="title-custom">과제</h1>
-            <div class="lecture-link">
-              <a href="https://drive.google.com/drive/folders/1ok_34SGd4pBSC2_cCRSajiy1sOYvbdZA?usp=sharing" target="_blank">
-                <span class="social-link"><img class='widget-icon i-white' src='/assets/google-drive'/>과제제출 드라이브</span>
-              </a>
-                <!--<span class="lineh"></span>-->
-                <!--<span class="social-link"><%#= link_to '과제작성', new_post_path %></span>-->
-            </div>
-            <hr class="margin-b0"/>
-          </div>
-          <% render 'homework' %>
+    <!-- Blog Entries Column -->
+      <div class="col-md-12 title">
+        <h1 class="title-custom">과제</h1>
+        <div class="lecture-link">
+          <a href="https://drive.google.com/drive/folders/1ok_34SGd4pBSC2_cCRSajiy1sOYvbdZA?usp=sharing" target="_blank">
+            <span class="social-link"><img class='widget-icon i-white' src='/assets/google-drive'/>과제제출 드라이브</span>
+          </a>
+            <!--<span class="lineh"></span>-->
+            <!--<span class="social-link"><%#= link_to '과제작성', new_post_path %></span>-->
+        </div>
+        <hr class="margin-b0"/>
+      </div>
+          
       <div class="row">    
         <div class="col-md-8">    
             <!--첫 포스트작성-->
@@ -87,26 +87,16 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-          <!-- Top-Widget -->
-            <%= render 'top-widget' %>
-            <!--<hr/>-->
-            
-          <!-- Categories Widget -->
-            <%= render 'cate-widget'%>
-            <!--<hr/>-->
-            
-          <!-- Side Widget -->
-            <%= render 'fb-widget' %>
-            
-        </div>
+        <%= render 'posts/side_widget/side-widget' %>
+      
+      <!-- /.row -->  
       </div>
-      <!-- /.row -->
+      
+  <!-- /.container -->
+  </div>
 
-    </div>
-    <!-- /.container -->
-  </div>  
+<!-- /.container-wrap -->  
+</div>  
     
 <!-- Footer -->
 <%= render 'footer' %>

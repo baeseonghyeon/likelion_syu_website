@@ -2,10 +2,12 @@
 <%= render 'nav' %>
 
 <!-- form -->
-<div class="container">
-  <h1 class="title-customform">수정<span class="title-star">*</span></h1>
-  <hr>
-  <%= render 'form', post: @post %>
+<div class="container_wrap_show">
+  <div class="container">
+    <h1 class="title-customform">수정<span class="title-star">*</span></h1>
+    <hr>
+    <%= render 'form', post: @post %>
+  </div>
 </div>
 <!-- Footer -->
 <%= render 'footer' %>
