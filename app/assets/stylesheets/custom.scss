@@ -1460,13 +1460,15 @@ input#post_attachment {
 }
 .new-icon {
   background-color: #ec4532;
-  font-size: 8px; color : white; font-weight: 500;
-  padding: 0px 3px 1px 3px;
+  font-size: 8px;
+  color: white;
+  font-weight: 500;
+  padding: 0px 4px 1px 4px;
   margin-bottom: 2px;
   position: relative;
-  top: -1px;
+  top: 1px;
   vertical-align: 2px;
-  margin-left: 1px;
+  border-radius: 2px;
 }
 .notihr {
   margin-bottom: 0px;

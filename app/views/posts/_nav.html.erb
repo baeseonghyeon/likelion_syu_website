@@ -56,9 +56,6 @@
             <%= link_to "수업자료", lecture_path, class:"dropdown-item" %>
           </div>
         </li>
-        <!--<li class="nav-item" data-nav-url='/notice'>-->
-        <!--  <%#= link_to "일정", calendar_path, class:"nav-link" %>-->
-        <!--</li>-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             게시판
@@ -89,7 +86,7 @@
       $(function(){
         // 페이지가 로드될때마다 이 구역이 실행됨.
         let _pathname = location.pathname;
-        let _navItems = $('navbar-nav').find('.nav-item');
+        let _navItems = $('.navbar-nav').find('.nav-item');
         for(let i = 0 ; i < _navItems.length ; i++){
           let _currentItem = _navItems.eq(i);
           if(_currentItem.attr('data-nav-url') === _pathname){

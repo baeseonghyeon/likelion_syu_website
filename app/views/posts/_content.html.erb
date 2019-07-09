@@ -20,7 +20,13 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="card-title">
-                  <div class="card-cate" id="cnoti"><%= post.category %></div>
+                  <div class="card-cate" id="cnoti">
+                    <%= post.category %>
+                  </div>
+                  <!-- 7주간 new 아이콘이 뜨도록 -->
+                  <!--<%# if post.created_at + 7*24*60*60 > Time.zone.now %>-->
+                  <!--<span class="new-icon">NEW</span>-->
+                  <!--<%# end %>-->
                   <% if post.attachment.present? %>
                     <h1 class="title etc">
                       <%= post.title %>
