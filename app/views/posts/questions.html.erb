@@ -37,7 +37,8 @@
                         <% else %>
                         <h1 class="title etc"><%= post.title %></h1>
                         <% end %>
-                      <div class="post-info">
+                        <hr>
+                        <div class="post-info">
                         <% if post.user.image.url.present? %>
                           <div class="avatar3">
                             <%= image_tag(post.user.image.thumb.url) %>
