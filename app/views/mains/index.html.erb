@@ -52,16 +52,6 @@
 
         </div>
     </div>
-    
-    <script>
-        var rgb = [255, 0, 0];
-
-        setInterval(function() {
-          var c = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
-          var o = Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) / 1000);
-          (o > 125) ? $('#bg').css('color', 'black'): $('#bg').css('color', 'white'); //http://www.w3.org/TR/AERT#color-contrast
-        });
-    </script>
 
     <div class="main-sec2">
     <div class="container">
