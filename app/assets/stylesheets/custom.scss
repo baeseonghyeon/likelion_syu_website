@@ -310,7 +310,7 @@ a.btn.btn-primary:visited {
 .main-title {
   font-size: 3.5rem;
   font-weight: 500;
-  color: white;
+  // color: white;
   min-height: 85px;
 }
 .main-lionth {
@@ -328,7 +328,7 @@ a.btn.btn-primary:visited {
   transition: color 0.15s;
 }
 .thbox {
-  color: white;
+  // color: white;
   transition: color 0.15s;
 }
 .main-line {
@@ -354,7 +354,7 @@ a.btn.btn-primary:visited {
   font-size: 15px;
   line-height: 25px;
   max-width: 450px;
-  color: white;
+  // color: white;
 }
 .main-info {
   font-family: 'Montserrat', sans-serif;
@@ -882,8 +882,7 @@ a.comment-link-marker:hover {
 //대문이미지
 .card-body.mainimg {
   padding: 0px;
-  height: 0;
-  padding-bottom: 40.8%;
+  height: 19rem;
   // margin-top: 15px;
   overflow: hidden;
 }
@@ -904,12 +903,6 @@ a.comment-link-marker:hover {
   position: absolute;
   transform: translateZ(0);
 }
-a.carousel-control-prev {
-  margin-top: 15px;
-}
-a.carousel-control-next {
-  margin-top: 15px;
-}
 #carousel {
   background: #f1f3f6;
   margin-top: 50px;
@@ -917,7 +910,15 @@ a.carousel-control-next {
 .carousel-inner {
   max-height: 300px;
 }
-
+.carousel-bg {
+  background-position-y: center!important;
+  background-position-x: center!important;
+  background-size: cover;
+}
+.carousel-item {
+  max-height: 300px;
+}
+  
 /* NEW PAGE */
 #post_category {
   width: 100%; height: 40px;
@@ -1975,9 +1976,9 @@ input:disabled {
   .nav-item .sign {
   border-right: none;
   }
-  //대문사진멘트
-  .mainimg-text {
-    text-align: center;
+  //대문사진비율
+  .card-body.mainimg {
+    max-height: 150px!important;
   }
   //메인 인포
   .col-md-3.r {

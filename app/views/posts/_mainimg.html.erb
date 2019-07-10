@@ -3,50 +3,44 @@
 <%if @mainimg.count == 0 %>
 
 <% elsif @mainimg.count == 1%>
-      <div class="carousel-item active">
-        <a href="/posts/<%= @mainimg_3_1.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
+    <div class="carousel-item active">
+      <a href="/posts/<%= @mainimg_3_1.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_1.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
+      </a>
+    </div>
 <% elsif @mainimg.count == 2%>
-      <div class="carousel-item active">
-        <a href="/posts/<%= @mainimg_3_1.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
+    <div class="carousel-item active">
+      <a href="/posts/<%= @mainimg_3_1.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_1.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a href="/posts/<%= @mainimg_3_2.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;" alt="Second slide" ><%= content_tag(:div, @mainimg_3_2.content.to_s.html_safe, :class => "panel-body") %></p>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="/posts/<%= @mainimg_3_2.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_2.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
+      </a>  
+    </div>
 <% else %>
-      <div class="carousel-item active">
-        <a href="/posts/<%= @mainimg_3_1.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;"><%= content_tag(:div, @mainimg_3_1.content.to_s.html_safe, :class => "panel-body") %></p>
+    <div class="carousel-item active">
+      <a href="/posts/<%= @mainimg_3_1.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_1.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a href="/posts/<%= @mainimg_3_2.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;" alt="Second slide" ><%= content_tag(:div, @mainimg_3_2.content.to_s.html_safe, :class => "panel-body") %></p>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="/posts/<%= @mainimg_3_2.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_2.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a href="/posts/<%= @mainimg_3_3.id%>"> 
-        <div class="card-body mainimg">
-          <p class="card-text" style="text-align: center;" alt="Third slide"><%= content_tag(:div, @mainimg_3_3.content.to_s.html_safe, :class => "panel-body") %></p>
+      </a>  
+    </div>
+    <div class="carousel-item">
+      <a href="/posts/<%= @mainimg_3_3.id%>">
+        <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_3.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
         </div>
-        </a>
-      </div>
+      </a>  
+    </div>
   </div>
 <% end %>  
   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
