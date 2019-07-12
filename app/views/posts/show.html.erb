@@ -57,11 +57,11 @@
       <!-- Author -->
       <div class="author">
         <% if @post.user.image.url.present? %>
-            <div class="avatar3">
+            <div class="avatar_show">
               <%= image_tag(@post.user.image.thumb.url) %>
             </div>
           <% else %>
-            <div class="avatar3">
+            <div class="avatar_show">
                 <img src="/assets/avatar">
             </div>
           <% end %>

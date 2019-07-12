@@ -1799,6 +1799,21 @@ input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-tex
   position: relative;
   top: 0px;
 }
+.avatar_show {
+  width: 100%;
+  height: 100%;
+  max-width: 25px!important;
+  max-height: 25px!important;
+  margin-right: 5px;
+  display: inline-block;
+}
+.avatar_show img {
+  border-radius: 100%;
+  width: 100%;
+  margin: 0px;
+  position: relative;
+  top: 0px;
+}
 #user_image {
   padding: 10px 10px;
 }

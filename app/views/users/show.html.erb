@@ -21,13 +21,13 @@
           <% if current_user.id === @user.id %>
           <p><%= @user.email %></p>
           <% else %>
-          <a href='mailto:<%= @user.email %>' class="user_mail">
+          <a href='mailto:<%= @user.email %>' class="user_mail" target="_blank">
             <%= @user.email %>
             <p><%= @user.name %>님께 이메일 보내기</p>
           </a> 
           <% end %>
         <% else %>
-        <a href='mailto:<%= @user.email %>' class="user_mail">
+        <a href='mailto:<%= @user.email %>' class="user_mail" target="_blank">
           <%= @user.email %>
           <p><%= @user.name %>님께 이메일 보내기</p>
         </a> 
@@ -47,7 +47,7 @@
           <% if user_signed_in? %>
             <% if current_user.id === @user.id %>
             <p>'게스트' 등급은 질문작성만 가능합니다.<span class="label-star">*</span><br>
-                  등업 관련 문의는 <a href='mailto:sahmyook@likelion.org'>sahmyook@likelion.org</a>로 해주세요.</p>
+                  등업 관련 문의는 <a href='mailto:sahmyook@likelion.org' target="_blank">sahmyook@likelion.org</a>로 해주세요.</p>
             <% end %>   
           <% end %>  
         <% end %>
