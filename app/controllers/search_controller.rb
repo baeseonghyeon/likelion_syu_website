@@ -8,6 +8,7 @@ class SearchController < ApplicationController
   
   def result
     @result = params[:search_text]
+    @posts_count = eval(params[:param_posts]).where('created_at >= :years_ago', :years_ago => Time.now - 1.years).where("title like ?", "%#{params[:search_text]}%")
     @posts = eval(params[:param_posts]).where('created_at >= :years_ago', :years_ago => Time.now - 1.years).where("title like ?", "%#{params[:search_text]}%").order("created_at DESC").page(params[:page]).per(10)
   end
 end

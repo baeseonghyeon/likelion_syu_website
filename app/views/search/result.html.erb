@@ -8,7 +8,7 @@
       
         <!-- Blog Entries Column -->
         <div class="col-md-12 title row"> 
-          <h1 class="title-custom-q col-md-8">"<%= @result %>" 검색결과 (<%= @posts.count %>개)</h1>
+          <h1 class="title-custom-q col-md-8">"<%= @result %>" 검색결과 (<%= @posts_count.count %>개)</h1>
           <div class="col-md-4 result">
             <%= render 'search_form', posts: @posts_search.klass %> 
           </div>
