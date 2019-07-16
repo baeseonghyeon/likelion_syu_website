@@ -5,7 +5,14 @@
 
 <div class="container_wrap_index">
   <div class="container">
-    
+    <div class="row search">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <%= render 'search/search_form', posts: @posts_search.klass %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <hr class="margin-t0"/>
     <div class="row">
       <div class="col-md-8 index">    
         <!-- 포스트 NULL -->
@@ -192,7 +199,7 @@
       </div>
   
       <!-- Sidebar Widgets -->
-      <%= render 'posts/side_widget/side-widget-main' %>
+      <%= render 'posts/side_widget/side-widget' %>
   
     <!-- /.row -->
     </div>
