@@ -2088,6 +2088,9 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 5px;
   line-height: 25px;
 }
+.new-btn.q:hover {
+  background: white;
+}
 .author.q {
   margin-top: 30px!important;
   margin-bottom: 0px!important;
@@ -2173,3 +2176,49 @@ input {
 .notice.homew {
   margin: 0px 15px;
 }
+
+// SEARCH
+#search_forms {
+  margin-bottom: 11px;
+  text-align: right;
+  display: block;
+  float: right;
+  width: 100%;
+}
+#search_text {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ced0da;
+  width: 100%;
+  margin-right: 3px;
+  padding: 5px 40px 5px 10px;
+  font-size: 14px;
+}
+.search_btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  background-image: url('/assets/search.svg');
+}
+
+.col-md-4.result {
+  padding: 0px;
+  right: -15px;
+  margin-top: 5px;
+    .search_btn {
+      right: 15px!important;
+    }  
+}
+.title-custom-q.col-md-8 {
+  padding-bottom: 5px;
+}
+.m-t5 {
+  margin-top: 5px;
+}
+

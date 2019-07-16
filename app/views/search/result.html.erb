@@ -1,0 +1,100 @@
+<!-- Navigation -->
+<%= render './posts/nav' %>
+
+<!-- Page Content -->
+<div class="container_wrap">
+  
+  <div class="container">
+      
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 title row"> 
+          <h1 class="title-custom-q col-md-8">"<%= @result %>" 검색결과</h1>
+          <div class="col-md-4 result">
+            <%= render 'search_form', posts: @posts_search.klass %> 
+          </div>
+        </div>
+        <hr class="margin-b0 m-t5"/>
+      <div class="row">    
+        <div class="col-md-12">   
+          <!--첫 포스트작성-->
+          <% if Post.count == 0 %>
+            <%= render './posts/nullpost' %>
+          <% else %>  
+            <%= render './posts/nullpost2' %>
+          <% end %>
+          
+          <div class="post-box">  
+          <% @posts.each do |post| %>
+              <a href="/posts/<%= post.id %>" class="card-con">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <%if post.category === '과제'%>
+                        <div class="card-cate" id="chome"><%= post.category %></div>
+                        <% if post.limit > Time.current %>
+                          <div class="card-cate" id="climit"><%= post.limit.strftime('%Y.%m.%d. %H:%M:%S') %> 까지</div>
+                        <% elsif %>
+                          <div class="card-cate" id="expir">기한 만료</div>
+                        <% end %>
+                      <% elsif post.category === '공지사항'%>  
+                        <div class="card-cate" id="cnoti"><%= post.category %></div>
+                      <% elsif post.category === '질문'%>
+                        <div class="card-cate" id="cques"><%= post.category %></div>
+                        <div class="card-cate" id="clect2"><%= post.lecture %></div>
+                      <% elsif post.category === '수업자료'%> 
+                        <div class="card-cate"><%= post.category %></div>
+                        <div class="card-cate" id="clect2"><%= post.lecture %></div>
+                      <% else %>
+                        <div class="card-cate" id="cfree"><%= post.category %></div>
+                      <% end %>  
+                        <% if post.attachment.present? %>
+                        <h1 class="title etc">
+                          <%= post.title %>
+                        <img class='attach-icon' src='/assets/attachment-clip.svg'/>
+                        </h1>
+                        <% else %>
+                        <h1 class="title etc"><%= post.title %></h1>
+                        <% end %>
+                        
+                        <hr>
+                        <div class="post-info">
+                        <% if post.user.image.url.present? %>
+                          <div class="avatar3">
+                            <%= image_tag(post.user.image.thumb.url) %>
+                          </div>
+                        <% else %>
+                          <div class="avatar3">
+                              <img src="/assets/avatar">
+                          </div>
+                        <% end %>
+                        <%= post.user.name %> | <%= post.created_at.strftime("%Y.%m.%d. %H:%M") %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+          </div>
+          
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li>
+              <%= paginate @posts %>
+            </li>
+          </ul>
+        </div>
+        
+      <!-- /.row -->  
+      </div>
+      
+      <!-- Sidebar Widgets Column -->
+      <%#= render 'posts/side_widget/side-widget-faq' %>
+      
+  <!-- /.container -->
+  </div>
+
+<!-- /.container-wrap -->    
+</div>  
+
+<!-- Footer -->
+<%= render './posts/footer' %>

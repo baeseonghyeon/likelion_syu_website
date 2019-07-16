@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/result'
+
   devise_for :users, controllers: {registrations:'users/registrations'}
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :posts

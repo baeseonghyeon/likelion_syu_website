@@ -8,6 +8,14 @@ class PostsController < ApplicationController
   
   # GET /posts
   # GET /posts.json
+  
+  before_filter :search_models
+  
+  def search_models
+    @posts_search = Post.all
+  end
+  
+  
   def index
     @posts = Post.all
     @posts = Post.order("created_at DESC").page(params[:page]).per(10)

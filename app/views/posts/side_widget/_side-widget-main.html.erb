@@ -1,0 +1,12 @@
+<div class="col-md-4">
+    <%= render 'search/search_form', posts: @posts_search.klass %>
+    <!--<h3 class="index_post_title plr-0">멋쟁이 사자처럼 at 삼육대학교</h3>-->
+    <!-- link-Widget -->
+    <%= render '/posts/side_widget/link-widget' %>
+      
+    <!-- Categories Widget -->
+    <%= render '/posts/side_widget/cate-widget'%>
+      
+    <!-- Facebook Widget -->
+    <%= render '/posts/side_widget/fb-widget' %>
+</div>
