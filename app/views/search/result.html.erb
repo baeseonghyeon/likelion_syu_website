@@ -8,7 +8,7 @@
       
         <!-- Blog Entries Column -->
         <div class="col-md-12 title row"> 
-          <h1 class="title-custom-q col-md-8">"<%= @result %>" 검색결과</h1>
+          <h1 class="title-custom-q col-md-8">"<%= @result %>" 검색결과 (<%= @posts.count %>개)</h1>
           <div class="col-md-4 result">
             <%= render 'search_form', posts: @posts_search.klass %> 
           </div>
@@ -17,10 +17,8 @@
       <div class="row">    
         <div class="col-md-12">   
           <!--첫 포스트작성-->
-          <% if Post.count == 0 %>
-            <%= render './posts/nullpost' %>
-          <% else %>  
-            <%= render './posts/nullpost2' %>
+          <% if @posts.count == 0 %>
+            <%= render 'nullpost' %>
           <% end %>
           
           <div class="post-box">  
@@ -36,6 +34,8 @@
                         <% elsif %>
                           <div class="card-cate" id="expir">기한 만료</div>
                         <% end %>
+                      <% elsif post.category === '대문'%>
+                        <div class="card-cate" id="cnoti"><%= post.category %></div>
                       <% elsif post.category === '공지사항'%>  
                         <div class="card-cate" id="cnoti"><%= post.category %></div>
                       <% elsif post.category === '질문'%>
