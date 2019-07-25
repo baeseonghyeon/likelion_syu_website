@@ -2175,6 +2175,7 @@ input {
   display: block;
   float: right;
   width: 100%;
+  position: relative;
 }
 #search_text {
   height: 40px;
@@ -2195,9 +2196,12 @@ input {
   background-repeat: no-repeat;
   position: absolute;
   top: 13px;
-  right: 30px;
+  right: 17px;
   padding: 0px;
   background-image: url('/assets/search.svg');
+}
+.search_box  {
+  margin-top: 10px;
 }
 
 .col-md-4.result {

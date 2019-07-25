@@ -1,0 +1,13 @@
+<div class="col-md-4">
+    <div class="search_box">
+    <%= render 'search/search_form', posts: @posts_search.klass %>
+    <!-- link-Widget -->
+    </div>
+    <%= render '/posts/side_widget/link-widget' %>
+      
+    <!-- Categories Widget -->
+    <%= render '/posts/side_widget/cate-widget'%>
+      
+    <!-- Facebook Widget -->
+    <%= render '/posts/side_widget/fb-widget' %>
+</div>
