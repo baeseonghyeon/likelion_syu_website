@@ -884,6 +884,8 @@ a.comment-link-marker:hover {
   height: 19rem;
   // margin-top: 15px;
   overflow: hidden;
+  filter: brightness(0.95);
+  -webkit-filter: brightness(0.95);
 }
 .card-body.mainimg img {
   width: 100%;
