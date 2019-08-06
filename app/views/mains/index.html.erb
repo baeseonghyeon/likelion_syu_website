@@ -151,50 +151,48 @@
         <div class="container">
 
         <div class="row">
-        <div class="col-lg-12 main">
-            <div class="main-service">
-              <h1>만든 서비스</h1>
-              <div class= "row service">
-                <% @services.each do |service| %>
-                  <div class="col-md-3 s">
-                    <a href="<%= service.url %>" target="_blank">
-                    <% if service.image.blank? %>
-                      <div class= "serviceimg sindex">
-                        <br>이미지<br>준비중
-                      </div>
-                    <% else %>
-                      <%= image_tag service.image.thumb.url, class: "serviceimg sindex" %>
-                    <% end %> 
-                    <p><%= service.title %></p>
-                    </a>
-                    <% if user_signed_in? %>
-                      <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
-                      <div class="admin-edit-box" >
-                      <%= link_to '수정', edit_service_path(service) %> | 
-                      <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %> 
-                      <% end %>
+            <div class="col-lg-12 main">
+                <div class="main-service">
+                    <h1>만든 서비스</h1>
+                    <div class= "row service">
+                    <% @services.each do |service| %>
+                      <div class="col-md-3 s">
+                        <a href="<%= service.url %>" target="_blank">
+                        <% if service.image.blank? %>
+                          <div class= "serviceimg sindex">
+                            <br>이미지<br>준비중
+                          </div>
+                        <% else %>
+                          <%= image_tag service.image.thumb.url, class: "serviceimg sindex" %>
+                        <% end %> 
+                        <p><%= service.title %></p>
+                        </a>
+                        <% if user_signed_in? %>
+                          <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
+                          <div class="admin-edit-box" >
+                          <%= link_to '수정', edit_service_path(service) %> | 
+                          <%= link_to '삭제', service, method: :delete, data: { confirm: '서비스를 삭제하시겠습니까?' } %> 
+                          </div>
+                          <% end %>
+                        <% end %>
                       </div>
                     <% end %>
-                  </div>
-                <% end %>
-                
-                <% if user_signed_in? %>
-                  <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
-                    <div class="col-md-3 s">
-                      <%= link_to(image_tag('/assets/add', class:"serviceimgadd"), new_service_path)%>
-                    </div>
-                  <% else %>
-                    <div class="col-md-3 s2">
                     
-                    </div>
-                  <% end %>
-                <% else %>
-                  <div class="col-md-3 s2">
+                    <% if user_signed_in? %>
+                      <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
+                        <div class="col-md-3 s">
+                          <%= link_to(image_tag('/assets/add', class:"serviceimgadd"), new_service_path)%>
+                        </div>
+                      <% else %>
+                        <div class="col-md-3 s2"></div>
+                      <% end %>
+                    <% else %>
+                        <div class="col-md-3 s2"></div>
+                    <% end %>
                     
                   </div>
-                <% end %>
-              </div>
-            </div>  
+                </div>  
+            
             <h1 class="info_title">SNS</h1>
             <div class="row">
               <div class="col-md-1"></div>
@@ -213,7 +211,7 @@
                 </div>
               <% end %>
             <% end %>
-          </div>
+            </div>
         </div> 
         
         <script>
