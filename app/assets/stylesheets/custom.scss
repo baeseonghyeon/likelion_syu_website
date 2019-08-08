@@ -23,6 +23,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+#main {
+  display: block!important;
+}
 .background {
   width: 100%;
   height: 98%;
@@ -459,7 +462,6 @@ a.btn.btn-primary:visited {
   filter: brightness(0.95);
   -webkit-filter: brightness(0.95);
   color: white;
-  display: flex;
   height: 90vh;
   display: flex;
   align-items: center;
@@ -1985,9 +1987,6 @@ input:disabled {
     margin-top: 55px;
   }
   // main bg
-  #main {
-    display: block!important;
-  }
   .main-sec1 {
     height: 100vh;
   }
