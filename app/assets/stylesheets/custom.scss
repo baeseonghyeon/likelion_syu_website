@@ -23,9 +23,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-// #main {
-//   display: block!important;
-// }
 .background {
   width: 100%;
   height: 98%;
@@ -1982,6 +1979,16 @@ input:disabled {
   }
   #carousel {
     margin-top: 55px;
+  }
+  // main bg
+  #main {
+    display: block!important;
+  }
+  .main-sec1 {
+    display: flex;
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
 
