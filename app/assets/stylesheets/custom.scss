@@ -466,6 +466,18 @@ a.btn.btn-primary:visited {
   display: flex;
   align-items: center;
 }
+.main-sec1 .container {
+  z-index: 11;
+}
+.main-sec1-cover {
+  text-align: center;
+  background: rgba(25,25,25,0.6);
+  height: 100%;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .main-sec2 {
   position: relative;
   background: #fafafa;
