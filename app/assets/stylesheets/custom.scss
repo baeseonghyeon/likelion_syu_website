@@ -364,9 +364,30 @@ a.btn.btn-primary:visited {
   margin-bottom: 60px;
   transition: color 0.15s ease-in-out;
   margin: 70px 0px 60px;
+  line-height: 160%;
 }
 .main-info p {
   margin: 15px 0px;
+}
+.main-info .col-md-4 {
+  padding: 20px;
+}
+.main-info .col-md-4 h3 {
+  margin: 15px auto;
+}
+.main-info .col-md-4 div:hover {
+  i, h3 {
+    color: #333;
+    transition: all 0.2s;
+  }
+}
+.main-info .col-md-4 i {
+  color: #0752dd;
+  font-size: 3rem;
+}
+.main-info .col-md-5 {
+  display: flex;
+  align-items: center;
 }
 #counter_service
 .col-md-3 {
@@ -494,6 +515,9 @@ a.btn.btn-primary:visited {
   text-align: center;
   padding: 100px 0px;
 }
+.text-center.mb-5 {
+  font-size: 1.3rem;
+}
 
 //edit
 .mainfield {
@@ -521,6 +545,7 @@ textarea {
 .main-service {
   margin-bottom: 50px;
   width: 100%;
+  padding: 0px 40px;
 }
 .info_title {
   font-size: 30px;
@@ -534,8 +559,9 @@ textarea {
 }
 .main-service h3 {
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 500;
   color: #0752dd;
+  margin: 20px 0px;
 }
 .col-md-3.s {
   margin: 0px auto;
@@ -2253,3 +2279,8 @@ input {
   margin: 8px 0px;
 }
 
+.main-liklion-logo {
+  width: 55%;
+  display: block;
+  margin: 20% auto;
+}
