@@ -486,7 +486,7 @@ a.btn.btn-primary:visited {
   filter: brightness(0.95);
   -webkit-filter: brightness(0.95);
   color: white;
-  height: 90vh;
+  height: 90%;
   display: flex;
   align-items: center;
 }
@@ -1959,7 +1959,7 @@ input:disabled {
 }
 @media (min-width: 992px) {
   .dropdown-menu {
-    left: -30px!important;
+    left: -27px!important;
     min-width: 5rem!important;
   }
   #userinfo.dropdown-menu.dropdown-menu-center.show {
@@ -1995,6 +1995,9 @@ input:disabled {
   a#navbarDropdownnickname.nav-link.dropdown-toggle {
   text-decoration: underline;
   }
+  .none-underline {
+    text-decoration: none!important;
+  }
   .dropdown-item {
     padding: 7px!important;
   }
@@ -2014,6 +2017,7 @@ input:disabled {
   a#navbarDropdownnickname.nav-link.dropdown-toggle {
   line-height: 1.2;
   }
+  
   //toggler
   .navbar-toggler {
     margin-right: 5px;
@@ -2036,7 +2040,7 @@ input:disabled {
   }
   // main bg
   .main-sec1 {
-    height: 100vh;
+    height: 100%;
   }
 }
 
