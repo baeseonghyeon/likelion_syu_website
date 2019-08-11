@@ -1,6 +1,19 @@
-// Place all the styles related to the Mains controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.height-fix {
+// 스크롤 다운 버튼
+.main-arrow-down {
+    width: 55px;
+    display: none;
+    position: absolute;
+    left: 50%;
+    right: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 30px;
+}
 
+@media (max-width: 768px) {
+    .main-arrow-down {
+        display: block;
+    }
 }

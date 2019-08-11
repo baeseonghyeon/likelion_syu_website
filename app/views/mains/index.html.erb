@@ -49,7 +49,23 @@
             <% end %>
             
             <%= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
-
+            <!--<a href="https://likelion.net/" target="_blank" class="btn main-btn">멋쟁이 사자처럼</a>-->
+            <img src="assets/arrow-down" alt="arrow-down" class="main-arrow-down" onclick="downFunction()">
+            
+            <script>
+            // $(document).ready(function(){
+            //     $('.main-arror-down').on('click', function(){
+            //         alert('abc');
+            //         console.log('a');
+            //         //  $('body,html').animate({ scrollDown: $('body').height() }, -500);
+            //         // return false;
+            //     });
+            // });
+            
+            function downFunction() {
+              $('html, body').animate( { scrollTop : 800 } ); 
+            }
+            </script>
         </div>
     </div>
     
@@ -161,32 +177,23 @@
     
     
     <div class="main-sec2">
-    <div class="container">
-    
-      <div class="row">
-        <!-- Post Content Column -->
-        <!--<div class="col-lg-1">-->
-        <!--</div>-->
-        <div class="col-lg-12 main">
-          
-          <!--<%#= link_to(image_tag('/assets/logo2', class:"logo-main"), posts_path )%>-->
-          <!--<div class="logo-main-text">로고이미지를 클릭하면 홈페이지로 이동합니다.</div>-->
-            <div class="main-textbox">
-            
-
-            <div class="main-info">
-            <h1 class="info_title">삼육멋사 활동내역</h1>
-              <div class="row">
-                <div class="col-md-3 r"><h1 id="counter_year" class="counter">2018</h1><p>년 부터</p></div>
-                <div class="col-md-3 r"><h1 id="counter_people" class="counter"><%= main.lion %></h1><p>명의 사자들이</p></div>
-                <div class="col-md-3 r"><h1 id="counter_hack"><%= main.lion %></h1><p>번의 해커톤을 통해</p></div>
-                <div class="col-md-3"><h1 id="counter_service">0</h1><p>개의 서비스를 만들었습니다.</p></div>
-              </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 main">
+                    <div class="main-textbox">
+                        <div class="main-info">
+                            <h1 class="info_title">활동내역</h1>
+                              <div class="row">
+                                <div class="col-md-3 r"><h1 id="counter_year" class="counter">2018</h1><p>년 부터</p></div>
+                                <div class="col-md-3 r"><h1 id="counter_people" class="counter"><%= main.lion %></h1><p>명의 사자들이</p></div>
+                                <div class="col-md-3 r"><h1 id="counter_hack"><%= main.lion %></h1><p>번의 해커톤을 통해</p></div>
+                                <div class="col-md-3"><h1 id="counter_service">0</h1><p>개의 서비스를 만들었습니다.</p></div>
+                              </div>
+                        </div>
+                    </div>    
+                </div>  
             </div>
-            </div>    
-        </div>  
-    </div>
-    </div>
+        </div>
     </div>
       
       
