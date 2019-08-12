@@ -16,10 +16,17 @@
 <% if current_page?(:controller => 'posts', :action => 'edit') %>
   <script>
     $(document).ready(function(){
-        if($("#post_category").val() == '수업자료' || $("#post_category").val() == '질문'){
+        if($("#post_category").val() == '수업자료'){
           $("#lecture").show();
         }else{
           $("#lecture").hide();
+        }
+    });
+    $(document).ready(function(){
+        if($("#post_category").val() == '질문'){
+          $("#questions").show();
+        }else{
+          $("#questions").hide();
         }
     });
       $(document).ready(function(){

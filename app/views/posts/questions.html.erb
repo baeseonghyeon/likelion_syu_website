@@ -37,6 +37,7 @@
                         <% else %>
                         <h1 class="title etc"><%= post.title %></h1>
                         <% end %>
+                        <p class="etc"><%= content_tag(:div, post.content.html_safe, :class => "panel-body") %></p>
                         <hr>
                         <div class="post-info">
                         <% if post.user.image.url.present? %>
@@ -69,7 +70,7 @@
       </div>
       
       <!-- Sidebar Widgets Column -->
-      <%= render 'posts/side_widget/side-widget-faq' %>
+      <%#= render 'posts/side_widget/side-widget-faq' %>
       
   <!-- /.container -->
   </div>

@@ -895,15 +895,22 @@ a.comment-link-marker:hover {
   padding: 0px;
 }
 .card-body p {
-  font-size: 0px!important; margin: 0px auto;
- //이미지 중앙정렬
-  display: block;
-  margin-left : auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
+  color: #474f5c;
+  font-size: 1rem;
+  font-weight: 500;
+  ine-height: 150%;
+}  
+
+
+//   font-size: 0px!important; margin: 0px auto;
+// //이미지 중앙정렬
+//   display: block;
+//   margin-left : auto;
+//   margin-right: auto;
+//   width: 100%;
+//   height: 100%;
+//   text-align: center;
+
 .card-title {
   padding: 17px 20px 20px 20px;
   font-size: 30px !important;
