@@ -2340,30 +2340,16 @@ input {
 }
 .custom-swiper {
   width: 100%;
-  margin-top: 55px!important;
+  margin-top: 50px!important;
   min-height: 19rem;
+}
+@media (max-width: 992px) {
+    .custom-swiper {
+        margin-top: 55px!important;
+    }
 }
 @media (max-width: 768px) {
     .custom-swiper {
       min-height: 150px!important;
     }
 }
-
-// .fb-con {
-//   width: 100%;
-// }
-// .fb-page .fb_iframe_widget{
-//   width: 100%!important;
-// }
-// #fb-root {
-//   width: 100%!important;
-// }
-// #fb-root span {
-//   width: 100%!important;
-// }
-// #fb-root iframe {
-//   width: 100%!important;
-// }
-// .fb-con .uiScaledImageContainer ._2zfr {
-//   width: 100%;
-// }

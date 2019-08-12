@@ -107,10 +107,13 @@
     .main-arrow-down {
         display: block;
     }
-    #our .col-md-3.r {
+    #our .col-md-3 {
         margin: 0px 30px;
     }
+    #our .col-md-3.r {
+        padding: 50px 30px;
+    }
     #stack .col-md-4 {
-    padding: 10px 20px;
+        padding: 10px 20px;
     }
 }
