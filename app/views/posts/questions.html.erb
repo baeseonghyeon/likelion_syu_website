@@ -37,6 +37,7 @@
                         <% else %>
                         <h1 class="title etc"><%= post.title %></h1>
                         <% end %>
+                        <hr>
                         <p class="etc"><%= content_tag(:div, post.content.html_safe, :class => "panel-body") %></p>
                         <hr>
                         <div class="post-info">
