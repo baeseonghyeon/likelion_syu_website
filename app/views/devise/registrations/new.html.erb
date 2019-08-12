@@ -10,9 +10,9 @@
       <%= f.input :password, required: true, label: '비밀번호', hint: ("#{@minimum_password_length} 글자 이상을 입력해주세요." if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true, label: '비밀번호 확인' %>
       <%= f.label "이름" %>
-      <%= f.text_field :name, :required => true, maxlength: "5"%>
+      <%= f.text_field :name, required: true, maxlength: "5"%>
       <%= f.label "휴대전화" %>
-      <%= f.number_field :phone, :required => true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
+      <%= f.number_field :phone, required: true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
       <script>
       phone.oninput = function () {
           if (this.value.length > 11) {
@@ -25,6 +25,11 @@
       <%#= f.text_field :nickname, :required => true, placeholder: "ex) 멋사 두희", maxlength: "10"%>
       <%= f.label "Github 주소" %>
       <%= f.text_field :gitlink, placeholder: "https://github.com/아이디" %>
+      
+      <div class="checkform">
+        <input type="checkbox" id="user_checkbox" name="user_checkbox" required/>
+        <label for="user_checkbox"><a href="https://github.com/likelion-sahmyook/likelion-sahmyook.github.io/wiki/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8" target="_blank">개인정보처리방침</a>을 읽었으며 이에 동의합니다.</label>
+      </div>
     </div>
   </div>
 
@@ -33,9 +38,23 @@
       <%= f.button :submit, "회원가입", class:"btn btn-primary" %>
     </div>
   </div>
+  
   <% end %>
 
   <%= link_to '뒤로가기', :back, class: "d_link" %>
 </div>
 </div>
+
+<script>
+  $("#new_user").submit(function () {
+      if( $('#user_checkbox').is(":checked") == true ) {
+        return true;
+      } else {
+        alert("개인정보처리방침에 동의 하셔야 합니다.");
+        $('#user_checkbox').focus();
+        return false;
+      }  
+      
+  });
+</script>
 <%= render '/posts/footer' %>

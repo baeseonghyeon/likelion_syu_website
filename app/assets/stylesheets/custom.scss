@@ -894,11 +894,17 @@ a.comment-link-marker:hover {
 .card-body {
   padding: 0px;
 }
+// .panel-body {
+//   display: none;
+// }
+// .panel-body-show {
+//   display: block;
+// }
 .card-body p {
   color: #474f5c;
   font-size: 1rem!important;
   font-weight: 500!important;
-  ine-height: 150%!important;
+  line-height: 150%!important;
 }  
 
 
@@ -1952,7 +1958,16 @@ input:disabled {
 .boolean.optional input {
   margin-right: 10px;
 }
-  
+// check
+.checkform input[type="checkbox"] {
+  display: inline-block!important;
+  width: 16px!important;
+  height: 16px!important;
+}
+.checkform label {
+  display: inline-block!important;
+  font-size: 15px!important;
+}  
 /* PAGENATOR */
 .pagination.justify-content-center.mb-4 {
   margin-bottom: 20px!important;
