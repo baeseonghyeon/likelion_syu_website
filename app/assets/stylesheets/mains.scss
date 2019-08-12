@@ -1,3 +1,44 @@
+#bg2 {
+    background-image: url('/assets/likelion-bg');
+    height: auto!important;
+    padding: 120px 20px;
+}
+#bg2 h1 a {
+    color: white;
+    font-weight: 1000;
+    font-size: 2.5rem;
+}
+#bg2 h1 a:hover {
+    color: #f2961b!important;
+}
+#bg2 h2 {
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin-bottom: 100px;
+    line-height: 150%;
+}
+#bg2 h4 {
+    font-size: 1.2rem;
+}
+#bg2 p {
+    font-size: 15px;
+}
+#bg2 i {
+    font-size: 2.5rem;
+    margin: 15px;
+}
+#bg2 .col-md-4 {
+    padding: 30px;
+    line-height: 150%;
+}
+#bg2 .col-md-4 div {
+    margin: 15px;
+}
+// #bg2 .col-md-4 {
+//     font-size: 15px;
+// }
+
+
 // 스크롤 다운 버튼
 .main-arrow-down {
     width: 55px;
