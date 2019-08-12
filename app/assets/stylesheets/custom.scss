@@ -64,7 +64,12 @@ body {
 }
 
 
-
+.mt-10 {
+  margin-top: 100px!important;
+}
+.mb-10 {
+  margin-bottom: 100px!important;
+}
 .col-md-8 {
   padding: 0px 5px;
 }
@@ -219,10 +224,10 @@ a.nav-link {
   padding-top: 2px;
   margin: 0px 6px;
 }
-a#navbarDropdownnickname.nav-link.dropdown-toggle {
-  font-size: 1rem;
-  line-height: 1;
-}
+// a#navbarDropdownnickname.nav-link.dropdown-toggle {
+//   font-size: 1rem;
+//   line-height: 1;
+// }
 a#navbarDropdownnickname.nav-link.dropdown-toggle:hover {
   color: #0652DD!important;
   text-decoration: underline;
@@ -235,6 +240,10 @@ a#navbarDropdownPortfolio.nav-link.dropdown-toggle:focus {
 }
 .dropdown-item {
   padding: 7px 1.5rem;
+}
+a.dropdown-item:hover {
+  background-color: #f8f8f8!important;
+  transition: color 0.15s;
 }
 
 /* BTN */
@@ -328,7 +337,7 @@ a.btn.btn-primary:visited {
 .main-lionth {
   font-size: 55px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 0px;
   transition: color 0.15s ease-in-out;
   display: inline-block;
@@ -348,10 +357,10 @@ a.btn.btn-primary:visited {
   background: white;
   margin: 30px auto;
 }
-.main-lionth:hover {
-  font-weight: bolder;
-  color: #0652DD;
-}
+// .main-lionth:hover {
+//   font-weight: bolder;
+//   color: #0652DD;
+// }
 .main-content {
   width: 93%;
   margin: 10px auto 70px;
@@ -562,7 +571,7 @@ textarea {
 }
 .main-service h3 {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 300;
   color: #0752dd;
   margin: 20px 0px;
 }
@@ -1034,6 +1043,9 @@ label {
 }
 // javascript셀렉 숨김
 #lecture {
+  display: none;
+}
+#questions {
   display: none;
 }
 #lecture2 {
@@ -1959,12 +1971,12 @@ input:disabled {
 }
 @media (min-width: 992px) {
   .dropdown-menu {
-    left: -27px!important;
-    min-width: 5rem!important;
+    left: 50%;
+    transform: translate(-50%);
   }
   #userinfo.dropdown-menu.dropdown-menu-center.show {
-    left: -48px!important;
-    min-width: 10rem!important;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 /*MOBILE NAV*/
@@ -2012,7 +2024,7 @@ input:disabled {
   margin: 0px 16px!important;
   }
   #navbarDropdownnickname::after {
-  display: none;
+  // display: none;
   }
   a#navbarDropdownnickname.nav-link.dropdown-toggle {
   line-height: 1.2;
@@ -2298,3 +2310,60 @@ input {
   display: block;
   margin: 20% auto;
 }
+
+// 스와이퍼
+.s-btn-white {
+  filter: brightness(0) invert(1) drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+  -webkit-filter: brightness(0) invert(1) drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+}
+.s-btn-black {
+  filter: brightness(0) drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+  -webkit-filter: brightness(0) drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+}
+.swiper-button-next {
+  margin-right: 2%;
+}
+.swiper-button-prev {
+  margin-left: 2%;
+}
+.custom-swiper-pagination {
+  .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff!important;
+  filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+  -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));
+  }
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #000000!important;
+}
+.custom-swiper {
+  width: 100%;
+  margin-top: 55px!important;
+  min-height: 19rem;
+}
+@media (max-width: 768px) {
+    .custom-swiper {
+      min-height: 150px!important;
+    }
+}
+
+// .fb-con {
+//   width: 100%;
+// }
+// .fb-page .fb_iframe_widget{
+//   width: 100%!important;
+// }
+// #fb-root {
+//   width: 100%!important;
+// }
+// #fb-root span {
+//   width: 100%!important;
+// }
+// #fb-root iframe {
+//   width: 100%!important;
+// }
+// .fb-con .uiScaledImageContainer ._2zfr {
+//   width: 100%;
+// }

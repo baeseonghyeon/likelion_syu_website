@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
 #bg2 {
     background-image: url('/assets/likelion-bg');
     height: auto!important;
@@ -9,35 +11,83 @@
     font-size: 2.5rem;
 }
 #bg2 h1 a:hover {
-    color: #f2961b!important;
+    color: white!important;
 }
 #bg2 h2 {
     font-weight: 100;
     font-size: 1.2rem;
+    margin-top: 40px;
     margin-bottom: 100px;
     line-height: 150%;
 }
-#bg2 h4 {
-    font-size: 1.2rem;
+#bg2 h3 {
+    font-weight: 100;
+    margin-bottom: 30px;
 }
 #bg2 p {
     font-size: 15px;
+    line-height: 150%;
+    margin-bottom: 40px;
 }
-#bg2 i {
+// btn
+.ll-btn {
+    background-color: rgba(242, 150, 27, 0.8) !important;
+}
+
+// stack
+#stack .container {
+    padding: 0px 35px;
+}
+#stack h4 {
+    font-size: 1rem;
+}
+#stack i {
     font-size: 2.5rem;
     margin: 15px;
 }
-#bg2 .col-md-4 {
-    padding: 30px;
+#stack .col-md-4 {
+    padding: 20px;
     line-height: 150%;
 }
-#bg2 .col-md-4 div {
+#stack .col-md-4 div {
     margin: 15px;
 }
-// #bg2 .col-md-4 {
-//     font-size: 15px;
-// }
 
+.hul {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+// our
+#our {
+    line-height: 190%;
+}
+#our .container {
+    padding: 0px 35px;
+}
+#our h2 {
+    font-size: 1.2rem;
+    line-height: 150%;
+}
+#our h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+#our p {
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+#our .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+#our .col-md-3:hover {
+    color: #333333;
+}
 
 // 스크롤 다운 버튼
 .main-arrow-down {
@@ -52,9 +102,15 @@
     margin-right: auto;
     bottom: 30px;
 }
-
+// 모바일
 @media (max-width: 768px) {
     .main-arrow-down {
         display: block;
+    }
+    #our .col-md-3.r {
+        margin: 0px 30px;
+    }
+    #stack .col-md-4 {
+    padding: 10px 20px;
     }
 }

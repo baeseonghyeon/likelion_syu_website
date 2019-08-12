@@ -20,11 +20,19 @@
       </div>
       <div class="col-md-2" id="lecture">
         <span id="lecturelabel1"><%= f.label :수업분류 %><span class="label-star">*</span></span>
-        <span id="lecturelabel2"><%= f.label :질문분류 %><span class="label-star">*</span></span>
+        <!--<span id="lecturelabel2"><%#= f.label :질문분류 %><span class="label-star">*</span></span>-->
         <br>
         
         <!-- 수업자료 분류 -->
         <%= render '/posts/form/lecture-options', { f: f , post: post } %>
+        
+      </div>
+      <div class="col-md-2" id="questions">
+        <span id="lecturelabel2"><%= f.label :질문분류 %><span class="label-star">*</span></span>
+        <br>
+        
+        <!-- 질문 분류 -->
+        <%= render '/posts/form/questions-options', { f: f , post: post } %>
         
       </div>
       <div class="col-md-2" id="limit">
@@ -99,10 +107,17 @@
       
       <script>
         $("#post_category").change(function(){
-            if($(this).val() == '수업자료' ||$(this).val() == '질문'){
+            if($(this).val() == '수업자료'){
               $("#lecture").show();
             }else{
               $("#lecture").hide();
+            }
+        });
+        $("#post_category").change(function(){
+            if($(this).val() == '질문'){
+              $("#questions").show();
+            }else{
+              $("#questions").hide();
             }
         });
         $("#post_category").change(function(){
@@ -137,8 +152,8 @@
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
         
-        <!-- 수업자료 분류 -->
-        <%= render '/posts/form/lecture-options', { f: f , post: post } %>
+        <!-- 질문 분류 -->
+        <%= render '/posts/form/questions-options', { f: f , post: post } %>
         
       </div>
       <div class="col-md-10" id="title">
@@ -168,8 +183,8 @@
         <%= f.label :질문분류 %><span class="label-star">*</span>
         <br>
         
-        <!-- 수업자료 분류 -->
-        <%= render '/posts/form/lecture-options', { f: f , post: post } %>
+        <!-- 질문 분류 -->
+        <%= render '/posts/form/questions-options', { f: f , post: post } %>
         
       </div>
     <% end %>  
