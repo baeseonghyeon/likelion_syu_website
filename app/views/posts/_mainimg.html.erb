@@ -29,7 +29,7 @@
                 <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_1.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
                     <div class="mainimg-cover"></div> 
                     <h1><%= @mainimg_3_1.title.to_s.html_safe %></h1>
-                    <p><%= @mainimg_3_1.created_at.strftime("%Y-%m").to_s.html_safe %></p>
+                    <p><%= @mainimg_3_1.created_at.strftime("%Y년 %m월").to_s.html_safe %></p>
                 </div>
             </a>
             </div>
@@ -39,7 +39,7 @@
                 <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_2.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
                     <div class="mainimg-cover"></div> 
                     <h1><%= @mainimg_3_2.title.to_s.html_safe %></h1>
-                    <p><%= @mainimg_3_2.created_at.strftime("%Y-%m").to_s.html_safe %></p>
+                    <p><%= @mainimg_3_2.created_at.strftime("%Y년 %m월").to_s.html_safe %></p>
                 </div>
             </a>
         </div>
@@ -48,11 +48,11 @@
                 <div class="card-body mainimg carousel-bg" style="background-image: url('<%= @mainimg_3_3.content.to_s.html_safe.remove('<p><img src="', '" alt="" /></p>') %>');">
                     <div class="mainimg-cover"></div> 
                     <h1><%= @mainimg_3_3.title.to_s.html_safe %></h1>
-                    <p><%= @mainimg_3_3.created_at.strftime("%Y-%m").to_s.html_safe %></p>
+                    <p><%= @mainimg_3_3.created_at.strftime("%Y년 %m월").to_s.html_safe %></p>
                 </div>
             </a>
         </div>
-            <% end %>
+        <% end %>
     </div>
     
     <!-- Pagination -->

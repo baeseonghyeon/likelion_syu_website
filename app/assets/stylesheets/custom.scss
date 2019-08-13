@@ -971,10 +971,18 @@ a.comment-link-marker:hover {
   justify-content: center;
   align-items: center;
 }
-.card-body.mainimg > h1,p {
+.card-body.mainimg > h1 {
     color: rgba(255,255,255,0.9)!important;
     text-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.4);
     z-index: 10;
+    font-weight: 600;
+}
+.card-body.mainimg > p {
+    color: rgba(255,255,255,0.9)!important;
+    text-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.4);
+    z-index: 10;
+    font-weight: 100!important;
+    font-size: 0.9rem!important;
 }
 .mainimg-cover {
   text-align: center;
@@ -2113,7 +2121,7 @@ input:disabled {
   .col-md-3.r {
       border-right: none;
       border-bottom: 1px solid #dfe2e6;
-    }
+  }
   .main-info {
     //메인 인포
     .col-md-3.r {
@@ -2130,7 +2138,6 @@ input:disabled {
       margin: 0px;
     }
   }
-  
   //메인 로고
   .logo-main {
   width: 60%;
@@ -2173,7 +2180,14 @@ input:disabled {
   .lecture-link table {
   margin: 0px 10px!important;
   }
+  .card-body.mainimg > h1 {
+    font-size: 1.5rem!important;
+  }
+  .card-body.mainimg > p {
+    font-size: 0.8rem!important;
+  }
 }
+
 @media (max-width: 600px) {
     //메인 로고
   .logo-main {
