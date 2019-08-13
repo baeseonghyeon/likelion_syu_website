@@ -401,7 +401,11 @@ a.btn.btn-primary:visited {
   display: flex;
   align-items: center;
 }
-#counter_service
+.main-info {
+  .col-md-3 {
+    padding: 20px;
+  }
+}
 .col-md-3 {
   padding: 20px 10px 0px 20px;
   transition: color 0.15s ease-in-out;
@@ -2088,12 +2092,27 @@ input:disabled {
   .card-body.mainimg {
     max-height: 150px!important;
   }
-  //메인 인포
   .col-md-3.r {
-  border-right: none;
-  border-bottom: 1px solid #dfe2e6;
-  margin: 20px
+      border-right: none;
+      border-bottom: 1px solid #dfe2e6;
+    }
+  .main-info {
+    //메인 인포
+    .col-md-3.r {
+      border-right: none;
+      border-bottom: 1px solid #dfe2e6;
+      margin: 0px 50px;
+      padding: 20px;
+    }
+    .col-md-3 {
+      margin: 0px 50px;
+      padding: 20px;
+    }
+    .col-md-3 p {
+      margin: 0px;
+    }
   }
+  
   //메인 로고
   .logo-main {
   width: 60%;

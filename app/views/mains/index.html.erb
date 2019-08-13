@@ -51,11 +51,7 @@
             <%= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
             <img src="assets/arrow-down" alt="arrow-down" class="main-arrow-down" onclick="downFunction()">
             
-            <script>
-            function downFunction() {
-              $('html, body').animate( { scrollTop : 600 } ); 
-            }
-            </script>
+            
         </div>
     </div>
     
@@ -70,6 +66,13 @@
             <a href="https://likelion.net/" target="_blank"  class="btn main-btn ll-btn">멋쟁이 사자처럼</a>
         </div>
     </div>
+    
+    <script>
+        var bg2top = $('#bg2').offset().top;
+        function downFunction() {
+          $('html, body').animate( { scrollTop : bg2top } ); 
+        }
+    </script>
     
     <div class="swiper-container">
         <div class="swiper-wrapper">
