@@ -92,7 +92,7 @@
 // 스크롤 다운 버튼
 .main-arrow-down {
     width: 55px;
-    display: none;
+    display: block;
     position: absolute;
     left: 50%;
     right: 10px;
@@ -104,9 +104,9 @@
 }
 // 모바일
 @media (max-width: 768px) {
-    .main-arrow-down {
-        display: block;
-    }
+    // .main-arrow-down {
+    //     display: block;
+    // }
     #our .col-md-3 {
         margin: 0px 30px;
     }
