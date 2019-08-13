@@ -16,7 +16,7 @@
         <%= f.label :카테고리 %><span class="label-star">*</span>
         <br>
         
-        <%= f.select :category, options_for_select(['공지사항', '수업자료', '과제', '대문', '일반', '질문'], :selected => post.category), {:required => true, :class => 'select-box'} %>
+        <%= f.select :category, options_for_select(['공지사항', '수업자료', '과제', '대문', '일반', '질문', '사진'], :selected => post.category), {:required => true, :class => 'select-box'} %>
       </div>
       <div class="col-md-2" id="lecture">
         <span id="lecturelabel1"><%= f.label :수업분류 %><span class="label-star">*</span></span>
@@ -145,7 +145,7 @@
         <div class="col-md-2">
           <%= f.label :카테고리 %><span class="label-star">*</span>
           <br>
-          <%= f.select :category, options_for_select(['일반', '과제제출' ,'질문' ], :selected => post.category), class:"select-box" %>
+          <%= f.select :category, options_for_select(['일반', '과제제출' ,'질문', '사진'  ], :selected => post.category), class:"select-box" %>
         </div>
       <div class="col-md-2" id="lecture2">
         <%= f.label :질문분류 %><span class="label-star">*</span>

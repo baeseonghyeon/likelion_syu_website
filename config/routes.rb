@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/lecture' => 'posts#lecture'
   get '/freeboard' => 'posts#freeboard'
   get '/questions' => 'posts#questions'
+  get '/photo' => 'posts#photo'
   get '/users/myposts' => 'posts#mypost'
   get '/users/list' => 'users#index'
   # ERROR

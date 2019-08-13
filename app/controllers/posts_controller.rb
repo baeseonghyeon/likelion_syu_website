@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions ]
+  before_action :categories, only: [:index, :show, :notice, :homework, :lecture, :freeboard, :questions, :photo ]
   before_action :mainimg, only: [:index]
-  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions]
+  before_action :authenticate_user!, except: [:index, :show, :notice, :homework, :lecture, :freeboard, :mypage, :mypost, :questions, :photo]
   # before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
   
@@ -122,6 +122,12 @@ class PostsController < ApplicationController
     @posts = @post.order("created_at DESC").page(params[:page])
     authorize! :questions, @posts
   end
+  
+  def photo
+    @post = Post.where(:category => ['대문', '사진'])
+    @posts = @post.order("created_at DESC").page(params[:page])
+    # authorize! :homework, @posts
+  end  
   
   def mypost
     @user = Post.where(:user_id => current_user)
