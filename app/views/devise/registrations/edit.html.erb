@@ -1,62 +1,60 @@
 <!-- Navigation -->
 <%= render '/posts/nav' %>
 <div class="container_wrap2">
-
-<div class="d_main">
-  <h1 class="title-custom3">개인 정보 수정하기</h1>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-    <p class=“notice’><%= notice %></p>
-    <p class=“alert’><%= alert %></p>
-  <div class="d_inputbox">
-    <div class="form-inputs">
-      <%= f.label "이름" %>
-      <%= f.text_field :name, class: "form-control", :required => true, disabled: true %>
-      <%= f.label "이메일" %>
-      <%= f.text_field :email, class: "form-control", :required => true, disabled: true %>
-      <%= f.label "등급" %>
-      <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
-        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "운영진" %>
-      <% elsif current_user.has_role? 'member'%>
-        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "아기사자" %>
-        <% elsif current_user.has_role? 'oldmember'%>
-        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "멋쟁이 사자" %>
-      <% else %>
-        <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "게스트" %>
-      <% end %>
-      <%= f.label "프로필 이미지" %>
-      <%= f.file_field :image %>
-      <%= f.hidden_field :image_cache %>
-      <%= f.label "휴대전화" %>
-      <%= f.number_field :phone, :required => true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
-      <script>
-      phone.oninput = function () {
-          if (this.value.length > 11) {
-              this.value = this.value.slice(0,11); 
-          }
-      }
-      </script>
-      <%#= f.text_field :phone, :required => true,placeholder: "- 없이 11자 입력", maxlength: "11"%>
-      <%= f.label "Github 주소" %>
-      <%= f.text_field :gitlink, placeholder: "https://github.com/아이디" %>
-      <%= f.input :password, autocomplete: "off", hint: "변경하지 않으려면 비워 두십시오.", required: false, label: "비밀번호 변경" %>
-      <%= f.input :password_confirmation, required: false, label:"비밀번호 변경 재확인" %>
-      <%= f.input :current_password, hint: "변경 사항을 저장하려면 현재 비밀번호가 필요합니다.", required: true, label:"현재 비밀번호" %>
+    <div class="d_main">
+        <h1 class="title-custom3">개인 정보 수정하기</h1>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <p class=“notice’><%= notice %></p>
+        <p class=“alert’><%= alert %></p>
+        <div class="d_inputbox">
+            <div class="form-inputs">
+              <%= f.label "이름" %>
+              <%= f.text_field :name, class: "form-control", :required => true, disabled: true %>
+              <%= f.label "이메일" %>
+              <%= f.text_field :email, class: "form-control", :required => true, disabled: true %>
+              <%= f.label "등급" %>
+              <% if current_user.has_role? 'admin' or current_user.has_role? 'manager' %>
+                <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "운영진" %>
+              <% elsif current_user.has_role? 'member'%>
+                <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "아기사자" %>
+                <% elsif current_user.has_role? 'oldmember'%>
+                <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "멋쟁이 사자" %>
+              <% else %>
+                <%= f.text_field :name ,class: "form-control", :required => true, disabled: true, value: "게스트" %>
+              <% end %>
+              <%= f.label "프로필 이미지" %>
+              <%= f.file_field :image %>
+              <%= f.hidden_field :image_cache %>
+              <%= f.label "휴대전화" %>
+              <%= f.number_field :phone, :required => true, placeholder: "- 없이 11자 입력", min: 1, max: 99999999999, id: "phone"%>
+              <script>
+              phone.oninput = function () {
+                  if (this.value.length > 11) {
+                      this.value = this.value.slice(0,11); 
+                  }
+              }
+              </script>
+              <%#= f.text_field :phone, :required => true,placeholder: "- 없이 11자 입력", maxlength: "11"%>
+              <%= f.label "Github 주소" %>
+              <%= f.text_field :gitlink, placeholder: "https://github.com/아이디" %>
+              <%= f.input :password, autocomplete: "off", hint: "변경하지 않으려면 비워 두십시오.", required: false, label: "비밀번호 변경" %>
+              <%= f.input :password_confirmation, required: false, label:"비밀번호 변경 재확인" %>
+              <%= f.input :current_password, hint: "변경 사항을 저장하려면 현재 비밀번호가 필요합니다.", required: true, label:"현재 비밀번호" %>
+            </div>
+        </div>
+        <div class="d_button">
+            <div class="form-actions">
+                <%= f.button :submit, "수정", class:"btn btn-primary" %>
+            </div>
+        </div>  
+       <% end %>
+      
+        <div class="d_link">
+        <p><%= link_to "회원탈퇴", registration_path(resource_name), data: { confirm: "정말 탈퇴하시겠습니까?" }, method: :delete %></p>
+          
+        <a href="/users/<%= current_user.id %>">뒤로가기</a>
+        </div>
     </div>
-  </div>
-  <div class="d_button">
-    <div class="form-actions">
-      <%= f.button :submit, "수정", class:"btn btn-primary" %>
-    </div>
-  </div>  
-  <% end %>
-  
-  <div class="d_link">
-  <p><%= link_to "회원탈퇴", registration_path(resource_name), data: { confirm: "정말 탈퇴하시겠습니까?" }, method: :delete %></p>
-  
-  <a href="/users/<%= current_user.id %>">뒤로가기</a>
-  <%#= link_to "뒤로가기", user_path %>
-  </div>
-</div>
 </div>
 <%= render '/posts/footer' %>

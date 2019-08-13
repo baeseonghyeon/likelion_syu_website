@@ -29,12 +29,12 @@
     line-height: 150%;
     margin-bottom: 40px;
 }
-// btn
+// bg2 btn
 .ll-btn {
     background-color: rgba(242, 150, 27, 0.8) !important;
 }
 
-// stack
+// stack section
 #stack .container {
     padding: 0px 35px;
 }
@@ -60,7 +60,7 @@
     margin-bottom: 15px;
 }
 
-// our
+// our section
 #our {
     line-height: 190%;
 }
@@ -92,7 +92,7 @@
 // 스크롤 다운 버튼
 .main-arrow-down {
     width: 55px;
-    display: block;
+    display: none;
     position: absolute;
     left: 50%;
     right: 10px;
@@ -102,11 +102,12 @@
     margin-right: auto;
     bottom: 30px;
 }
-// 모바일
+
+// main 모바일
 @media (max-width: 768px) {
-    // .main-arrow-down {
-    //     display: block;
-    // }
+    .main-arrow-down {
+        display: block;
+    }
     #our .col-md-3 {
         margin: 0px 30px;
     }
