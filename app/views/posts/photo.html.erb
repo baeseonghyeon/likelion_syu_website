@@ -30,12 +30,12 @@
                         <%= content_tag(:div, post.content.html_safe, :class => "panel-body") %>
                         <hr class="margin-b0">
                         <% if post.attachment.present? %>
-                        <h1 class="title etc text-center" style="font-size: 18px;">
+                        <h1 class="title etc text-center" style="font-size: 18px!important;">
                           <%= post.title %>
                         <img class='attach-icon' src='/assets/attachment-clip.svg'/>
                         </h1>
                         <% else %>
-                        <h1 class="title etc text-center" style="font-size: 18px;"><%= post.title %></h1>
+                        <h1 class="title etc text-center" style="font-size: 18px!important;"><%= post.title %></h1>
                         <% end %>
                         <div class="post-info text-center">
                             <%= post.created_at.strftime("%Y년 %m월 %d일") %> <!--|--> <%#= link_to "0 댓글", post, class: 'comment-link-marker', data: { "disqus-url": post_url(post) } %>
