@@ -125,7 +125,7 @@ class PostsController < ApplicationController
   
   def photo
     @post = Post.where(:category => ['대문', '사진'])
-    @posts = @post.order("created_at DESC").page(params[:page])
+    @posts = @post.order("created_at DESC").page(params[:page]).per(9)
     # authorize! :homework, @posts
   end  
   
