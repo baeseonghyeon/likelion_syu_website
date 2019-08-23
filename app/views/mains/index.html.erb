@@ -47,8 +47,8 @@
               <a href="<%= main.applylink %>" class="btn main-btn" target= "_blank">삼육대 멋사 <%= main.th %>기 지원하기!</a>
               </div>
             <% end %>
-             <a href="http://sahmyook.likelion.org/posts" class="btn main-btn">홈페이지로 이동하기</a>
-            <%#= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
+            
+            <%= link_to '홈페이지로 이동하기', posts_path, class: "btn main-btn" %>
             <img src="assets/arrow-down" alt="arrow-down" class="main-arrow-down" onclick="downFunction()">
             
             
@@ -386,7 +386,8 @@
                 
                 if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
                 if (eval == "above") return ((y < (viewportHeight + scrolltop)));
-            } 
+            }
+            
         </script>
           
           <% end %>
