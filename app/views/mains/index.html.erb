@@ -379,13 +379,19 @@
             
             function checkVisible( elm, eval ) {
                 eval = eval || "object visible";
-                var viewportHeight = $(window).height(), // Viewport Height
-                    scrolltop = $(window).scrollTop(), // Scroll Top
-                    y = $(elm).offset().top,
-                    elementHeight = $(elm).height();   
                 
-                if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
-                if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+                // window.__scroll_element = window.__scroll_element  $(elm);
+                var __window = $(window);
+                var __elm = $(elm);
+                if (__elm.offset() && __elm.offset().top){
+                    var viewportHeight = __window.height(), // Viewport Height
+                    scrolltop = __window.scrollTop(), // Scroll Top
+                    y = __elm.offset().top,
+                    elementHeight = __elm.height();       
+                    if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+                    if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+                }
+                
             }
             
         </script>
