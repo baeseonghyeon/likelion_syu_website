@@ -1,28 +1,7 @@
-== README
+# 멋쟁이 사자처럼 at 삼육대학교 웹 사이트
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby on Rails로 구현한 웹 사이트 저장소 사본 입니다.
+### THIS IS COPY SOURCE(배포 되어있는 버전과 차이가 있을 수 있음)
+### [Visit the website](http://sahmyook.likelion.org/)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+**(웹사이트 기획, UI/UX디자인, 프론트엔드 개발 및 퍼블리싱, 백엔드 개발, 배포를 담당하였습니다.)**
